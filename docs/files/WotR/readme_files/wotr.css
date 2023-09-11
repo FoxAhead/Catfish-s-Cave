@@ -1,0 +1,67 @@
+body        
+{
+background: url(tile.png) #C9AC84 scroll;
+color: #FFF;
+font-family: Arial, sans-serif;
+font-size: 10pt;
+margin: 15px 50px 20px 50px;
+padding: 0 0 0 0;
+text-align: justify
+}
+
+h1 {background-color: transparent; color: #FFF; font-family: Ringbearer, Arial, sans-serif; font-size: 26pt; font-weight: bold; text-align: left}
+h2 {background-color: transparent; color: #FFF; font-family: Ringbearer, Arial, sans-serif; font-size: 22pt; font-weight: bold; text-align: left}
+h3 {background-color: transparent; color: #FFF; font-size: 18pt; font-weight: bold; text-align: left}
+h4 {background-color: transparent; color: #FFF; font-size: 14pt; font-weight: bold; text-align: left}
+h5 {background-color: transparent; color: #FFF; font-size: 12pt; font-weight: bold; text-align: left}
+h6 {background-color: transparent; color: #FFF; font-size: 11pt; font-weight: bold; text-align: left}
+
+.block a:link, a:hover, a:active {background-color: transparent; font-size: 10pt; font-weight: normal; text-decoration: underline; color: #E9DAC9}
+.block a:visited {background-color: transparent; font-size: 10pt; font-weight: normal; text-decoration: underline; color: #DFCDB5}
+
+img {border-width: 0px}
+img.framed {border: 3px ridge #E9DAC9}
+
+table {border-collapse: collapse; font-size: 10pt; text-align: justify; width: 100%}
+tr.tablehead {font-size: 11pt; font-weight: bold}
+tr.alt {background-color: #B2915E}
+
+.block
+{
+background-color: #957748;
+border: 2px solid #E9DAC9;
+border-collapse: inherit;
+border-spacing: 15px;
+padding: 0px 10px 20px 10px;
+text-align: justify;
+width: 100%
+}
+
+.tipblock
+{
+background-color: #B2915E;
+border: 1px solid #6c5736;
+padding: 5px 10px 5px 10px;
+margin: 0px 0px 15px 0px;
+text-align: justify
+}
+
+.contents
+{
+background-color: #957748;
+border: 2px solid #E9DAC9;
+border-collapse: inherit;
+border-spacing: 15px;
+padding: 0px 10px 5px 10px;
+text-align: justify;
+width: 100%
+}
+
+.contents a:link, a:hover, a:active, a:visited
+{
+background-color: transparent;
+color: #FFF;
+font-size: 12pt;
+font-weight: bold;
+text-decoration: none
+}

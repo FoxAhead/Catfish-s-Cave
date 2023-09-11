@@ -1,0 +1,1364 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+  <head>
+    <title>Catfish's Cave - Converting Scenarios</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="author" content="Catfish">
+    <meta name="description" content="A Civilization 2 guide for converting Fantastic Worlds and Multiplayer Gold Edition scenarios to the Test of Time format.">
+    <meta name="viewport" content="width=device-width, initial-scale=.8">
+    <link href="cave.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <script type="text/javascript">
+      function showMonotypeText(obj)
+        {
+        var inner = obj.parentNode.getElementsByTagName("div")[0];
+        if (inner.style.display == "none")
+            inner.style.display = "";
+        else
+            inner.style.display = "none";
+        }
+    </script>
+
+  </head>
+
+  <body>
+
+    <div class="Fixed">
+      <div><img src="images/Cave.png" width="660" height="100" alt="Catfish's Cave - Resources For Civilization 2: Test of Time"></div>
+      <div class="SideBar">
+        <ul class="menu">
+          <li><p><a title="Catfish's Cave Homepage" href="index.htm">Main</a></p></li>
+          <li><p><a title="Frequently Asked Questions." href="jp_faq.htm">FAQ</a></p></li>
+          <li><p><a title="Design guides for Test of Time." href="jp_guides.htm">Guides</a></p></li>
+          <li><p><a title="Download the War of the Ring scenario." href="jp_wotr.htm">War of the Ring</a></p></li>
+          <li><p><a title="24-bit units for Test of Time." href="jp_units.htm">Units</a><br>(last modified<br>25/05/2009)</p></li>
+          <li><p><a title="24-bit terrain graphics for Test of Time." href="jp_terrain.htm">Terrain</a><br>(last modified<br>24/05/2009)</p></li>
+          <li><p><a title="Modpacks, People, Icons, Wonders, etc." href="jp_miscgraphics.htm">Miscellaneous Graphics</a><br>(last modified<br>28/02/2020)</p></li>
+          <li><p><a title="Links to useful websites related to Civ2 scenarios and their design." href="jp_links.htm">Links</a></p></li>
+        </ul>
+      </div>
+      <div class="SideBarBot"><p></p></div>
+    </div>
+
+    <div class="content" style="min-width: 690px">
+
+      <h1>Converting FW/MGE Scenarios to the ToT Format</h1>
+
+      <p>One of Test of Time's drawbacks is its lack of backwards compatibility with the older versions of Civilization 2 such as Fantastic Worlds (FW) and the Multiplayer Gold Edition (MGE). Fortunately, Angelo Scotto came to the fore in early 2000 when he produced CivConverter, a utility capable of converting FW and MGE scenarios to the ToT format. Unfortunately, it never advanced beyond a beta version and as you would expect, it has its share of anomalies and bugs. After reading many questions in the Civ2 forums regarding the use of this utility, I figured it was about time I wrote some kind of guide. This guide presents an outline of the conversion procedure (the readme file may be a little unclear to some people) and a checklist of items that may or may not need attention post-conversion.</p><br>
+
+      <div id="Download" class="tipblock">
+
+        <div class="blockheading">
+          <h3>1. Download CivConverter</h3>
+        </div>
+
+        <p>CivConverter version 1.4 beta can be downloaded from the following locations:</p>
+
+        <ul class="totmenu">
+          <li><p><a href="files/CivConverter_1.4beta.7z">Right here</a> 59 kB (Includes a link to this guide and the graphics file templates that I use).</p></li>
+          <li><p><a href="http://sleague.civfanatics.com/COC/utilities/index.shtml#Civ%20Convert">The Cradle of Civilization</a></p></li>
+          <li><p><a href="http://www.civfanatics.com/civ2/downloads/utilities/">Civilization Fanatics' Center</a></p></li>
+          <li><p><a href="http://civ2.mercator.fastmail.fm/mapedit/downloads.html#file0021">Mercator's Civilization2 Utility Site</a></p></li>
+        </ul><br>
+
+      </div><br>
+
+      <div id="GraphicsPrep" class="tipblock">
+
+        <div class="blockheading">
+          <h3>2. Prepare the Graphics Files</h3>
+        </div>
+
+        <p>Before you run CivConverter you must convert the scenario's graphics files to a compatible format. Graphics for FW and MGE use an 8-bit indexed colour palette (saved as either GIFs or BMPs). The format required by CivConverter is 24-bit BMP. Open the scenario's graphics files in your editor of choice and save them all as 24-bit bitmaps. Note: the file title.gif does not require conversion; in this instance ToT uses exactly the same format as FW and MGE.</p>
+
+        <div class="tipblock_dark">
+          <p><b>IrfanView 4.28:</b> (<a href="http://www.irfanview.com/">Free image viewer and converter</a>) From the <b>File</b> menu, select <b>Batch Conversion/Rename...</b>. This will open the <b>Batch conversion</b> window. There are several ways to submit files for processing, but the easiest is to drag and drop them into the <b>Input files</b> box (bottom right). From the <b>Output format</b> drop-down menu, select 'BMP - Windows Bitmap'. Check the <b>Use advanced options</b> box and click the <b>Advanced</b> button. The <b>Set for all images</b> window will open. Check the <b>CHANGE COLOR DEPTH</b> box and select '16.7 Million colors (24 BPP)'. Under <b>MISCELLANEOUS</b>, check 'Overwrite existing files'. Click OK to close. In the <b>Output directory for result files</b> box, switch to the scenario folder. Click the <b>Start Batch</b> button to complete.</p>
+
+          <p><b>Paint Shop Pro 8.10:</b> From the <b>Image</b> menu, select <b>Increase Color Depth</b> and then <b>16 Million Colors (24 bit)</b>. Select <b>Save As...</b> from the <b>File</b> menu and then choose 'Windows or OS/2 Bitmap (*.bmp)' in the <b>Save as type</b> box. Click the <b>Options...</b> button and make sure you have RGB Encoding selected. Click <b>OK</b> and <b>Save</b>.</p>
+
+          <p><b>Photoshop 7.0:</b> From the <b>Image</b> menu, select <b>Mode</b> and then <b>RGB Color</b>. Select <b>Save As...</b> from the <b>File</b> menu and then choose 'BMP (*.BMP,*.RLE,*.DIB)' in the <b>Format</b> box. Click the <b>Save</b> button and you will be presented with a <b>BMP Options</b> box. Make sure you have 24 bit depth selected. Click <b>OK</b>.</p>
+
+          <p><b>MS Paint:</b> Select <b>Save As...</b> from the <b>File</b> menu and then choose '24-bit Bitmap (*.bmp,*.dib)' in the <b>Save as type</b> box. Click the <b>Save</b> button.</p>
+        </div><br>
+
+      </div><br>
+
+      <div id="CommandLines" class="tipblock">
+
+        <div class="blockheading">
+          <h3>3. Running CivConverter</h3>
+        </div>
+
+        <p>CivConverter is a DOS-based program, requiring the use of command lines. In Windows it can be run from either the Command Prompt window or the Run Command in the Start menu.</p>
+
+        <h4>3.1. The Command Prompt</h4>
+
+        <p>This method involves accessing the Command (or MS-DOS) Prompt window, changing to the CivConverter directory (folder) and then running the utility on a scenario using a command line. It's basically the same procedure for Windows 7, XP and 98SE, with a few minor variations. The Command Prompt window can normally be accessed via the Start Menu:</p>
+
+        <div class="tipblock_dark">
+          <p><b>Windows 7:</b> Start Menu &#8594; All Programs &#8594; Accessories &#8594; Command Prompt</p>
+          <p><b>Windows XP:</b> Start Menu &#8594; Programs &#8594; Accessories &#8594; Command Prompt</p>
+          <p><b>Windows 98SE:</b> Start Menu &#8594; Programs &#8594; MS-DOS Prompt</p>
+          <p><b>All:</b> Start Menu &#8594; Run... &#8594; type "CMD" (minus the quotes) in the Open box</p>
+        </div>
+
+        <p>It is important to run the CivConverter program from the CivConverter directory. Failure to do so will almost certainly result in errors. This may require changing the directory at the Command Prompt before running the utility. Getting this part right has proved problematic for some, so I'll demonstrate the procedure using a few examples (the commands are highlighted in light blue):</p>
+
+        <p><b>Example 1:</b> Assume our scenario is located in the c:\civ2\scenario\ directory and we've extracted CivConverter into c:\unzipped\civconverter\. The scenario can be converted by opening the Command Prompt window and typing the following lines:</p>
+
+        <p style="margin-left: 40px"><img src="images/Command1.png" width="600" height="108" alt="CivConverter and the Command Prompt"></p>
+
+        <p>The first line moves the prompt to the CivConverter directory. The second line executes the program, converting the scenario.</p>
+
+        <p><b>Example 2:</b> Assume our scenario is located in the c:\civ2\scenario\ directory and we've extracted CivConverter into d:\unzipped\civconverter\. Note that in this example the CivConverter utility is located on a different drive to the game installation.</p>
+
+        <p style="margin-left: 40px"><img src="images/Command2.png" width="600" height="133" alt="Switching Drives with Command Lines"></p>
+
+        <p>The first line is required to switch from drive C to drive D, the second line changes to the CivConverter directory and the third line executes the program.</p>
+
+        <p>Alternatively, if you're running Windows 7 or XP, you can use the /d switch with the cd command to change drives. This option is unavailable in Windows 9x systems.</p>
+
+        <p style="margin-left: 40px"><img src="images/Command3.png" width="600" height="109" alt="Switching Drives in Windows XP"></p>
+
+        <div class="tipblock_dark">
+          <p><b>Tip:</b> There's an even simpler method to open the Command Prompt in the desired directory. If you have Windows 7, Shift-right-click the CivConverter folder. You should now see the 'Open command window here' option in the context menu. Select it and enter the command line for CivConverter. Using the same file locations as Example 2, above, the scenario can now be converted with a single line:</p>
+          <p style="margin-left: 40px"><img src="images/Command4.png" width="600" height="109" alt="Using 'Open Command Prompt Here'"></p>
+          <p>To achieve the same in Windows XP, you'll need to install a component of <a href="http://windows.microsoft.com/en-US/windows/xp-downloads">Microsoft's PowerToys for Windows</a>. Download the Open Command Window Here component (CmdHere.exe). It adds the Command Prompt to the menu when you right-click on a folder.</p>
+          <p>There is no version of PowerToys available for Windows 98, 98SE or ME. A registry hack is required to implement the 'Command Prompt Here' menu option for these operating systems; something that is beyond the scope of this document. Anyway, if you're still using Windows 9x it's about time you crawled out onto land.</p>
+        </div>
+
+        <h4>3.2. The Run Command in the Start Menu</h4>
+
+        <p>The Run Command requires only a single line: the full path to the program and the program's parameters. To convert the scenario from Example 1, above, using the Run Command (all Windows versions):</p>
+
+        <div class="tipblock_dark">
+          <ol>
+            <li><p>Start Menu &#8594; Run... (or Windows key + R)</p></li>
+            <li><p>In the Open box, type: c:\unzipped\civconverter\civconverter c:\civ2\scenario\scenario.scn</p></li>
+          </ol>
+        </div>
+
+        <h4>3.3. Common Issues</h4>
+
+        <p><b>Multiple Game Files:</b> If a scenario uses a batch file to implement multiple game files, you will be required to run CivConverter multiple times, each time temporarily changing the file names, eg, units2.bmp would need to be renamed units.bmp so that it can be recognised by CivConverter.</p>
+
+        <p><b>CivConverter Crashes:</b> This is usually the result of an incompatible labels file. It occurs when a labels.txt file derived from classic Civ2, Conflicts in Civilization (CiC) or FW is used with a scenario file made with MGE. CivConverter reads the 11th byte in the scenario (SCN) file. If the value returned is 0x2C, the scenario will be identified as an MGE creation. The program will then attempt to convert the labels file as though it were also an MGE file, causing it to crash. A partially written labels.txt file will result. This file will, in turn, crash ToT if you use it with the converted scenario (see section 5, below). Removing labels.txt from the scenario directory prior to running CivConverter will avoid the problem. If CivConverter has crashed, run the program again; it will not have finished converting all the files.</p>
+
+        <div class="tipblock_dark">
+          <p><b>Note:</b> CivConverter will accept long file names, but it's not keen on spaces in the pathname. Including them will produce the following error message:</p>
+          <p style="margin-left: 40px">Error in opening Scenario File!<br>
+          Please check for existence of file and<br>
+          remember to use full path &amp; extension<br></p>
+          <p>If the name of the scenario (SCN) file contains spaces, run CivConverter with the entire pathname enclosed in quotation marks, eg, civconverter "c:\unzipped\redfront\red front.scn".</p>
+          <p>If spaces exist within directory names, then you'll be required to rename them using the standard 8-character DOS format, eg, a scenario located at c:\unzipped\red front\redfront.scn would require the command line: civconverter c:\unzipped\redfro~1\redfront.scn. In this case, enclosing the entire pathname in quotation marks would cause CivConverter to crash, producing the following error message:</p>
+          <p style="margin-left: 40px">The syntax of the command is incorrect.</p>	  
+          <p>If the scenario.txt file contains spaces, manually copy this file to the Converted directory.</p>
+        </div>
+
+        <h4>3.4. CivConverter Done</h4>
+
+        <p>You should now have a new folder in your scenario directory called Converted. This contains the new converted scenario. Move the folder to your main Test of Time directory. Give it a meaningful name, eg, ToT_OriginalScenarioName.</p><br>
+
+        </div><br>
+
+      <div id="Checklist" class="tipblock">
+
+        <div class="blockheading">
+          <h3>4. Post-Conversion Checklist</h3>
+        </div>
+
+        <p>The following is a checklist of items that may require attention post-conversion. I'm not going to fall into the trap here of writing a how-to guide on graphics and hex editing - much of this will be assumed knowledge. This is a list that I use and is not exhaustive.</p>
+
+        <div class="tipblock_dark">
+          <p><b>Note:</b> Changes to the SCN file can generally be implemented by either of two methods:</p>
+          <ol>
+            <li><p><b>Loading the SCN file, making the modifications and resaving as a scenario.</b> Before employing this method, I'd firstly recommend that any events.txt files be temporarily relocated. This is a precautionary move against ScenarioLoaded events; obviously loading the scenario will trigger them. You should never open a scenario for editing using the Begin A Scenario option in the main Test of Time menu. Doing so advances the scenario by 1 turn, thereby affecting research, production, gold, etc. You can load a scenario (SCN) file using <b>Load Game</b> (Ctrl+L) in the <b>Game</b> menu, just like a normal saved game. The scenario file will not appear in the file list; you will need to enter the name of the scenario (with the .scn extension) in the <b>File name</b> box. After making your changes to the scenario, select <b>Save As Scenario</b> from the <b>Cheat</b> menu.</p></li>
+            <li><p><b>Hex-editing.</b> Sometimes it's easier to make changes to a scenario file by hex-editing; sometimes it's the only way. Where hex-editing is an option I'll provide offset locations. For more information about the layout of the SCN file, check out the <a href="jp_hex.htm">Saved Game File Format</a> page.</p></li>
+          </ol>
+        </div>
+
+        <ul class="utilmenu">
+          <li><p><b>Units.bmp:</b> Unit icons are placed 6 pixels too high, as shown in the example below (taken from the FW Dinosaurs scenario). These should be lowered. I believe this was a deliberate decision on the part of CivConverter's author. It can, however, cause visual 'aberrations' in some scenarios, particularly with respect to immobile/terrain units.</p></li>
+        </ul>
+
+          <p style="text-align: center"><img src="images/Dinos.png" width="196" height="66" alt="Converted Dinosaur Units"></p>
+
+        <ul class="utilmenu">
+          <li><p><b>Units.bmp:</b> ToT mirrors unit icons according to their direction of movement. The icons of left-facing units should be mirrored so that they face to the right, otherwise they will appear to be moving backwards in the game. In the dinosaur example, you should end up with this:</p></li>
+        </ul>
+
+          <p style="text-align: center"><img src="images/Dinos_fixed.png" width="196" height="66" alt="Corrected Dinosaur Units"></p>
+
+        <ul class="utilmenu">
+          <li><p><b>Units.bmp:</b> In FW and MGE, the 63rd icon slot is reserved for the Barbarian leader (diplomat). In ToT this is the 81st slot. Move the 63rd icon to the 81st slot.</p></li>
+
+          <li><p><b>Terrain1.bmp:</b> The tiles for the desert, grassland, forest base, hills base, mountains base and jungle slots are incorrectly mapped to the converted bitmap. ToT uses 3 graphic slots per terrain type; FW and MGE use just one. Rather than simply reproducing the original tiles in triplicate, CivConverter uses the spare graphic slots in column two of the original file to create the 2nd and 3rd tiles. Clearly it's a deliberate decision on the part of the author, based on the layout of the official terrain1.gif files - but really the spare slots could contain anything. More often than not you'll end up with something inappropriate. To fix this, simply copy terrain column one and paste it into columns two and three.</p></li>
+
+          <li><p><b>Terrain2.bmp:</b> The cyan numbers frequently found in the river mouth icon boxes (see below) are sometimes visible in ToT's city information screen. Blank them out.</p></li>
+        </ul>
+
+          <p style="text-align: center"><img src="images/River_Mouths.png" width="261" height="34" alt="River Mouths"></p>
+
+        <ul class="utilmenu">
+          <li><p><b>Cities.bmp:</b> In ToT, any tribe that possesses the Invention tech (Inv) will use the city style in the 7th row.  This applies only if the tribe doesn't also possess Industrialisation (Ind) or Automobile (Aut) + Electronics (E2), in which case it will use the 5th and 6th rows respectively. The 7th row, used for the Renaissance city style in ToT's Original game, is not used by older versions of Civilization 2. You may be required to copy and paste one of the other city styles to row seven.</p></li>
+
+          <li><p><b>Cities.bmp:</b> The blue vertical flag position markers in the city icon boxes (see below) are not read by ToT - flags are always positioned high. On occasions, you may find that you have to manipulate the position of the blue horizontal marker and/or the city icon itself to avoid the appearance of a 'floating' flag.</p></li>
+        </ul>
+
+          <p style="text-align: center"><img src="images/city_markers.png" width="260" height="196" alt="City Flag Position Markers"></p>
+
+        <ul class="utilmenu">
+          <li><p><b>Icons.bmp:</b> CivConverter only copies the city improvement, wonder and advances icons from the original scenario file. All other icons, including shield, food, trade, pollution, revolt, research and global warming icons are not transferred. This must be done manually. Remember, that if pollution has been eliminated from the scenario (Cheat menu &#8594; Scenario Parameters), you should remove the pollution icon.</p></li>
+
+          <li><p><b>People.bmp:</b> The cells for the people icons in the official file from the Original game are misaligned. CivConverter repeats this error. The pixel in the top-left corner of each cell defines a secondary transparent colour (after magenta) for the corresponding icon. If the frame for the cells is incorrectly aligned, it can cause transparency problems, especially if the frame is black. To avoid this, realign the blocks of cells so that the top-left corner of the large frame lies at position (1,5), as shown below.</p></li>
+        </ul>
+
+          <p style="text-align: center"><img src="images/people_cells.png" width="258" height="204" alt="Correct Cell Alignment in People.bmp"></p>
+
+        <ul class="utilmenu">
+          <li><p><b>All graphics files:</b> Some 8-bit Civilization 2 palettes contain a shade of grey (#878787) which is shared by two indices, 16 and 255. Index 255 is given the transparent colour property, whilst index 16 is a standard visible colour. When the original 8-bit (indexed palette) graphics are converted to 24-bit colour, there is nothing to differentiate the two types of pixels. CivConverter automatically replaces this shade of grey with magenta (#FF00FF), ToT's universal transparent colour. Clearly this means that any former index 16 pixels will also be converted to magenta. This can produce 'holes' in your icons, as shown below. Manual correction is required - use a colour replacer tool (if your editor has one) to restore the grey colour.</p></li>
+        </ul>
+
+          <p style="text-align: center"><img src="images/city_holy.png" width="524" height="200" alt="Example of Magenta 'Holes'"></p>
+
+        <ul class="utilmenu">
+          <li><p><b>Game.txt:</b> ToT requires a wider Build menu box (city information screen) than FW and MGE. The default width for FW and MGE is 440; for ToT it's 500. Depending on the length of the unit/improvement/wonder names, it may need to be wider still. Under the @PRODUCTION entry, increase the width to a minimum of 500.</p></li>
+
+          <li><p><b>Game.txt:</b> Under the entry @HOCKTHIS, insert the line, 'Sell %STRING0 from all cities for %NUMBER1 gold.' between the lines 'Sell it.' and 'Never mind.'; otherwise you won't be provided with a cancel option in the game. Selecting 'Never mind.' will sell the lot. Substitute the word 'gold' with an appropriate denomination if the scenario uses something other than gold as the unit for cash.</p></li>
+
+          <li><p><b>Game.txt:</b> To make the Pillage menu work correctly, under @PILLAGEMENU, insert the line, 'Transporter', between 'Airbase' and 'Fortress' (5th line - they may have been renamed for the scenario).</p></li>
+
+          <li><p><b>Game.txt:</b> In some scenarios there is an additional line under @EDITSCEN. Below 'Maximum Turns (%NUMBER3)' you may find an entry for 'Toggle Scenario Flag (%STRING0)'. This is so rare that I suspect it's found only in files derived from CiC. It's not a major issue, but it will throw out your Scenario Parameters menu (Ctrl+Shift+P). If present, simply delete the entry from the list.</p></li>
+          
+          <li><p><b>Game.txt:</b> Check that the Foreign Minister's screen (F3) is wide enough to display all text. The width can be adjusted under the @REPORTFOREIGN entry. The default is 580.</p></li>
+
+          <li><p><b>Game.txt:</b> In scenarios where diplomacy has been disabled via events, check the Foreign Minister's screen (F3). If the 'We have not yet made contact with other civilizations.' message proves nonsensical in the context of the scenario, go to the @NOFOREIGN entry and change the text to something along the lines of 'Diplomacy has been disabled in this scenario.'</p></li>
+
+          <li><p><b>SCN File:</b> FW uses major (x3) objective cities; MGE and ToT don't. This poses a problem when converting FW scenarios which use Objective Victory Conditions. Any major objectives will be completely ignored by ToT, resulting in inaccurate victory thresholds. The solution is to assign minor (x1) status to all of the former major objective cities and adjust the victory conditions accordingly. Load the scenario and make the changes.</p></li>
+        </ul>
+
+          <p class="tip_indent_dark"><b>Hex-editing:</b> When dealing with large numbers of cities, you may find that hex-editing is a much more efficient method of amending the file. A city's objective status is stored in the 10th city byte (of 92 bytes). Values of 0x10 should be changed to 0x04. The 10th byte also contains auto-build settings (0x01 military advisor, 0x02 domestic advisor), but these values are so rare it's not worth worrying about.</p>
+
+		  <p class="tip_indent_dark"><b>Update:</b> Version 0.8 of TheNamelessOne's <a href="http://forums.civfanatics.com/showthread.php?t=517282">Test of Time Patch Project</a> (15/08/2014) restored major objective cities to ToT. The best solution, now, is to leave objective cities alone and use the ToTPP's 'Major objective' option instead.</p>
+
+        <ul class="utilmenu">
+          <li><p><b>SCN File:</b> Check that no units in the scenario have been issued with the 'Build Transporter' order, as shown below for the conversion of the FW Dinosaurs scenario. Load the scenario and clear these orders. If the unit is not reassigned orders, a transporter <i>will</i> be constructed - albeit a useless one.</p></li>
+        </ul>
+
+          <p style="text-align: center"><img src="images/Build_Transporter.png" width="266" height="248" alt="Example of 'Build Transporter' Orders"></p>
+
+          <p class="tip_indent_dark"><b>Hex-editing:</b> The incorrect order is caused by an error in the value of the 18th unit byte (copied from the 16th unit byte in FW and MGE). In FW and MGE, a byte value of 0x0B indicates a 'Go to' order. In ToT, the same value produces a 'Build Transporter' order, with the 'Go to' value increased to 0x0C. Scan these bytes in the units block and change any values of 0x0B to 0x0C.</p>
+
+        <ul class="utilmenu">
+          <li><p><b>SCN File:</b> For many converted scenarios the Defence Minister's screen will contain bizarre casualty counts in the unused unit slots (the file's offsets are out by 11 bytes). The screenshot below, taken from a conversion of Captain Nemo's Red Front scenario, shows an example. This problem can only be solved by hex-editing.</p></li>
+        </ul>
+
+          <p style="text-align: center"><img src="images/Casualties_RF.jpg" width="500" height="339" alt="Example of Incorrect Casualty Lists"></p>
+
+          <p class="tip_indent_dark"><b>Hex-editing:</b> The offsets for the casualty lists are constants. This makes matters easy. There are 8 blocks of 80 bytes, one block for each tribe. The offsets are 3248 to 3327 + 3348N, where N is the tribe number (0 to 7, starting with Barbarians). Zero everything in these blocks.</p>
+
+        <ul class="utilmenu">
+          <li><p><b>SCN File:</b> In ToT airbases are no longer assigned city attributes. Consequently they no longer possess the railway improvement property. In some converted scenarios, I've found that the change has created interrupted roads and railway lines. You may have some patching up to do.</p></li>
+
+          <li><p><b>SCN File:</b> CivConverter automatically enables the Terrain and Unit animation lockout options (Cheat menu &#8594; Scenario Parameters). These don't work as described in the 1.1 patch release notes and really should be disabled. They simply serve to prevent  users from changing their current animation settings in the Graphic Options menu. They are nuisance value. Load the scenario and disable them.</p></li>
+        </ul>
+
+          <p class="tip_indent_dark"><b>Hex-editing:</b> The offsets for the two lockout options are variable, but their location can be determined by finding the scenario name string near the end of the SCN file. The two bytes that precede this string contain the scenario parameters settings. To disable the Terrain animation lockout option, subtract 0x80 from the first of these bytes. To disable the Unit animation lockout option, subtract 0x01 from the second of these bytes.</p>
+
+        <ul class="utilmenu">
+          <li><p><b>Hiding Unit Health Bars:</b> Some scenarios use units as immobile structures or impassable terrain. In the FW/MGE version their health bars and shields will often be hidden from view. If you wish to do the same in ToT, you'll need Mercator's <a href="http://civ2.mercator.fastmail.fm/mapedit/downloads.html#file0008">SpriteGen utility</a>. It creates a static sprite file which raises the health bar beyond the viewable area of the screen (at standard zoom levels and typical screen resolutions) for selected units. However, the static.spr file will not work with the scenario until the .SPR file override option (Cheat menu &#8594; Scenario Parameters) is disabled. CivConverter automatically enables this option. Load the scenario and disable it.</p></li>
+        </ul>
+
+          <p class="tip_indent_dark"><b>Hex-editing:</b> The offset of the .SPR file override is variable. It's  stored in the same byte as the previously mentioned Unit animation lockout option, ie, the byte preceding the scenario name string near the end of the SCN file. To disable the .SPR file override option, subtract 0x02 from the value of the byte.</p>
+
+          <div class="tip_indent_dark"><p><b>Tip:</b> Before running SpriteGen, first make a copy of units.bmp. Replace any purple background colours with magenta (some shades of purple are not recognised by SpriteGen). Remove all superfluous units from the file, ie, the ones for which you want the health bars to remain visible (this dramatically reduces the size of the output file). Run SpriteGen on the file, checking the boxes for the remaining units. Copy the @UNITS_ADVANCED section below and append it to the rules.txt file for the converted scenario. In column G, change the .SPR file override bit to 0 (8th bit, reverse programmer notation) for all units with hidden health bars.</p>
+          
+            <div class="MonotypeText">
+              <input class="button" type="button" onclick="showMonotypeText(this);" value="Show/Hide">
+              <div class="TextBlock" style="display:none;">
+                <p>;&nbsp;&nbsp;&nbsp;A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G<br><br>          
+                @UNITS_ADVANCED<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br>
+                11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, 10000000<br></p>
+              </div>
+            </div>
+
+          </div>
+
+        <ul class="utilmenu">
+          <li><p><b>Resource.spr:</b> To completely remove any possibility of interference from the Original game's animated terrain sprites, simply drop a dummy resource.spr file in the scenario directory. This file can be downloaded <a href="files/Dummy_Resource.zip">here</a>. Don't worry, it's only 369 bytes unzipped.</p></li>
+
+          <li><p><b>Rules.txt:</b> Goodie huts will not appear in a scenario unless you add the goodie hut bitmask to the Cosmic Principles section of the rules.txt file. To remedy this, copy the following lines and append them to the @COSMIC section in the converted rules file.</p>
+
+          <div class="MonotypeText">
+            <input class="button" type="button" onclick="showMonotypeText(this);" value="Show/Hide">
+            <div class="TextBlock" style="display:none;">
+              <p>1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; Value of each citizen to the Civilization Score.<br>
+              20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; Value of each wonder to the Civilization Score.<br>
+              1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; Reward for landing on A. Centauri first = this multiplier*(# of habitats)*(prob. of success)<br>
+              -10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; Cost to Civilization Score (+ or -) for each extant non-AI controlled polluted tile.<br>
+              1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; For each turn of peace after turn 199, this amount *3 is added to Civilization Score.<br>
+              5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; Value to the Civilization Score of each future tech researched.<br>
+              0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; Penalty assessed to Civilization Score each time player betrays another race.<br>
+              0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; Cost to Civilization Score (+ or -) for each unit destroyed.<br>
+              11111111; bitmask for goodie huts, right bit =map0, 0=no goodie huts<br>
+              0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; Helicopters pick up huts 0=no 1=yes</p>
+            </div>
+          </div></li>
+
+          <li><p><b>Rules.txt:</b> If you want the correct sounds to be assigned to the correct units, then you may want to include a @SOUNDS override section in your rules.txt file. If you don't, ToT will use its default <a href="jp_unitsounds.htm">unit sound map</a> - and I believe it differs somewhat from the FW/MGE one. Copy the @SOUNDS section below and append it to the rules.txt file for the converted scenario. Replace the '&lt;none&gt;' (default sound) entries with appropriate ones. You can also use this method to remove replicated sound files from the scenario package.</p>
+          
+          <div class="MonotypeText">
+            <input class="button" type="button" onclick="showMonotypeText(this);" value="Show/Hide">
+            <div class="TextBlock" style="display:none;">
+              <p>@SOUNDS<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br>
+              &lt;none&gt;<br></p>
+            </div>
+
+          </div></li>
+
+          <li><p><b>Labels.txt:</b> CivConverter only partially converts labels files for MGE scenarios and doesn't even touch those for FW. If an MGE scenario uses a labels file derived from an older version of Civ2 then it will even crash CivConverter (see section 3.3). The upshot is that the file really needs to be converted manually (thanks to Mercator for bringing this up). To convert labels.txt to the ToT format, make the following changes:</p></li>
+        </ul>
+
+          <div class="tip_indent_dark">
+            <ol>
+              <li><p>Increase the value under @STRINGHEAP to 50000. This is the amount of memory allocated to the game's string variables.</p></li>
+              <li><p>Increase the first entry under @LABELS to 922. This is the number of lines in the table.</p></li>
+              <li><p>Add the missing ToT entries to the @LABELS list. The number of missing entries depends on the version of labels.txt used by the original scenario:</p>
+
+              <ul type="disc">
+                <li><p><b>Classic Civ2</b> (normally 458 lines): Append the following lines to the file:</p>
+
+                <div class="MonotypeText">
+                  <input class="button" type="button" onclick="showMonotypeText(this);" value="Show/Hide">
+                  <div class="TextBlock" style="display:none;">
+                    <p>Terrain Editor<br>
+                    Units Editor<br>
+                    City Improvements Editor<br>
+                    Technological Advances Editor<br>
+                    Cities Editor<br>
+                    Events Editor<br>
+                    Move Cost<br>
+                    Defense (x50%)<br>
+                    Food<br>
+                    Shield<br>
+                    Trade<br>
+                    Production<br>
+                    Irrigation<br>
+                    Mining<br>
+                    Produces<br>
+                    Bonus<br>
+                    Turns to finish<br>
+                    Government for AI<br>
+                    Engineer's Transform Produces<br>
+                    Shield(s)<br>
+                    Obsolescence<br>
+                    Role<br>
+                    Domain<br>
+                    Build Cost<br>
+                    Holds on Ship<br>
+                    Movement<br>
+                    Range<br>
+                    Attack<br>
+                    Defend<br>
+                    Hit Points<br>
+                    Firepower<br>
+                    Advance<br>
+                    Benefits<br>
+                    Epoch<br>
+                    Category<br>
+                    AI Value<br>
+                    Modifier<br>
+                    Yes<br>
+                    No<br>
+                    Nil<br>
+                    Never<br>
+                    Edit Icon<br>
+                    Sounds<br>
+                    Abilities<br>
+                    Icon Editor<br>
+                    Sound Editor<br>
+                    Naval Superiority<br>
+                    Air Superiority<br>
+                    Sea Transport<br>
+                    Settle<br>
+                    Diplomacy<br>
+                    Trade<br>
+                    Ground<br>
+                    Air<br>
+                    Sea<br>
+                    Expiration advancements for Wonders of the World<br>
+                    Allow production of<br>
+                    Prerequisite for<br>
+                    Ancient<br>
+                    Renaissance<br>
+                    Industrial Revolution<br>
+                    Modern<br>
+                    Military<br>
+                    Economic<br>
+                    Social<br>
+                    Academic<br>
+                    Applied<br>
+                    Stone/Bronze<br>
+                    Ancient/Classical<br>
+                    Far East<br>
+                    Mediaeval<br>
+                    Early Industrial<br>
+                    Modern<br>
+                    Small<br>
+                    Medium<br>
+                    Large<br>
+                    Extra-Large<br>
+                    Open<br>
+                    Walled<br>
+                    City Style<br>
+                    City Size<br>
+                    City Walls<br>
+                    Battle<br>
+                    Orders<br>
+                    Explosion<br>
+                    Bomb<br>
+                    Crash<br>
+                    Sputter<br>
+                    Sound Files<br>
+                    Sound File to Copy<br>
+                    Select Unit Killed<br>
+                    Select Attacker<br>
+                    Select Defender<br>
+                    Select First Party<br>
+                    Select Second Party<br>
+                    NOSCHISM Title<br>
+                    Select Recipient<br>
+                    Select Technology<br>
+                    Enter Message Text<br>
+                    Unit to Move<br>
+                    Select Owner<br>
+                    Unit to Create<br>
+                    Select Aggressor<br>
+                    Select Victim<br>
+                    Destroy Whom<br>
+                    All Items In Use<br>
+                    Error<br>
+                    Triggers<br>
+                    Actions<br>
+                    Add<br>
+                    Edit<br>
+                    Delete<br>
+                    Insufficient Memory<br>
+                    Help<br>
+                    Edit Misc<br>
+                    Edit River<br>
+                    Edit Coast<br>
+                    Male<br>
+                    Female<br>
+                    Rational<br>
+                    Neutral<br>
+                    Aggressive<br>
+                    Perfectionist<br>
+                    Normal<br>
+                    Expansionist<br>
+                    Militaristic<br>
+                    Civilized<br>
+                    Tribe Adjective<br>
+                    Expand<br>
+                    Civilize<br>
+                    Tribe Editor<br>
+                    Tribe<br>
+                    Leader<br>
+                    City<br>
+                    Commodities<br>
+                    Government<br>
+                    Titles<br>
+                    Universal Effects Editor<br>
+                    Import Icon<br>
+                    Import All<br>
+                    Files<br>
+                    Import<br>
+                    Please select a filename starting with<br>
+                    Invalid File Format<br>
+                    File must be either BMP or GIF format<br>
+                    Double-click on filename to play<br>
+                    Select Terrain<br>
+                    Rename Default Values<br>
+                    Player 1:<br>
+                    Player 2:<br>
+                    Player 3:<br>
+                    Player 4:<br>
+                    Player 5:<br>
+                    Player 6:<br>
+                    Player 7:<br>
+                    Communication<br>
+                    Diplomacy<br>
+                    Trade<br>
+                    Chat<br>
+                    Diplomacy<br>
+                    Trade<br>
+                    : Please Enter Your Password<br>
+                    : Please Enter Your New Password<br>
+                    : Please Verify Password<br>
+                    Quit Game<br>
+                    Game:<br>
+                    Host:<br>
+                    Status:<br>
+                    Difficulty:<br>
+                    Barbarians:<br>
+                    Civilizations:<br>
+                    Humans:<br>
+                    Timer:<br>
+                    Open Game<br>
+                    Closed Game<br>
+                    Chieftain<br>
+                    Warlord<br>
+                    Prince<br>
+                    King<br>
+                    Emperor<br>
+                    Deity<br>
+                    Villages Only<br>
+                    Roving Bands<br>
+                    Restless Tribes<br>
+                    Raging Hordes<br>
+                    Minutes<br>
+                    Seconds<br>
+                    Unlimited<br>
+                    &lt; Waiting for Games&gt;<br>
+                    Multiplayer Games<br>
+                    Available Players<br>
+                    Accept Player<br>
+                    Reject Player<br>
+                    Start Game<br>
+                    &lt; Waiting for Players&gt;<br>
+                    ^^Requests To Join<br>
+                    ^^Accepted For Play<br>
+                    Internet (TCP/IP)<br>
+                    Local Area Network<br>
+                    (TCP/IP)<br>
+                    (IPX/SPX)<br>
+                    Move Cost<br>
+                    Unit Defense Bonus<br>
+                    Terrain Type<br>
+                    Shields<br>
+                    Effects of Irrigation<br>
+                    Turns to Irrigate<br>
+                    Effects of Mining<br>
+                    Turns to Mine<br>
+                    (N/A)<br>
+                    Effect of Engineer Transformation<br>
+                    Effects of Roads<br>
+                    Possible Resources<br>
+                    Civilization Advances<br>
+                    City Improvements<br>
+                    Wonders of the World<br>
+                    Unit Types<br>
+                    Terrain and Special Resources<br>
+                    Forms of Government<br>
+                    Game Concepts<br>
+                    Airbases<br>
+                    Airlift<br>
+                    City Squares<br>
+                    Civilization Size<br>
+                    Combat Damage<br>
+                    Corruption and Waste<br>
+                    Disband<br>
+                    Fortify<br>
+                    Fortress<br>
+                    Irrigation<br>
+                    Luxuries<br>
+                    Mining<br>
+                    Pillage<br>
+                    Pollution<br>
+                    Railroads<br>
+                    Roads<br>
+                    Science<br>
+                    Sentry<br>
+                    Shields<br>
+                    Specialists<br>
+                    Taxes<br>
+                    Trade<br>
+                    Trade Routes<br>
+                    Transforming Terrain<br>
+                    Veteran Units<br>
+                    Waste<br>
+                    (Shield)<br>
+                    Description<br>
+                    Normal<br>
+                    1/3 of a point<br>
+                    Increases the amount of Food produced in %s from %d to %d.<br>
+                    There is no increase in Food production.<br>
+                    Increases Shields from %d to %d, and<br>
+                    increases Trade from %d to %d.<br>
+                    does not increase Trade.<br>
+                    There is no increase in Shields, and<br>
+                    no increase in Trade.<br>
+                    End Chat<br>
+                    End Negotiations<br>
+                    Send<br>
+                    Clear<br>
+                    Continue<br>
+                    Never Mind<br>
+                    Accept Offer<br>
+                    No Thanks<br>
+                    Make Counter Offer<br>
+                    Negotiating with the<br>
+                    Chat with Kings<br>
+                    Spy Reports: (From<br>
+                    )(To<br>
+                    From<br>
+                    Anonymous<br>
+                    To<br>
+                    Units)<br>
+                    Unit)<br>
+                    (Capitol)<br>
+                    &lt; No Cities Visible &gt;<br>
+                    &lt; No Units Visible &gt;<br>
+                    &lt; No New Advances &gt;<br>
+                    &lt; No Enemies Visible &gt;<br>
+                    Waiting for %string0 offer...<br>
+                    Pick an Action:<br>
+                    Offer Treaty<br>
+                    Offer Proposal<br>
+                    Offer Gift<br>
+                    Barter<br>
+                    Make Threat<br>
+                    Remain Anonymous<br>
+                    Broadcast to All<br>
+                    Money<br>
+                    Knowledge<br>
+                    Military Unit<br>
+                    Territory<br>
+                    Maps<br>
+                    To Declare War<br>
+                    War Declaration<br>
+                    Offer Treaty:<br>
+                    Cease Fire<br>
+                    Peace Treaty<br>
+                    Strategic Alliance<br>
+                    Cancel Current Treaty<br>
+                    Current Treaty<br>
+                    Alliance<br>
+                    Peace<br>
+                    Open Warfare<br>
+                    None<br>
+                    Pick a gift to offer:<br>
+                    Offer Knowledge<br>
+                    Offer Money<br>
+                    Offer Military Unit<br>
+                    Cede Territory<br>
+                    Offer Maps<br>
+                    Pick Advance(s)<br>
+                    Offer:<br>
+                    In Exchange For:<br>
+                    Bribe Request:<br>
+                    Our Treasury:<br>
+                    Gold<br>
+                    Amount to Offer:<br>
+                    Pick Unit(s)<br>
+                    Sort By Unit<br>
+                    Sort By City<br>
+                    Make proposal:<br>
+                    Ask to Declare War<br>
+                    Ask to Share Maps<br>
+                    Pick maps to share:<br>
+                    Pick desired maps:<br>
+                    Entire Map (Cities, Units)<br>
+                    Terrain and Cities Map<br>
+                    Terrain Map Only<br>
+                    Pick Enemy(s)<br>
+                    To declare war on the:<br>
+                    Declaring war on the:<br>
+                    We agree not to attack you<br>
+                    only if you give us:<br>
+                    Military Unit(s)<br>
+                    Pick City(s) to Cede<br>
+                    Pick City(s) Desired<br>
+                    Our offer has been transmitted. We await a reply. The offer is echoed below.<br>
+                    We offer a cease fire.<br>
+                    We offer a peace treaty.<br>
+                    We offer a strategic alliance.<br>
+                    We offer to cancel the current treaty.<br>
+                    We offer the following proposal:<br>
+                    Let us exchange maps of our entire territories.<br>
+                    Let us exchange terrain and city maps.<br>
+                    Let us exchange terrain maps.<br>
+                    Let us declare mutual war on the following civilizations:<br>
+                    We offer the following gifts:<br>
+                    Advances:<br>
+                    Units:<br>
+                    Money:<br>
+                    Cities and their resident units:<br>
+                    Your puny civilization makes us laugh!<br>
+                    We will agree not to crush you if you give us the following:<br>
+                    We offer a fair and reasonable trade.<br>
+                    We will give you the following knowledge:<br>
+                    We will provide you the following funds:<br>
+                    We will give you the following units:<br>
+                    We will give you the following cities and their resident units:<br>
+                    We will provide the following information:<br>
+                    We will declare war on the following civilizations:<br>
+                    But only if you give us the following knowledge:<br>
+                    But only in exchange for the following funds:<br>
+                    But only in exchange for the following units:<br>
+                    But only in exchange for the following cities and their resident units:<br>
+                    But only in exchange for the following information:<br>
+                    But only if you declare war on the following civilizations:<br>
+                    and<br>
+                    Gold<br>
+                    Maps of our entire territory.<br>
+                    Maps of your entire territory.<br>
+                    Maps of our terrain and cities.<br>
+                    Maps of your terrain and cities.<br>
+                    Maps of our terrain.<br>
+                    Maps of your terrain.<br>
+                    Treaty<br>
+                    War declaration on the:<br>
+                    Transmit Offer<br>
+                    We will agree not to crush you if you sign the following treaty:<br>
+                    We will agree not to crush you if you declare war on the:<br>
+                    We will sign the following treaty:<br>
+                    But only if you sign the following treaty:<br>
+                    Modem/Direct Connect<br>
+                    Available Now<br>
+                    Tree<br>
+                    Key<br>
+                    Details<br>
+                    Already Own<br>
+                    Can Research<br>
+                    Can't Research Yet<br>
+                    Can Never Research<br>
+                    Not Available<br>
+                    Betrayals<br>
+                    Maximum Players<br>
+                    Two Player Game<br>
+                    Invisible except during attack<br>
+                    You may not disband this unit<br>
+                    Net Food: %d<br>
+                    Net Taxes: %d<br>
+                    Net Luxury: %d<br>
+                    Net Science: %d<br>
+                    Net Production: %d<br>
+                    Net: %d&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eaten: %d&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Support: %d<br>
+                    Net: %d<br>
+                    Corruption: %d<br>
+                    %d %% Tax: %d<br>
+                    %d %% Lux: %d<br>
+                    %d %% Sci: %d<br>
+                    Waste: %d&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Support: %d<br>
+                    Next Citizen: %d turns<br>
+                    Danger: People starving<br>
+                    Warning: Stagnant growth<br>
+                    %d gold<br>
+                    Build<br>
+                    Happy<br>
+                    Support<br>
+                    Improvements<br>
+                    You cannot build this unit<br>
+                    Impassable to most units<br>
+                    Impassable to all units except<br>
+                    Steal Or Trade Only<br>
+                    Teleporter type 0<br>
+                    Teleporter type 1<br>
+                    Teleporter type 2<br>
+                    Intercept Chat Messages<br>
+                    Mute/Send<br>
+                    Basic Game<br>
+                    Turn Based<br>
+                    Simultaneous<br>
+                    Normal Production<br>
+                    Double Production<br>
+                    Normal Moves<br>
+                    Double Moves<br>
+                    Joining<br>
+                    Accept<br>
+                    Deny<br>
+                    Go Back<br>
+                    Hotseat Files<br>
+                    Select File Name For Hotseat Saved Game<br>
+                    Select Hotseat Game To Load<br>
+                    EMAIL Files<br>
+                    Select File Name For EMAIL Saved Game<br>
+                    Select EMAIL Game To Load<br>
+                    Multiplayer Files<br>
+                    Select File Name For Multiplayer Saved Game<br>
+                    Select Multiplayer Game To Load<br>
+                    Tree<br>
+                    Mute Anonymous<br>
+                    Dial-Up Networking<br>
+                    Quit &amp;Hotseat Game|Ctrl+H<br>
+                    Humans Move Units at the Same Time<br>
+                    Five (5) Human Players<br>
+                    Six (6) Human Players<br>
+                    Seven (7) Human Players<br>
+                    Casualty Timeline<br>
+                    Moves<br>
+                    &lt; Nothing We Need &gt;<br>
+                    &lt; Nothing They Want &gt;<br>
+                    Map Size:<br>
+                    Immune to bribery<br>
+                    Can cross impassable terrain<br>
+                    Can use teleporter<br>
+                    Has native teleport</p>
+                  </div>
+                </div></li>
+
+                <li><p><b>FW</b> (normally 606 lines): The FW list contains additional entries for the scenario editor. Append the following lines to the file:</p>
+
+                <div class="MonotypeText">
+                  <input class="button" type="button" onclick="showMonotypeText(this);" value="Show/Hide">
+                  <div class="TextBlock" style="display:none;">
+                    <p>Player 1:<br>
+                    Player 2:<br>
+                    Player 3:<br>
+                    Player 4:<br>
+                    Player 5:<br>
+                    Player 6:<br>
+                    Player 7:<br>
+                    Communication<br>
+                    Diplomacy<br>
+                    Trade<br>
+                    Chat<br>
+                    Diplomacy<br>
+                    Trade<br>
+                    : Please Enter Your Password<br>
+                    : Please Enter Your New Password<br>
+                    : Please Verify Password<br>
+                    Quit Game<br>
+                    Game:<br>
+                    Host:<br>
+                    Status:<br>
+                    Difficulty:<br>
+                    Barbarians:<br>
+                    Civilizations:<br>
+                    Humans:<br>
+                    Timer:<br>
+                    Open Game<br>
+                    Closed Game<br>
+                    Chieftain<br>
+                    Warlord<br>
+                    Prince<br>
+                    King<br>
+                    Emperor<br>
+                    Deity<br>
+                    Villages Only<br>
+                    Roving Bands<br>
+                    Restless Tribes<br>
+                    Raging Hordes<br>
+                    Minutes<br>
+                    Seconds<br>
+                    Unlimited<br>
+                    &lt; Waiting for Games&gt;<br>
+                    Multiplayer Games<br>
+                    Available Players<br>
+                    Accept Player<br>
+                    Reject Player<br>
+                    Start Game<br>
+                    &lt; Waiting for Players&gt;<br>
+                    ^^Requests To Join<br>
+                    ^^Accepted For Play<br>
+                    Internet (TCP/IP)<br>
+                    Local Area Network<br>
+                    (TCP/IP)<br>
+                    (IPX/SPX)<br>
+                    Move Cost<br>
+                    Unit Defense Bonus<br>
+                    Terrain Type<br>
+                    Shields<br>
+                    Effects of Irrigation<br>
+                    Turns to Irrigate<br>
+                    Effects of Mining<br>
+                    Turns to Mine<br>
+                    (N/A)<br>
+                    Effect of Engineer Transformation<br>
+                    Effects of Roads<br>
+                    Possible Resources<br>
+                    Civilization Advances<br>
+                    City Improvements<br>
+                    Wonders of the World<br>
+                    Unit Types<br>
+                    Terrain and Special Resources<br>
+                    Forms of Government<br>
+                    Game Concepts<br>
+                    Airbases<br>
+                    Airlift<br>
+                    City Squares<br>
+                    Civilization Size<br>
+                    Combat Damage<br>
+                    Corruption and Waste<br>
+                    Disband<br>
+                    Fortify<br>
+                    Fortress<br>
+                    Irrigation<br>
+                    Luxuries<br>
+                    Mining<br>
+                    Pillage<br>
+                    Pollution<br>
+                    Railroads<br>
+                    Roads<br>
+                    Science<br>
+                    Sentry<br>
+                    Shields<br>
+                    Specialists<br>
+                    Taxes<br>
+                    Trade<br>
+                    Trade Routes<br>
+                    Transforming Terrain<br>
+                    Veteran Units<br>
+                    Waste<br>
+                    (Shield)<br>
+                    Description<br>
+                    Normal<br>
+                    1/3 of a point<br>
+                    Increases the amount of Food produced in %s from %d to %d.<br>
+                    There is no increase in Food production.<br>
+                    Increases Shields from %d to %d, and<br>
+                    increases Trade from %d to %d.<br>
+                    does not increase Trade.<br>
+                    There is no increase in Shields, and<br>
+                    no increase in Trade.<br>
+                    End Chat<br>
+                    End Negotiations<br>
+                    Send<br>
+                    Clear<br>
+                    Continue<br>
+                    Never Mind<br>
+                    Accept Offer<br>
+                    No Thanks<br>
+                    Make Counter Offer<br>
+                    Negotiating with the<br>
+                    Chat with Kings<br>
+                    Spy Reports: (From<br>
+                    )(To<br>
+                    From<br>
+                    Anonymous<br>
+                    To<br>
+                    Units)<br>
+                    Unit)<br>
+                    (Capitol)<br>
+                    &lt; No Cities Visible &gt;<br>
+                    &lt; No Units Visible &gt;<br>
+                    &lt; No New Advances &gt;<br>
+                    &lt; No Enemies Visible &gt;<br>
+                    Waiting for %string0 offer...<br>
+                    Pick an Action:<br>
+                    Offer Treaty<br>
+                    Offer Proposal<br>
+                    Offer Gift<br>
+                    Barter<br>
+                    Make Threat<br>
+                    Remain Anonymous<br>
+                    Broadcast to All<br>
+                    Money<br>
+                    Knowledge<br>
+                    Military Unit<br>
+                    Territory<br>
+                    Maps<br>
+                    To Declare War<br>
+                    War Declaration<br>
+                    Offer Treaty:<br>
+                    Cease Fire<br>
+                    Peace Treaty<br>
+                    Strategic Alliance<br>
+                    Cancel Current Treaty<br>
+                    Current Treaty<br>
+                    Alliance<br>
+                    Peace<br>
+                    Open Warfare<br>
+                    None<br>
+                    Pick a gift to offer:<br>
+                    Offer Knowledge<br>
+                    Offer Money<br>
+                    Offer Military Unit<br>
+                    Cede Territory<br>
+                    Offer Maps<br>
+                    Pick Advance(s)<br>
+                    Offer:<br>
+                    In Exchange For:<br>
+                    Bribe Request:<br>
+                    Our Treasury:<br>
+                    Gold<br>
+                    Amount to Offer:<br>
+                    Pick Unit(s)<br>
+                    Sort By Unit<br>
+                    Sort By City<br>
+                    Make proposal:<br>
+                    Ask to Declare War<br>
+                    Ask to Share Maps<br>
+                    Pick maps to share:<br>
+                    Pick desired maps:<br>
+                    Entire Map (Cities, Units)<br>
+                    Terrain and Cities Map<br>
+                    Terrain Map Only<br>
+                    Pick Enemy(s)<br>
+                    To declare war on the:<br>
+                    Declaring war on the:<br>
+                    We agree not to attack you<br>
+                    only if you give us:<br>
+                    Military Unit(s)<br>
+                    Pick City(s) to Cede<br>
+                    Pick City(s) Desired<br>
+                    Our offer has been transmitted. We await a reply. The offer is echoed below.<br>
+                    We offer a cease fire.<br>
+                    We offer a peace treaty.<br>
+                    We offer a strategic alliance.<br>
+                    We offer to cancel the current treaty.<br>
+                    We offer the following proposal:<br>
+                    Let us exchange maps of our entire territories.<br>
+                    Let us exchange terrain and city maps.<br>
+                    Let us exchange terrain maps.<br>
+                    Let us declare mutual war on the following civilizations:<br>
+                    We offer the following gifts:<br>
+                    Advances:<br>
+                    Units:<br>
+                    Money:<br>
+                    Cities and their resident units:<br>
+                    Your puny civilization makes us laugh!<br>
+                    We will agree not to crush you if you give us the following:<br>
+                    We offer a fair and reasonable trade.<br>
+                    We will give you the following knowledge:<br>
+                    We will provide you the following funds:<br>
+                    We will give you the following units:<br>
+                    We will give you the following cities and their resident units:<br>
+                    We will provide the following information:<br>
+                    We will declare war on the following civilizations:<br>
+                    But only if you give us the following knowledge:<br>
+                    But only in exchange for the following funds:<br>
+                    But only in exchange for the following units:<br>
+                    But only in exchange for the following cities and their resident units:<br>
+                    But only in exchange for the following information:<br>
+                    But only if you declare war on the following civilizations:<br>
+                    and<br>
+                    Gold<br>
+                    Maps of our entire territory.<br>
+                    Maps of your entire territory.<br>
+                    Maps of our terrain and cities.<br>
+                    Maps of your terrain and cities.<br>
+                    Maps of our terrain.<br>
+                    Maps of your terrain.<br>
+                    Treaty<br>
+                    War declaration on the:<br>
+                    Transmit Offer<br>
+                    We will agree not to crush you if you sign the following treaty:<br>
+                    We will agree not to crush you if you declare war on the:<br>
+                    We will sign the following treaty:<br>
+                    But only if you sign the following treaty:<br>
+                    Modem/Direct Connect<br>
+                    Available Now<br>
+                    Tree<br>
+                    Key<br>
+                    Details<br>
+                    Already Own<br>
+                    Can Research<br>
+                    Can't Research Yet<br>
+                    Can Never Research<br>
+                    Not Available<br>
+                    Betrayals<br>
+                    Maximum Players<br>
+                    Two Player Game<br>
+                    Invisible except during attack<br>
+                    You may not disband this unit<br>
+                    Net Food: %d<br>
+                    Net Taxes: %d<br>
+                    Net Luxury: %d<br>
+                    Net Science: %d<br>
+                    Net Production: %d<br>
+                    Net: %d&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eaten: %d&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Support: %d<br>
+                    Net: %d<br>
+                    Corruption: %d<br>
+                    %d %% Tax: %d<br>
+                    %d %% Lux: %d<br>
+                    %d %% Sci: %d<br>
+                    Waste: %d&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Support: %d<br>
+                    Next Citizen: %d turns<br>
+                    Danger: People starving<br>
+                    Warning: Stagnant growth<br>
+                    %d gold<br>
+                    Build<br>
+                    Happy<br>
+                    Support<br>
+                    Improvements<br>
+                    You cannot build this unit<br>
+                    Impassable to most units<br>
+                    Impassable to all units except<br>
+                    Steal Or Trade Only<br>
+                    Teleporter type 0<br>
+                    Teleporter type 1<br>
+                    Teleporter type 2<br>
+                    Intercept Chat Messages<br>
+                    Mute/Send<br>
+                    Basic Game<br>
+                    Turn Based<br>
+                    Simultaneous<br>
+                    Normal Production<br>
+                    Double Production<br>
+                    Normal Moves<br>
+                    Double Moves<br>
+                    Joining<br>
+                    Accept<br>
+                    Deny<br>
+                    Go Back<br>
+                    Hotseat Files<br>
+                    Select File Name For Hotseat Saved Game<br>
+                    Select Hotseat Game To Load<br>
+                    EMAIL Files<br>
+                    Select File Name For EMAIL Saved Game<br>
+                    Select EMAIL Game To Load<br>
+                    Multiplayer Files<br>
+                    Select File Name For Multiplayer Saved Game<br>
+                    Select Multiplayer Game To Load<br>
+                    Tree<br>
+                    Mute Anonymous<br>
+                    Dial-Up Networking<br>
+                    Quit &amp;Hotseat Game|Ctrl+H<br>
+                    Humans Move Units at the Same Time<br>
+                    Five (5) Human Players<br>
+                    Six (6) Human Players<br>
+                    Seven (7) Human Players<br>
+                    Casualty Timeline<br>
+                    Moves<br>
+                    &lt; Nothing We Need &gt;<br>
+                    &lt; Nothing They Want &gt;<br>
+                    Map Size:<br>
+                    Immune to bribery<br>
+                    Can cross impassable terrain<br>
+                    Can use teleporter<br>
+                    Has native teleport</p>
+                  </div>
+                </div></li>
+
+                <li><p><b>MGE</b> (normally 888 lines): The MGE list contains additional entries for multi-player support. Copy the following lines and insert them between the entries 'Modem/Direct Connect' and 'Intercept Chat Messages':</p>
+                
+                <div class="MonotypeText">
+                  <input class="button" type="button" onclick="showMonotypeText(this);" value="Show/Hide">
+                  <div class="TextBlock" style="display:none;">
+                    <p>Available Now<br>
+                    Tree<br>
+                    Key<br>
+                    Details<br>
+                    Already Own<br>
+                    Can Research<br>
+                    Can't Research Yet<br>
+                    Can Never Research<br>
+                    Not Available<br>
+                    Betrayals<br>
+                    Maximum Players<br>
+                    Two Player Game<br>
+                    Invisible except during attack<br>
+                    You may not disband this unit<br>
+                    Net Food: %d<br>
+                    Net Taxes: %d<br>
+                    Net Luxury: %d<br>
+                    Net Science: %d<br>
+                    Net Production: %d<br>
+                    Net: %d&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eaten: %d&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Support: %d<br>
+                    Net: %d<br>
+                    Corruption: %d<br>
+                    %d %% Tax: %d<br>
+                    %d %% Lux: %d<br>
+                    %d %% Sci: %d<br>
+                    Waste: %d&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Support: %d<br>
+                    Next Citizen: %d turns<br>
+                    Danger: People starving<br>
+                    Warning: Stagnant growth<br>
+                    %d gold<br>
+                    Build<br>
+                    Happy<br>
+                    Support<br>
+                    Improvements<br>
+                    You cannot build this unit<br>
+                    Impassable to most units<br>
+                    Impassable to all units except<br>
+                    Steal Or Trade Only<br>
+                    Teleporter type 0<br>
+                    Teleporter type 1<br>
+                    Teleporter type 2</p>
+                  </div>
+                </div>
+
+                <p>Then delete all of the lines after the 'Map Size:' entry and append the following lines to the list:</p>
+
+                <div class="MonotypeText">
+                  <input class="button" type="button" onclick="showMonotypeText(this);" value="Show/Hide">
+                  <div class="TextBlock" style="display:none;">
+                    <p>Immune to bribery<br>
+                    Can cross impassable terrain<br>
+                    Can use teleporter<br>
+                    Has native teleport</p>
+                  </div>
+                </div>
+
+              </ul></li>
+            </ol>
+          </div>
+
+        <ul class="utilmenu">
+          <li><p><b>Pedia.txt and Describe.txt:</b> In ToT the presence of the improvement/wonder graphics in the Civilopedia's Information screens reduces the area available for text from the pedia.txt file. If the author of the scenario used large descriptions, they may not be fully displayed. The best option here is to cut the text from the entry in pedia.txt and relocate it to the corresponding one under @@IMPROVEMENT_INDEX or @@WONDER_INDEX in describe.txt. The text can then be viewed by clicking the Description button in the Information screen. If the original scenario did not include a describe.txt file, then neither will the converted scenario - so create one. I use <a href="files/Describe_Template.zip">this file</a> as a template.</p></li>
+
+          <li><p><b>Pedia.txt and Describe.txt:</b> ToT's Civilopedia uses the government descriptions from describe.txt, not pedia.txt. If no describe.txt file is present in the scenario directory, the game will read the one from the Original directory. Again, if no describe.txt file was included with the original scenario, you will need to create one (see previous). Copy the @PEDIAGOVT entries from the pedia.txt file and paste them in the corresponding sections under @GOVERNMENT_DESCRIPTIONS in describe.txt.</p></li>
+
+          <li><p><b>Pedia.txt:</b> Use Find/Replace to remove any instances of double '%' symbols.</p></li>
+
+          <li><p><b>City Improvement and Wonder Graphics:</b> Obviously older versions of Civilization 2 don't use custom city improvement and wonder graphics. Unless you create your own, the game will use the default ones (01imp.bmp to 67imp.bmp) from the Original game directory.</p></li>
+
+          <li><p><b>Batch Files:</b> If the scenario uses a batch file to swap files during the course of the game, make sure this file now uses the correct file extensions. Remember, any GIF files will now be BMPs. You may also need to rename the events files: if they use the events*.txt naming convention, the game will <i>randomly</i> select one of these events files when the scenario is loaded. This was a feature introduced in ToT and therefore, never an issue in FW or MGE. I generally change the file extensions from TXT to BAK to solve the problem.</p></li>
+        </ul><br>
+
+      </div><br>
+
+      <div id="Crashes" class="tipblock">
+
+        <div class="blockheading">
+          <h3>5. The Converted Scenario Crashes the Game</h3>
+        </div>
+
+        <p>With CivConverter 1.4 beta, the conversion process is far from perfect and on occasions you may find yourself with a converted scenario that crashes the game. I am aware of two causes that are directly attributable to CivConverter:</p>
+
+        <ol>
+          <li><p><b>Corrupt Labels File</b>: As stated in section 3.3, partially written labels.txt files (created when CivConverter crashes) will crash ToT if used with the converted scenario. Remove labels.txt from the original scenario's directory and run CivConverter again. Convert the file manually, as per section 4.</p></li>
+        
+          <li><p><b>Corrupt Data in the SCN File</b>: There are a number of scenarios around that, when converted to ToT, will crash the game during the first turn of play (normally during the AI's move or when the Build menu is accessed). Examples of these include Bonaparte II by John Ellis, and 2194 Days of War by Captain Nemo and Alex the Magnificent. This is not caused by the presence of x3 city objectives, as has been stated many times elsewhere (including CivConverter's readme file), but by a corrupt table found at the end of each block of tribe variables in the SCN file. All converted scenarios suffer from the problem; it's just that most can cope with the garbage data without crashing. As players take turns, these tables are updated and old values are overwritten, so if a scenario survives the first turn it will probably work out fine. However, this does not mean that the scenario is unaffected: after all, the game still reads this junk on the first turn and often the lower part of each table is not rewritten until the more advanced stages of a game. Therefore, it's recommended that the following fix be applied to all converted scenarios, not only those that crash on the first turn.</p></li>
+        </ol>
+        
+        <div class="tip_indent_dark">
+          <p><b>Technical Info:</b> The table in question contains entries for up to 64 map locations. Its function is a bit of a mystery, but I believe it is associated with AI goals. In FW and MGE, these tables are located at offsets 3322-3705 + 1428N, where N is the tribe number (0 to 7, starting with Barbarians). Each table is 64 x 6 (384) bytes. The first 4 bytes of each 6-byte entry contain the map coordinates; the function of the last 2 bytes is currently unknown. In ToT, these tables are located at offsets 5778-6289 + 3348N. That's 64 x 8 (512) bytes; ToT has an additional coordinate (2 bytes) for map number.</p>
+        
+          <p>Instead of expanding the original table to include the 2 extra map bytes, CivConverter, inserts 98 zero bytes at 5753-5850 + 3348N, then takes the 25 bytes that preceded the table in the original file and dumps these at 5851-5875 + 3348N. The first 49 x 6 (294) bytes of the original table are copied unaltered to 5876-6179 + 3348N, but the last 15 entries are expanded from 6 bytes to 8, with 2 zero bytes inserted at the beginning of each entry. Net result: corrupt tables.</p>
+        </div><br>
+
+        <div class="tip_indent_dark">
+          <p><b>Solution:</b> That's right, it's a hex-editing job. You need to edit the 8 tables located at offsets 5778-6289 + 3348N, where N is the tribe number (0 to 7, starting with Barbarians). If you're nuts, you could carefully recreate the tables using the data from the original scenario. A more practical solution is to simply zero all values in each table until you reach entries of 0x000000000000FF00. This essentially restores the tables to the same state you'd find for a completely new game.</p>
+        </div><br>
+
+      </div><br>
+
+      <p><img src="images/Elephant.gif" width="58" height="53" alt="Elephant_Icon"></p>
+
+      <p>Catfish</p>
+      <p>5/02/2005</p>
+      <p class="note">(Last updated 6/9/2014. ToTPP version 0.8 restored major objective cities.)</p>
+
+    </div>
+
+  </body>
+
+</html>

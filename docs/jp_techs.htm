@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+  <head>
+    <title>Catfish's Cave - Technologies</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="author" content="Catfish">
+    <meta name="description" content="A guide to using CIVILIZE2, LEADERS2 and EnableTechnology in the turn-based strategy game, Civilization 2: Test of Time.">
+    <meta name="viewport" content="width=device-width, initial-scale=.8">
+    <link href="cave.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+
+    <div class="Fixed">
+      <div><img src="images/Cave.png" width="660" height="100" alt="Catfish's Cave - Resources For Civilization 2: Test of Time"></div>
+      <div class="SideBar">
+        <ul class="menu">
+          <li><p><a title="Catfish's Cave Homepage" href="index.htm">Main</a></p></li>
+          <li><p><a title="Frequently Asked Questions." href="jp_faq.htm">FAQ</a></p></li>
+          <li><p><a title="Design guides for Test of Time." href="jp_guides.htm">Guides</a></p></li>
+          <li><p><a title="Download the War of the Ring scenario." href="jp_wotr.htm">War of the Ring</a></p></li>
+          <li><p><a title="24-bit units for Test of Time." href="jp_units.htm">Units</a><br>(last modified<br>25/05/2009)</p></li>
+          <li><p><a title="24-bit terrain graphics for Test of Time." href="jp_terrain.htm">Terrain</a><br>(last modified<br>24/05/2009)</p></li>
+          <li><p><a title="Modpacks, People, Icons, Wonders, etc." href="jp_miscgraphics.htm">Miscellaneous Graphics</a><br>(last modified<br>28/02/2020)</p></li>
+          <li><p><a title="Links to useful websites related to Civ2 scenarios and their design." href="jp_links.htm">Links</a></p></li>
+        </ul>
+      </div>
+      <div class="SideBarBot"><p></p></div>
+    </div>
+
+    <div class="content">
+
+      <h1>Restricting Technologies</h1>
+
+      <h2>A Guide to Using CIVILIZE2, LEADERS2 and EnableTechnology</h2>
+
+      <p>Prior to the release of Test of Time, access to specific technologies in Civilization 2 was restricted to various tribes using 'no, no' prerequisites at the base of the advancement tree. Test of Time introduced a new capability that enabled the designer to place technologies into groups with different access rules. These rules were implemented in the CIVILIZE2 and LEADERS2 sections of the rules.txt file. The reason I am writing this guide is that a considerable amount of erroneous information regarding these sections has been disseminated on the Internet, resulting in confusion.</p>
+
+      <div id="RulesGroups" class="tipblock">
+
+        <div class="blockheading">
+          <h3>Rules and Groups</h3>
+        </div>
+
+        <p>There are 8 technology groups available in Test of Time. To each of these groups, the designer can assign access rules for each tribe. The attributes for each group are listed in the LEADERS2 section of the rules.txt file. The example below is taken from the Sci-Fi game. It shows 8 columns, each representing a technology group. Groups are numbered from 0 to 7 (reading from left to right). Each row represents one of the 21 possible tribes. The tribe names that follow the semi-colons are merely comments to assist the designer and are not read by the game.</p>
+
+        <table class="textblock" align="center" width="400">
+          <tr>
+            <td>
+            @LEADERS2<br>
+            00201111 ;Cadre<br>
+            02010111 ;Ellecor<br>
+            00201111 ;True Colony<br>
+            02010111 ;Grau<br>
+            00201111 ;Clerisy<br>
+            02010111 ;Iihibati<br>
+            00201111 ;Engineers<br>
+            00201111 ;Star Officers<br>
+            02010111 ;Ponn Jahr<br>
+            00201111 ;Funesti<br>
+            02010111 ;Vallan<br>
+            00201111 ;Seekers<br>
+            02010111 ;Det Pin<br>
+            00201111 ;Uridians<br>
+            00201111 ;Enclave<br>
+            02010111 ;Selephon<br>
+            00201111 ;Liberests<br>
+            02010111 ;Jilda<br>
+            00201111 ;Sciolists<br>
+            02010111 ;Ka Rhee<br>
+            00201111 ;Observers</td>
+          </tr>
+        </table>
+
+        <p>Within each group, the designer has a choice of 3 rules to be applied to each tribe. These are:</p>
+
+        <div class="tipblock_dark">
+          <p><b>Rule 0:</b> The technology can be researched, stolen, traded, obtained by conquest or by events, ie, no restrictions.</p>
+          <p><b>Rule 1:</b> The technology cannot be researched, but can be stolen, traded, obtained by conquest or by events.</p>
+          <p><b>Rule 2:</b> The technology cannot be researched, stolen*, traded or obtained by conquest. It can only be obtained by events.</p>
+          <p>* My experience suggests that this restriction is buggy, as I have in fact managed to steal forbidden technologies. It differs from rule 1 in that such technologies will not appear on the list generated when a spy attempts to steal a specific advance. However, when no advance is specified, these technologies can be stolen. This is annoying to say the least, since the use of diplomats and spies can potentially ruin a designer's attempts to restrict specific technologies to specific tribes.</p>
+          <p>In my <a href="jp_wotr.htm">War of the Ring scenario</a> I circumvented this issue by avoiding the spy slot (the 48th unit) for role 6 units and setting the 'Technology stolen' flags to 1 (<a href="jp_hex.htm#Cities">hex editing</a>) for every city in the game. City building was disabled, so there were no cities in the scenario where a diplomat-type unit could steal any advance. At Emperor level of difficulty or greater, role 6 units switched from stealing technologies to subverting cities: the desired outcome.</p>
+		  <p><b>Update:</b> In March 2014, this bug was fixed in version 0.3 of the <a href="http://forums.civfanatics.com/showthread.php?t=517282">Test of Time Patch Project</a>.</p>
+        </div>
+
+        <p>As shown in the Sci-Fi example above, column 1 (group 0) consists entirely of zeros. This means that any technology that is placed into group 0 will be freely available, without restriction, to any of the 21 possible tribes. Reading down column 2 (group 1), we see that 9 tribes, specifically the Ellecor, Grau, Iihibati, Ponn Jahr, Vallan, Det Pin, Selephon, Jilda and Ka Rhee, have been assigned rule 2, ie, they have been prohibited from researching, trading or obtaining by conquest any technologies that are placed in group 1. The remaining tribes gain unrestricted access to group 1 technologies. In this example, we also see that groups 5, 6 and 7 have identical characteristics, ie, all tribes have been assigned rule 1.</p>
+
+        <div class="tipblock_dark"><b>Warning:</b> It is strongly advised (as you will see later) that you finalise the relationships under LEADERS2 <i>before</i> you start your scenario game, otherwise you'll be faced with more work than you planned.</div><br>
+
+      </div><br>
+
+      <div id="CIVILIZE2" class="tipblock">
+
+        <div class="blockheading">
+          <h3>Placing Technologies in Groups</h3>
+        </div>
+
+        <p>Once the attributes for each technology group have been established, the designer can then assign technologies to groups. This is a relatively simple task and is performed in the CIVILIZE2 section of the rules.txt file. The CIVILIZE2 section lists the group numbers for each of the 100 technologies available in the game. Remember that technologies are numbered from 0 to 99. Again, everything following the semi-colons on each line is a comment. The example below shows the first 10 technologies listed for the Sci-Fi game. Technologies 0-8 have been assigned to group 0, meaning that all tribes would have unrestricted access. Technology number 9 (Cer), however, has been assigned to group 2. Based on the group attributes defined in LEADERS2, technology 9 would be unavailable to the Cadre, True Colony, Clerisy, Engineers, Star Officers, Funesti, Seekers, Uridians, Enclave, Liberests, Sciolists and Observers, except via events (and stealing - see above).</p>
+
+        <table class="textblock" align="center" width="400">
+          <tr>
+            <td>
+            @CIVILIZE2<br>
+            0 ; AFl&nbsp; 0<br>
+            0 ; Alp&nbsp; 1<br>
+            0 ; Amp&nbsp; 2<br>
+            0 ; Ast&nbsp; 3<br>
+            0 ; Ato&nbsp; 4<br>
+            0 ; Aut&nbsp; 5<br>
+            0 ; Ban&nbsp; 6<br>
+            0 ; Bri&nbsp; 7<br>
+            0 ; Bro&nbsp; 8<br>
+            2 ; Cer&nbsp; 9</td>
+          </tr>
+        </table><br>
+
+      </div><br>
+
+      <div id="LEADERS2" class="tipblock">
+
+        <div class="blockheading">
+          <h3>Making Changes to LEADERS2 and the Saved Game</h3>
+        </div>
+
+        <p>Everything up until now sounds simple enough, right? I mentioned earlier that the LEADERS2 section should be finalised prior to beginning your game. Why? Well, in Test of Time version 1.1, the data from the LEADERS2 table is written to the SAV file. In other words, once you've created your saved game, any changes made to the LEADERS2 section in rules.txt will have absolutely no effect. There is a good reason for this and that reason is events. The EnableTechnology event can change the technology group attributes during the course of the game. Obviously event-modified values must override the original ones in rules.txt - and that's exactly what happens.</p>
+
+        <p>Much of the confusion over CIVILIZE2, LEADERS2 and EnableTechnology is caused by a lack of understanding of their functionality.  I'll attempt to clear this up by stating a few facts:</p>
+
+        <div class="tipblock_dark">
+          <ol>
+            <li><p>The data from CIVILIZE2 are <i>not</i> stored in the SAV/SCN file. Therefore, any changes made to this list in rules.txt, following the creation of the SAV file, will be implemented in the game. If you need to change your initial group assignments, there's no drama, just edit rules.txt.</p></li>
+            <li><p>The data from LEADERS2 are indeed stored in the SAV/SCN file (although they are <i>not</i> embedded in the events section at the end of the file). For the hex-editors amongst us, the offsets for the LEADERS2 data are: 29728 to 29895 (version 1.1 only). That's 168 bytes (21 tribes x 8 groups x 1 rules). A brief tutorial on how to hex edit the LEADERS2 table in the SAV/SCN file can be found <a href="http://forums.civfanatics.com/showpost.php?p=2955771&amp;postcount=17">here</a>.</p></li>
+            <li><p>The EnableTechnology event does not change the restriction rule for the specified technology, it changes the group rule for the specified tribe, ie, it writes the changes to the LEADERS2 section in the SAV file. It would actually be more accurate to define the technology specified in the event as: the group to which this technology is assigned. Consequently, the EnableTechnology event will affect all other technologies within the same group as the specified technology.</p></li>
+          </ol>
+        </div>
+
+        <p>Let's clarify the situation with an example. Below we have the settings for the first dozen technologies and the first tribe:</p>
+
+        <table class="textblock" align="center" width="400">
+          <tr>
+            <td>
+            @CIVILIZE2<br>
+            1 ; AFl&nbsp; 0<br>
+            0 ; Alp&nbsp; 1<br>
+            0 ; Amp&nbsp; 2<br>
+            0 ; Ast&nbsp; 3<br>
+            0 ; Ato&nbsp; 4<br>
+            0 ; Aut&nbsp; 5<br>
+            0 ; Ban&nbsp; 6<br>
+            0 ; Bri&nbsp; 7<br>
+            0 ; Bro&nbsp; 8<br>
+            1 ; Cer&nbsp; 9<br>
+            1 ; Che 10<br>
+            0 ; Chi 11<br>
+            <br>@LEADERS2<br>
+            02000000 ;Russians</td>
+          </tr>
+        </table>
+
+        <p>As defined by the LEADERS2 settings, the Russians cannot ever obtain any technologies in group 1, except via GiveTechnology events. From CIVILIZE2, we can see that three technologies have been assigned to group 1. These are: 0 (AFl), 9 (Cer) and 10 (Che). Using events, we wish to create a situation where if the Russians successfully bribe a German scientist, they gain the ability to research all three of those technologies. To do so would require an event like this:</p>
+
+        <table class="textblock" align="center" width="400">
+          <tr>
+            <td>
+            @IF<br>
+            BribeUnit<br>
+            who=Russians<br>
+            whom=Germans<br>
+            unittype=1 ;unit number for scientist<br>
+            @THEN<br>
+            EnableTechnology<br>
+            whom=Russians<br>
+            technology=0<br>
+            value=0<br>
+            @ENDIF</td>
+          </tr>
+        </table>
+
+        <p>Logically one would assume that, for the Russians, this event assigns rule 0 (no restrictions) to technology 0 (AFl) <i>only</i>. Well, throw logic out the window; it doesn't. As stated in point 3, above, the EnableTechnology event writes to the LEADERS2 section of the SAV file. Since technology 0 is assigned to group 1, it is the setting for group 1 in LEADERS2 that will be rewritten. The result is that all 3 technologies in group 1 will now be available to the Russians for research. Clearly, identical effects would be achieved if you substituted technologies 9 or 10 for technology 0.</p>
+
+        <p>If you need to change any LEADERS2 settings in your SAV/SCN file, you have two methods at your disposal: you can use  the EnableTechnology event or alternatively, whip out your hex-editor (see point 2, above). If you decide to make corrections to LEADERS2 via events, create a temporary events.txt file and use the EnableTechnology event with the ScenarioLoaded trigger. Run delevent.exe on the SAV file to clear any old events. Load the game with the new set of events and save it. The LEADERS2 table in the SAV file will be rewritten. Run delevent.exe on the SAV file a second time to clear the temporary events.</p>
+
+      </div><br>
+
+      <p><img src="images/Demon.gif" width="51" height="53" alt="Demon_Icon"></p>
+
+      <p>Catfish</p>
+      <p>26/01/2005</p>
+      <p class="note">(Last updated 1/06/2014. ToTPP bug fix reference.)</p>
+
+    </div>
+
+  </body>
+
+</html>

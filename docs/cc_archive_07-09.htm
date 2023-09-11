@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+  <head>
+    <title>Catfish's Cave - Archive (2007-2009)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="author" content="Catfish">
+    <meta name="description" content="Catfish's Cave archived Main page for the period 2007-2009.">
+    <meta name="viewport" content="width=device-width, initial-scale=.8">
+    <link href="cave.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+
+    <div class="Fixed">
+      <div><img src="images/Cave.png" width="660" height="100" alt="Catfish's Cave - Resources For Civilization 2: Test of Time"></div>
+      <div class="SideBar">
+        <ul class="menu">
+          <li><p><a title="Catfish's Cave Homepage" href="index.htm">Main</a></p></li>
+          <li><p><a title="Frequently Asked Questions." href="jp_faq.htm">FAQ</a></p></li>
+          <li><p><a title="Design guides for Test of Time." href="jp_guides.htm">Guides</a></p></li>
+          <li><p><a title="Download the War of the Ring scenario." href="jp_wotr.htm">War of the Ring</a></p></li>
+          <li><p><a title="24-bit units for Test of Time." href="jp_units.htm">Units</a><br>(last modified<br>25/05/2009)</p></li>
+          <li><p><a title="24-bit terrain graphics for Test of Time." href="jp_terrain.htm">Terrain</a><br>(last modified<br>24/05/2009)</p></li>
+          <li><p><a title="Modpacks, People, Icons, Wonders, etc." href="jp_miscgraphics.htm">Miscellaneous Graphics</a><br>(last modified<br>28/02/2020)</p></li>
+          <li><p><a title="Links to useful websites related to Civ2 scenarios and their design." href="jp_links.htm">Links</a></p></li>
+        </ul>
+      </div>
+      <div class="SideBarBot"><p></p></div>
+    </div>
+
+    <div class="content" style="min-width: 480px">
+
+      <h1>Archived Main (2007 - 2009)</h1>
+
+      <div class="post" id="P20091204">
+        <div class="blockheading">
+          <h3><span class="date">4/12/2009 </span>Test of Time and Windows 7 Compatibility</h3>
+        </div>
+
+        <p>I installed Microsoft Windows 7 Ultimate 32-bit yesterday. After reading comments regarding its incompatibility with Civilization 2, I decided to install Test of Time and work my way through using the War of the Ring scenario. The first problem was the batch file installers - no surprise there. Copying files to a parent directory doesn't work: access is denied. When running these batch files as administrator, <i>none</i> of the copy commands work. It seems the only way to resolve this is to turn off User Account Control completely. With that sorted, and my modified GUI and scenario files installed, it was time to play the game.</p>
+        
+        <p>The game launched without a hitch; no compatibility mode required. However, when the game tried to play AVI files using the latest Indeo codec, I was presented with a black screen. Not good; the scenario's events rely heavily on AVIs. I'd already installed the <a href="http://www.free-codecs.com/download/k_lite_mega_codec_pack.htm">K-Lite Mega Codec Pack</a>, which includes Indeo 5, but the OS wasn't recognising it. Registering the DLL by entering "regsvr32 ir50_32.dll" at the Command Prompt solved the problem. I have video. Heh. There I was thinking I'd have to run the game in Windows XP Mode (only available for the Professional version of Windows 7 or higher). I guess a War of the Ring maintenance release, with additional installation instructions, is in order.</p>
+
+        <h4>Addendum (20/12/2009):</h4>
+
+        <p>Since posting this entry, I've managed to run the game in Windows 7 64-bit, both natively and in Windows XP Mode:</p>
+        
+        <blockquote><p class="tipblock">Briefly tested ToT on a 64-bit version of Windows 7 yesterday. Firstly, I tried it in the 64-bit environment using Timbatron's CPU-fixed executable, patched with MastermindX's 64-bit compatibility fix. It seemed to run fine. Again, I needed to register the Indeo 5 codec to get video. This was done by typing "regsvr32 C:\Windows\SysWOW64\ir50_32.dll" in the Search Box in the Start Menu. I also installed ToT in Windows XP Mode. Timbatron's CPU fix was used. This installation seemed to work OK as well, if not a little sluggish compared to the previous.</p></blockquote>
+                
+        <p>That quote, along with further discussion of Windows 7 and Test of Time compatibility, can be found in <a href="http://apolyton.net/showthread.php/189134-Damn-you-Windows-Vista!-%28part-342%29">this thread</a> at Apolyton. I've also updated the Readme file for the War of the Ring scenario with additional installation instructions for Windows 7 and Vista users.</p>
+
+        <p><img src="images/HillGiant.gif" width="54" height="56" alt="Sign Off"></p>
+      </div>
+
+      <div class="post" id="P20090526">
+        <div class="blockheading">
+          <h3><span class="date">26/05/2009 </span>Site Maintenance</h3>
+        </div>
+
+        <p>Over the past few nights I've been buggering around with the site. Long overdue, I found myself cleaning up code, formatting documents and removing dead links, etc. I even changed the site's horrid brown banner after all these years. I've also added another modpack to the Miscellaneous Graphics section, and dumped a load of units and terrain in those sections. I just thought you should know that. See, I do think about Civ2 from time to time.</p>
+
+        <p><img src="images/Elf-lord.gif" width="56" height="56" alt="Sign Off"></p>
+      </div>
+
+      <div class="post" id="P20080920">
+        <div class="blockheading">
+          <h3><span class="date">20/09/2008 </span>A New Age of Darkness?</h3>
+        </div>
+
+        <p>That War of the Ring scenario... yeah, the one that's been sitting on my hard disk for aeons, well, I've decided to make the beta version available for download. Knock knock, does anyone play Civilization 2 any more? You can find the link in the site menu. I'll make updates when the mood takes me.</p>
+
+        <p><img src="images/Shelob.gif" width="64" height="49" alt="Sign Off"></p>
+      </div>
+
+    </div>
+
+  </body>
+
+</html>

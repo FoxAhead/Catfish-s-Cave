@@ -1,0 +1,1056 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+  <head>
+    <title>Readme - War of the Ring</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="author" content="Catfish">
+    <meta name="description" content="Readme file for War of the Ring">
+    <meta name="keywords" content="War of the Ring, Lord of the Rings, Middle-earth, Tolkien, scenario, Civilization 2, Civilization II, Test of Time, Civ2, Civ 2, ToT, Catfish">
+    <link href="readme_files/wotr.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+
+    <h1>War of the Ring</h1>
+
+    <h2>A Scenario for Civilization 2: Test of Time</h2>
+
+    <div class="contents">
+      <h4>Contents</h4>
+
+      <table cellpadding="4">
+        <tr class="alt">
+          <td><a href="#Installation">1. Installation</a></td>
+          <td><a href="#Diplomacy">6. Alliances and Diplomacy</a></td>
+          <td><a href="#Acknowledgements">11. Acknowledgements</a></td>
+        </tr>
+        <tr>
+          <td><a href="#Background">2. Background</a></td>
+          <td><a href="#Cities">7. Cities</a></td>
+          <td><a href="#Utilities">12. Utility Software</a></td>
+        </tr>
+        <tr class="alt">
+          <td><a href="#Parameters">3. Scenario Parameters</a></td>
+          <td><a href="#Concepts">8. Game Concepts</a></td>
+          <td><a href="#References">13. References</a></td>
+        </tr>
+        <tr>
+          <td><a href="#Objective">4. Objective</a></td>
+          <td><a href="#Heroes">9. Heroes of the Free Peoples</a></td>
+          <td><a href="#Changelog">14. Changelog</a></td>
+        </tr>
+        <tr class="alt">
+          <td><a href="#HouseRules">5. House Rules</a></td>
+          <td><a href="#Issues">10. Known Issues</a></td>
+          <td></td>
+        </tr>
+      </table>
+    </div><br>
+
+    <div id="Installation" class="block">
+      <h4>1. Installation</h4>
+
+      <ol>
+        <li><p>This scenario requires the latest official patch for Civilization 2: Test of Time. The version 1.1 patch can be downloaded from the following locations:</p>
+        <ul type="disc">
+          <li><p><a href="http://www.civfanatics.com/civ2/downloads/patches">Civilization Fanatics' Center</a> (Hosts the English and German versions.)</p></li>
+          <li><p><a href="http://coc.apolyton.net/utilities/index.shtml">The Cradle of Civilization</a> (Hosts the English, French and German versions.)</p></li>
+          <li><p><a href="http://www.civgaming.net/mercator/files.html">Mercator's Civilization 2 Site</a> (Hosts the English, French and German versions.)</p></li>
+        </ul>
+        <p>If you are using the version of Test of Time that ships with Civilization Chronicles, try <a href="http://forums.civfanatics.com/downloads.php?do=file&amp;id=8534">this patch installer</a> by SanMadJack.</p>
+
+        <p>I'd also recommend downloading <a href="http://tim.strafenet.com/civ2tot.html">Timbatron's CPU fix</a>, which replaces the game's executable file with one that doesn't use 100% of the computer's available CPU resources 100% of the time, causing unnecessary power consumption, overheating and furious fan activity. Some anti-virus software may return a false positive alert for this patch; if so, add the modified Civ2 executable to the application's exception list. There's an alternative game launcher, <a href="http://forums.civfanatics.com/downloads.php?do=file&amp;id=9593">CPU-Throttle</a> by Till, which performs the same function.</p></li>
+
+        <li><p>Extract the contents of the scenario's RAR and 7Z archives into your Test of Time directory (use <a href="http://www.7-zip.org/">7-Zip</a> or <a href="http://www.rarlab.com/">WinRAR</a>). If your copy of Test of Time is installed in the default directory, you should end up with a path that looks something like this: C:\Program Files\Microprose\Test of Time\WotR.</p></li>
+
+        <li><p>Double-click WotR_Setup.bat (found in the newly created WotR folder). This will allow you to complete the installation of the city improvement graphics, and, optionally, install replacement background tiles for a number of the game's information windows.</p>
+        <p class="tipblock"><b>Windows 7 and Vista users:</b> You will need to disable User Account Control before running the batch file installer, otherwise the script's copy command will be denied access to the parent directory. I've found that running the batch file as administrator is completely ineffective.</p></li>
+
+        <li><p>Can your system play Indeo-encoded video files? This scenario uses AVI video files to provide important information about key events. If you are presented with errors or a black screen when the game attempts to play video, check that you have the latest Indeo codec (version 5) installed on your system. In 32-bit versions of Windows XP, Vista and 7, the codec is normally found in the Windows/System32 directory. In 64-bit versions of Windows, check the Windows\SysWOW64 directory. You're looking for the presence of a file called, ir50_32.dll. If you don't have it on your system, you can download it from <a href="http://www.free-codecs.com/download/Indeo_Codec.htm">here</a>, or, alternatively, install it as part of the comprehensive <a href="http://www.free-codecs.com/download/K_Lite_Mega_Codec_Pack.htm">K-Lite Mega Codec Pack</a>.</p>
+
+        <p class="tipblock"><b>Windows 7 and Vista users:</b> Even with the Indeo codec installed, you will probably need to register the DLL file before you can play any Indeo-encoded videos - otherwise all you'll get is a black screen. In the Search Box in the Start Menu, type "regsvr32" and the path of the Indeo codec DLL. For example, on Windows 7 32-bit, you might type "regsvr32 c:\windows\system32\ir50_32.dll", and for the 64-bit version: "regsvr32 c:\windows\syswow64\ir50_32.dll" (minus the quotes).</p></li>
+        
+        <li><p>Start a Single-Player game in Test of Time and then select the Begin a Scenario option. Locate the WotR folder and select WotR.scn. Choose Gondor (Aragorn) as your tribe.</p></li>
+
+        <li><p>Under Graphic Options (Ctrl+P), ensure that the Animated Terrain box is checked and the Animated Units box is left unchecked.</p></li>
+
+        <li><p>Under Game Options (Ctrl+O), ensure that the Sound Effects box is checked. Disabling the sound effects in Test of Time also disables the videos. Very clever. If you don't want sound, I guess you'll have to mute it from outside the game.</p></li>
+
+        <li><p>Be sure to save all your games in the WotR folder, otherwise they will not load correctly.</p></li>
+      </ol>
+    </div><br>
+
+    <div id="Background" class="block">
+      <h4>2. Background</h4>
+
+      <p>The War of the Ring scenario is set in J.R.R. Tolkien's fantasy world of Middle-earth and is based on events from his classic book, <i>The Lord of the Rings</i>. To complete the scenario doesn't require the player to have read the book, but it would certainly be an advantage.</p>
+
+      <p>The scenario begins in the year 3018, at the end of the Third Age, with the Dark Lord Sauron poised for yet another invasion of Middle-earth. A little over three thousand years earlier, the Second Age ended when a Last Alliance of Men and Elves, led by Elendil and Gil-galad, defeated Sauron on the slopes of Mount Doom in the dark land of Mordor. In the final battle Sauron had his One Ruling Ring cut from his finger by Isildur, Elendil's son. In the fires of Mount Doom Sauron had secretly forged the One Ring to control all other Rings of Power: One Ring to rule them all. Within this Ring he had poured his might and power; without it he could no longer take form, but only with its destruction could he himself be utterly destroyed. In the fires of Mount Doom the One Ring was made and only there could it be unmade. The opportunity to destroy the Ring was forfeited when Isildur, overcome by its power, claimed it for himself. Two years later Isildur was slain by orcs on the banks of the river Anduin and the Ring was seemingly lost forever. If Sauron were to become reunited with the One Ring, his power would be restored and he could once again take shape on Middle-earth.</p>
+
+      <p>Without his Ring, Sauron remained concealed for much of the Third Age, using his powerful servants, the Nazgûl or Ringwraiths, as tools of destruction. In around 1050 he established himself in the stronghold of Dol Guldur in the south of the great forest of Greenwood, later known as Mirkwood. Some grew suspicious of the growing evil in Mirkwood and in 2063 the wizard Gandalf investigated the fortress. Sauron fled to Mordor and his identity remained hidden.</p>
+      
+      <p>Four hundred years later the Dark Lord returned to Dol Guldur in strength. In 2463 the White Council was formed to counter the growing power in Dol Guldur. Headed by the wizard Saruman the White, it comprised members of his order, including Gandalf and Radagast, and the leaders of the Elves. The true nature of the power was not revealed until 2850 when Gandalf again entered the fortress in secret and discovered that Dol Guldur's Necromancer was indeed Sauron. Upon this discovery, Gandalf urged an attack on the fortress at the White Council, but was overruled by Saruman who secretly desired the Ring for himself. In 2939 Saruman learned that Sauron's servants were searching for the Ring along the banks of the river Gladden, but spoke nothing of it to the Council. Alarmed by these activities, Saruman finally agreed to attack Dol Guldur at the next meeting of the White Council. Having already made plans to move to Mordor, Sauron abandoned his fortress in southern Mirkwood. In 2951 Sauron began to rebuild his great fortress of Barad-dûr and openly declared himself a power in Mordor.</p>
+
+      <p>Always were Sauron's servants searching for the One Ring, however, it had already been recovered in 2463 by an unlikely character, Sméagol, a hobbit of Stoor strain. With the power and evil of the Ring corrupting his mind and body, Sméagol stole away in the dark tunnels of the Misty Mountains where he fed on raw fish and gradually transformed into the creature known as Gollum. There he remained hidden for nearly 500 years until an encounter with another hobbit, Bilbo Baggins of the Shire. The circumstances of this encounter are detailed in Tolkien's earlier novel, <i>The Hobbit</i>. Bilbo <i>acquired</i> the Ring from Gollum in the Misty Mountains on his way to Erebor accompanying Gandalf and the dwarves, led by Thorin Oakenshield, in a quest to recover the treasure hoard stolen by the dragon Smaug. At the time, Gandalf was unaware of the true nature of the Ring and Bilbo returned to his home in the Shire in 2942, bringing it with him.</p>
+
+      <p>At around the turn of the millennium, Gandalf begins to suspect that Bilbo's magic ring is in fact the One Ruling Ring. At Gandalf's urging, Bilbo leaves the Ring in the care of his cousin Frodo Baggins, before departing the Shire for the Elven refuge of Rivendell. A few years prior to the events of the War of the Ring, Gollum is captured by Sauron. Under torture he reveals the names Baggins and Shire. Sauron releases him in 3017 in the hope that he'll lead him to the Ring, but Gollum is instead captured by the ranger Aragorn. Gandalf reads the scroll of Isildur in the archives of Minas Tirith. It describes the hidden inscription on the One Ring that only reveals itself when hot: 'One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the Darkness bind them.' The wizard returns to the Shire in early 3018, and upon examining the Ring, discovers its true nature. Frodo decides that he must take the Ring away from Shire; Gandalf suggests Rivendell. Gandalf leaves the Shire to seek counsel from the head of his order in Isengard: Saruman the White. Saruman reveals to Gandalf his plans for power and tries to persuade Gandalf to join him. When he refuses, Saruman imprisons him in the Tower of Orthanc. Gollum escapes from the Elves of northern Mirkwood during an attack by orcs. Gandalf is freed from Orthanc by the great eagle Gwaihir the Windlord on 18th September 3018. The scenario begins on the 23rd with Frodo and his companions setting out from Hobbiton, and Sauron's servants, the Nazgûl, fast closing in.</p>
+    </div><br>
+
+    <div id="Parameters" class="block">
+      <h4>3. Scenario Parameters</h4>
+
+      <ol>
+        <li><p>War of the Ring is a single-player game for Gondor <i>only</i>. The scenario is heavily events driven and Gondor's opponents hold a massive numerical advantage. Playing the game as any other tribe will only result in a royal mess, so don't bother.</p></li>
+        <li><p>Gondor [white] begins the game with 2 allies in Rohan [lime green] and the Elves [light green], and 4 opponents: Mordor [grey] and its allies (Harad [red] and the Easterlings [rust]), plus Isengard [purple] (which may vacillate between war and truce). Diplomatic relations with your allies have been disabled due to the game's aggressive AI model (see section 6 below).</p></li>
+        <li><p>Some terrain types are impassable to ground units. These include Mountains and Rivers with Floodplains on the main Middle-earth map, and Bedrock, Deep Forest, Abyss, Magma, Foothills and Thickets on the secondary maps.</p></li>
+        <li><p>The Road Movement Multiplier is x2 compared with the standard x3. As a result, the unit descriptions in the Civilopedia will display incorrect movement rates: two-thirds of the actual value.</p></li>
+        <li><p>The only units you can move on the first turn of the scenario are Frodo, Sam and Pippin.</p></li>
+        <li><p>There are no settler or engineer-type units in this scenario. Building cities and improving terrain are not options. The events that take place during this scenario occurred over a 13 month period in the book, so city-building is not feasible. Rates of growth are also slow. I'll give this piece of advice: get your city walls up in areas that are under threat, so that they don't lose population when they are attacked. The AI has been discouraged from pillaging tile improvements in most areas, so this should not pose a major problem.</p></li>
+        <li><p>There are no trade units in the scenario. Many trade links have already been established. You'll have to make do with what you're given.</p></li>
+        <li><p>You will never obtain units with espionage abilities, but some of your enemies will. Note that at lower difficulty levels (less than Olog-hai) the AI will not use them effectively.</p></li>
+        <li><p>Government switching has been disabled.</p></li>
+        <li><p>You cannot obtain technologies by conquest.</p></li>
+        <li><p>There is no pollution.</p></li>
+        <li><p>The scenario ends on turn 100.</p></li>
+      </ol>
+    </div><br>
+
+    <div id="Objective" class="block">
+      <h4>4. Objective</h4>
+
+      <p>There are two interwoven threads in the plot: the War itself and the Quest of Mount Doom. To win the scenario requires a military victory and the best way to accomplish this is to successfully complete the Quest. The Quest of Mount Doom was undertaken by the heroes of the Fellowship of the Ring. Frodo Baggins the Ring-bearer and eight companions set out from Rivendell with the objective of taking the Dark Lord's One Ruling Ring into the heart of Mordor and casting it into the fires of Mount Doom. It was in the Forge of Mount Doom that the One Ring was made long ago and only there could it be unmade.</p>
+      
+      <p>Essentially the completion of the Quest involves getting Frodo the Ring-bearer from the town of Hobbiton (59, 65) to the volcanic mountain of Mount Doom in the heart of enemy territory (169, 165). There he must enter the Chambers of Fire (The Sammath Naur) where the Ring was forged and cast it into the flames, thereby unmaking it. Easier said than done.</p>
+      
+      <p>The destruction of the Ring means the complete destruction of the Dark Lord Sauron. In game terms, Mordor will suffer a heavy blow: many of its armies will be destroyed and it will no longer be able to assault the lands of Middle-earth in force. Should the Ring fall into the hands of the Enemy, the Gondor player faces an uphill battle. Protect Frodo at all costs.</p>
+          
+      <p>Military success in War of the Ring is measured by the number of objectives held at the end of the game. Most cities belonging to Gondor, Mordor, Harad, the Easterlings and Isengard count as objectives. Each wonder held counts as an additional objective. Excluding the three wonders from Mordor's chief city, Barad-dûr, which are lost when the One Ring is destroyed, there are a total of 46 objectives in enemy hands at the start of the game. Gondor holds 40 and can obtain an additional wonder from events, for a grand total of 87 attainable objectives. The Elves hold three objectives and Rohan holds two, all from wonders. It <i>is</i> possible to retake the Rohan cities of Helm's Deep and Edoras from the Enemy for two additional wonder objectives, but there's a price to pay for allowing them to fall.</p>
+      
+      <p>A Marginal Victory requires 50 objectives, a Decisive Victory requires 64. Your progress score can be viewed at any time by hitting the F9 key. The objective values of a city (including its wonders) are shown in the Find City screen (Shift+C).</p>
+    </div><br>
+
+    <div id="HouseRules" class="block">
+      <h4>5. House Rules</h4>
+
+      <p>I don't much like house rules so I try to avoid them where possible. This scenario has three. Firstly, and this is standard for most scenarios, changing city names is not permitted. A number of events apply to specific cities and altering names will void them. Secondly, pillaging of map portals is considered cheating. There's really not much to be gained by doing so anyway. Pillaging of other tile improvements is fine. Thirdly, using the Ctrl+N exploit to prevent ranged air units from running out of fuel is also considered cheating.</p>
+    </div><br>
+
+    <div id="Diplomacy" class="block">
+      <h4>6. Alliances and Diplomacy</h4>
+
+      <p>Because of the aggressive diplomacy model (introduced in the Multi-player Gold Edition of the game and inherited by Test of Time), I've had to disable diplomatic negotiations between Gondor and its allies, Rohan and the Elves. Negotiations were enabled in early versions of the scenario, but I found that it was virtually impossible to maintain alliances under those circumstances. In the current version, contact is possible only with Isengard for a limited period of time, an opponent for whom double-dealing and treachery are second nature.</p>
+
+      <p>Despite disabling negotiations in events, it is still possible for Gondor's allies to make contact when they are in need of assistance. Failure to respond positively will break an alliance and make it more difficult to complete the scenario, as former allies will be less tolerant of intrusions into their territory.</p>
+      
+      <p>Gondor begins the game at peace with Isengard, but this volatile relationship will almost certainly turn hostile at some point in the game. Gondor is at war with Mordor and its allies, Harad and the Easterlings, for the duration of the scenario.</p>
+    </div><br>
+
+    <div id="Cities" class="block">
+      <h4>7. Cities</h4>
+
+      <p>Most of the cities present in the scenario are genuine locations found in Tolkien's Middle-earth. I've taken a few liberties here and there, for example around Rhûn, a region that's poorly detailed in Tolkien's maps. I've avoided using names from supplementary works, such as those provided by Iron Crown Enterprises' Middle-earth Role-Playing game. A city in the game may represent a town, fortress, citadel, ruined city or region (upper case lettering as a general rule).</p>
+    </div><br>
+
+    <div id="Concepts" class="block">
+      <h4>8. Game Concepts</h4>
+
+      <p>For clarification of many of the game's basic concepts, see the Game Concepts section in the Civilopedia. Some concepts lend themselves to more thorough treatment; I'll deal with those here.</p>
+
+      <h5>8.1. Secondary Maps</h5>
+
+      <p>The War of the Ring scenario is comprised of 4 maps: Middle-earth, the Upper Deeps & Holds, the Tunnels & Groves, and the Lower Deeps. You can cycle through these maps by clicking the arrow buttons in the mini-map window. Most activity takes place on the main Middle-earth map, but many key Quest locations lie on the secondary maps (see section 8.2). Gondor begins the game with a small number of forces on the Upper Deeps & Holds map: the three Dwarven strongholds of Ered Luin, Erebor and the Iron Hills, and the secret refuge of Henneth Annûn in North Ithilien.</p>
+
+      <h6>Intermap Movement and Map Portals</h6>
+
+      <table>
+        <tr valign="top">
+          <td>Intermap movement is facilitated by three types of map portals (see right): stairs, tunnel entrances and concealed entrances. Not all units possess the ability to use map portals and those that do cannot use them all. Check the unit descriptions in the game's Civilopedia. It will display a list of usable map portals for those units capable of intermap movement. To use a map portal, simply move a unit onto the tile and hit the N-key; it costs no movement points. If a unit is unable to use a portal listed in its Civilopedia description, the odds are that the destination tile is blocked by a unit belonging to another tribe. Your unit will have to wait it out.</td>
+          <td><img src="readme_files/wotr_mapportals.gif" width="270" height="45" alt="Map Portals"></td>
+        </tr>
+      </table>
+
+      <h5>8.2. Quest Triggers</h5>
+
+      <table>
+        <tr valign="top">
+          <td>
+            <p>The actions of the Fellowship heroes were critical to the outcome of the War of the Ring. In the scenario I've placed static trigger units on the secondary maps in a number of key event locations. When one of these units is defeated by a hero, it triggers an event favourable to the Gondor player. These trigger units are identified by an icon depicting a ring encircling a red eye (see right). I have designed the scenario so that certain triggers can only be dispatched by specific heroes. The approximate locations of the scenario's triggers are shown on the map below. The accompanying table shows which heroes are capable of triggering them and the effect of doing so.</p>
+
+            <p>One of the first triggers you'll encounter will be at the Prancing Pony Inn in Bree (see right). This is an example of a trigger location on a secondary map that uses two adjacent one-way map portals. Only Frodo (posing as Mr Underhill) can access this area and so trigger the event. Entering the trigger area is simply a matter of moving Frodo onto the concealed entrance to the northwest of Bree and hitting the N-key. To leave, he must kill the trigger unit and move onto its tile, containing the stairs. Hitting the N-key again will make him appear in the city of Bree on the main Middle-earth map.</p>
+          
+            <p>The map portal leading to the Forge of Mount Doom (165, 169), where Frodo must destroy the Ring, is obscured by the Mount Doom unit. On the Middle-earth map, Mount Doom is represented by an unbeatable unit belonging to Gondor. It will protect Frodo from attacks; it also prevents the tile from being blocked by enemy units. Once Frodo has reached the safety of Mount Doom, hitting the N-key will move him into the Forge area (the Sammath Naur) on the Lower Deeps map. Only Sam can join him there.</p></td>
+          <td><img src="readme_files/wotr_breetrigger.gif" width="270" height="243" alt="Bree Trigger"></td>
+        </tr>
+      </table>
+
+      <br><p style="text-align: center"><img class="framed" src="readme_files/wotr_questmap.png" width="873" height="615" alt="Quest Trigger Map (Map by Chris Taylor)"></p>
+      
+      <table cellpadding="3">
+        <colgroup>
+          <col width="30%">
+          <col width="30%">
+          <col width="40%">
+        </colgroup>
+        <tr class="tablehead" valign="top">
+          <td>Location</td>
+          <td>Triggered by</td>
+          <td>Key Effect/s</td>
+        </tr>
+        <tr class="alt">
+          <td>1. The Barrow-downs</td>
+          <td>Frodo, Sam, Merry or Pippin</td>
+          <td>Upgrades Sam, Merry and Pippin with Barrow-blades.</td>
+        </tr>
+        <tr>
+          <td>2. The Prancing Pony Inn in Bree</td>
+          <td>Frodo</td>
+          <td>Triggers the (early) appearance of Aragorn.</td>
+        </tr>
+        <tr class="alt">
+          <td>3. The House of Elrond in Rivendell</td>
+          <td>Frodo</td>
+          <td>Triggers the (early) appearance of Gandalf, Legolas, Gimli and Boromir. Upgrades Frodo with the mithril-mail and Sting.</td>
+        </tr>
+        <tr>
+          <td>4. The Doors of Durin</td>
+          <td>Gandalf</td>
+          <td>Allows other Fellowship members and Dwarves to pass into Moria.</td>
+        </tr>
+        <tr class="alt">
+          <td>5. Caras Galadhon in Lórien</td>
+          <td>Any Fellowship member.</td>
+          <td>Provides elven-boats. Upgrades Sam and Frodo with the Phial of Galadriel. Allows Merry and Pippin to escape capture by Isengard (once each) using the Elven-cloaks gifted to them in Lórien.</td>
+        </tr>
+        <tr>
+          <td>6. The Emyn Muil</td>
+          <td>Frodo</td>
+          <td>Triggers the appearance of Sméagol (Gollum).</td>
+        </tr>
+        <tr class="alt">
+          <td>7. The Stone Stair in Fangorn Forest</td>
+          <td>Merry or Pippin</td>
+          <td>Treebeard summons Entmoot (advance becomes available).</td>
+        </tr>
+        <tr>
+          <td>8. The Golden Hall of Edoras</td>
+          <td>Gandalf</td>
+          <td>The mobilisation of Rohan; take command of some of Rohan's forces, including Éomer.</td>
+        </tr>
+        <tr class="alt">
+          <td>9. The Paths of the Dead</td>
+          <td>Aragorn, after acquiring <i>The Grey Company</i>.</td>
+          <td>Triggers the appearance of the Dead Men of Dunharrow. Allows Legolas, Gimli, Rangers of the North and Elf-lords to pass.</td>
+        </tr>
+        <tr>
+          <td>10. Minas Tirith</td>
+          <td>Gandalf, if Denethor abandons the command of Minas Tirith.</td>
+          <td>Reactivates the Tower of Ecthelion wonder in Minas Tirith. Restores the availability of the <i>Minas Tirith Guard</i>, <i>Rangers of Ithilien</i>, <i>Knights of Dol Amroth</i> and <i>Warriors of Lamedon</i> advances for research.</td>
+        </tr>
+        <tr class="alt">
+          <td>11. The Pass of Cirith Ungol</td>
+          <td>Sméagol</td>
+          <td>Allows Frodo and Sam to pass through Torech Ungol.</td>
+        </tr>
+        <tr>
+          <td>12. The Sammath Naur in Mount Doom</td>
+          <td>Frodo</td>
+          <td>Destroys the One Ring.</td>
+        </tr>
+      </table>
+
+      <h5>8.3. Limited-range Air Units</h5>
+
+      <p>There are several characters and creatures in the scenario whose movements were quite limited during the War of the Ring; often restricted to one small region or even a single city. For example, Elrond never left Rivendell and the Ents only participated in three battles in and around Rohan: the destruction of Isengard, the Huorns at Helm's Deep and the defence of the Wold. To prevent a player from using these types of units unrealistically, I've made them air units with limited ranges (an idea borrowed from Harlan Thompson's Lord of the Rings scenario for Fantastic Worlds). An air unit exceeding its range will be lost outright. You can avoid this misfortune by returning units to a city or dwelling (air base) in good time. Keep an eye on their available moves in the game's status bar so you don't lose units unnecessarily. Gondor's limited-range air units include: Grimbeorn, Elrond, Radagast the Brown, The Dead, Treebeard and the Ents. Their ranges are listed in the Civilopedia: click the unit's <b>Description</b> button for details.</p>
+
+      <h5>8.4. Special Unit Production</h5>
+
+      <p>At the start of the scenario there are a number of Gondor cities producing special units unavailable in the Build menu. This reflects some unique characteristic or special status of a given city or region. These units and their host cities are listed in the table below:</p>
+
+      <table>
+        <tr class="tablehead" valign="top">
+          <td>Unit</td>
+          <td>Cities</td>
+        </tr>
+        <tr class="alt">
+          <td>Knights</td>
+          <td>Minas Tirith (chief city of Gondor), Dol Amroth (chief city of Belfalas) and Calembel (chief city of Lamedon)</td>
+        </tr>
+        <tr>
+          <td>Elven Marksmen</td>
+          <td>Rivendell</td>
+        </tr>
+        <tr class="alt">
+          <td>Hobbits</td>
+          <td>Hobbiton, Michel Delving, Tuckborough and Buckland</td>
+        </tr>
+        <tr>
+          <td>Rangers of the North</td>
+          <td>Sarn Ford</td>
+        </tr>
+      </table>
+
+      <p>Since these units are not listed in the Build menu, they can no longer be built after a change in production. It's a limitation of the Civ2 engine. So be mindful that if you stop building a special unit, you will not be able to build it again in that city for the remainder of the game. You can cancel a change in production from the Build menu by clicking <b>Auto</b> and <b>Exit</b>.</p>
+      
+      <p><b>Note:</b> Dwarves are being produced in the cities of Erebor, Ered Luin and the Iron Hills at the beginning of the game. In fact they are the <i>only</i> unit type available to Gondor in cities found on the secondary maps. This extends to any subterranean cities captured by Gondor. As Dwarves are present in the Build menu, they can be produced at any time, even following a change of production.</p>
+
+      <h5>8.5. Research and Reinforcements</h5>
+
+      <p>All researchable advances in War of the Ring, with the exception of Unfinished Tales (Future Technology renamed), lead to or directly provide reinforcements. Therefore, it doesn't make much sense to be making research dependent on science, magic or lore. In War of the Ring, Science has become Command. The Command Status of a city equals the number of Command points it contributes towards research each turn. Elevating the Command Status of many cities will result in a faster turnout of reinforcements. You can help raise a city's Command Status by building city improvements such as Banners of the House, Heroic Monuments and Tokens of the Kings, or by converting citizens into commanders, represented by the White Wizard. Command can be raised across the kingdom by adjusting the value in the Finances of the Realm screen (Shift+T).</p>
+
+      <p>The table below shows all the advances potentially available to the Gondor player for research during the course of the game, the criteria that make them available and their effect/s when acquired. Check the entries in the Civilopedia for further information.</p>
+
+      <table cellpadding="5">
+        <colgroup>
+          <col>
+          <col width="130">
+          <col>
+          <col>
+        </colgroup>
+        <tr class="tablehead" valign="top">
+          <td colspan="2">Researchable Advances</td>
+          <td>Available When</td>
+          <td>Effect/s</td>
+        </tr>
+        <tr class="alt" valign="top">
+          <td><img src="readme_files/tech_acta.png" width="36" height="20" alt="A Call to Arms"></td>
+          <td>A Call to Arms</td>
+          <td>At game start. Once the Ring is destroyed, you will lose this advance and the reinforcement advances that require it will no longer be available for research</td>
+          <td>Prerequisite for many reinforcement advances.</td>
+        </tr>
+        <tr valign="top">
+        <td><img src="readme_files/tech_gondor.png" width="36" height="20" alt="Gondor Tech"></td>
+          <td>Bardings of Dale</td>
+          <td>A <i>Call to Arms</i> is acquired <i>and</i> Brand is still alive.</td>
+          <td>Seven veteran Archers appear in and around the cities of Dale (159, 43) and Esgaroth (158, 46).</td>
+        </tr>
+        <tr class="alt" valign="top">
+          <td><img src="readme_files/tech_gondor.png" width="36" height="20" alt="Gondor Tech"></td>
+          <td>Eagles of the <br>Misty Mountains</td>
+          <td>Gandalf appears in Rivendell.</td>
+          <td>Gwaihir and three veteran Eagles appear at the Eagles' Eyrie in the Misty Mountains (124, 56).</td>
+        </tr>
+        <tr valign="top">
+          <td><img src="readme_files/tech_gondor.png" width="36" height="20" alt="Gondor Tech"></td>
+          <td>Entmoot</td>
+          <td>Merry or Pippin reaches the Stone Stair trigger in Fangorn Forest.</td>
+          <td>Treebeard and seven veteran Ents appear at Derndingle (108, 130) in Fangorn Forest.</td>
+        </tr>
+        <tr class="alt" valign="top">
+          <td><img src="readme_files/tech_gondor.png" width="36" height="20" alt="Gondor Tech"></td>
+          <td>Iron Hills Regiment</td>
+          <td>A <i>Call to Arms</i> is acquired <i>and</i> Dáin II Ironfoot is still alive.</td>
+          <td>Six veteran Dwarves appear at the Lonely Mountain (159, 41).</td>
+        </tr>
+        <tr valign="top">
+          <td><img src="readme_files/tech_gondor.png" width="36" height="20" alt="Gondor Tech"></td>
+          <td>Knights of Dol Amroth</td>
+          <td>A <i>Call to Arms</i> is acquired, Dol Amroth has not been lost at any point during the game <i>and</i> Denethor/Gandalf commands Minas Tirith.</td>
+          <td>Six veteran Knights appear in the city of Dol Amroth (110, 190).</td>
+        </tr>
+        <tr class="alt" valign="top">
+          <td><img src="readme_files/tech_gondor.png" width="36" height="20" alt="Gondor Tech"></td>
+          <td>Minas Tirith Guard</td>
+          <td>A <i>Call to Arms</i> is acquired and Denethor/Gandalf commands Minas Tirith.</td>
+          <td>Seven veteran Spearmen appear in the city of Minas Tirith (150, 174). No effect if Minas Tirith is lost at any time.</td>
+        </tr>
+        <tr valign="top">
+          <td><img src="readme_files/tech_gondor.png" width="36" height="20" alt="Gondor Tech"></td>
+          <td>Rangers of Ithilien</td>
+          <td>A <i>Call to Arms</i> is acquired, Faramir is still alive <i>and</i> Denethor/Gandalf commands Minas Tirith.</td>
+          <td>Six veteran Rangers of Ithilien appear near Henneth Annûn (155, 165).</td>
+        </tr>
+        <tr class="alt" valign="top">
+          <td><img src="readme_files/tech_gondor.png" width="36" height="20" alt="Gondor Tech"></td>
+          <td>Shire Militia</td>
+          <td>Always available.</td>
+          <td>Seven veteran Hobbits appear in and around the various townships of the Shire.</td>
+        </tr>
+        <tr valign="top">
+          <td><img src="readme_files/tech_gondor.png" width="36" height="20" alt="Gondor Tech"></td>
+          <td>The Grey Company</td>
+          <td>Any of the Fellowship arrives in Lórien, Aragorn is still alive and the Ring has <i>not</i> been destroyed.</td>
+          <td>Two Elf-lords (Elladan and Elrohir) and 3 veteran Rangers of the North appear in western Rohan near the river Isen. Allows Aragorn to access the Paths of the Dead (116, 158).</td>
+        </tr>
+        <tr class="alt" valign="top">
+          <td><img src="readme_files/tech_gondor.png" width="36" height="20" alt="Gondor Tech"></td>
+          <td>The Muster of Rohan</td>
+          <td>Gandalf has arrived in Edoras, Isengard has been captured and the Ring has <i>not</i> been destroyed.</td>
+          <td>Théoden, Éowyn and 12 veteran Riders of Rohan become available to Gondor and appear near Edoras (115, 153).</td>
+        </tr>
+        <tr valign="top">
+          <td><img src="readme_files/tech_gondor.png" width="36" height="20" alt="Gondor Tech"></td>
+          <td>The White Rider</td>
+          <td>Gandalf the Grey is killed in Moria.</td>
+          <td>Gandalf the White appears in the southeastern corner of Fangorn Forest.</td>
+        </tr>
+        <tr class="alt" valign="top">
+          <td><img src="readme_files/tech_gondor.png" width="36" height="20" alt="Gondor Tech"></td>
+          <td>Tom Bombadil</td>
+          <td>At game start. Unavailable following the Council of Elrond.</td>
+          <td>Eliminates all Barrow-wights from the Barrow-downs area and prevents their respawning.</td>
+        </tr>
+        <tr valign="top">
+          <td><img src="readme_files/tech_gondor.png" width="36" height="20" alt="Gondor Tech"></td>
+          <td>Warriors of Lamedon</td>
+          <td>A <i>Call to Arms</i> is acquired <i>and</i> Denethor/Gandalf commands Minas Tirith.</td>
+          <td>Seven veteran Spearmen appear in one of 7 cities: Pelargir (146, 196), Lebennin (138, 190), Linhir (130, 194), Belfalas (117, 203), Ethring (128, 178), Calembel (123, 177) or Lamedon (121, 173). The location is dependent on the state of the front lines.</td>
+        </tr>
+        <tr class="alt" valign="top">
+          <td><img src="readme_files/tech_ut.png" width="36" height="20" alt="Unfinished Tales"></td>
+          <td>Unfinished Tales #</td>
+          <td>Always available.</td>
+          <td>Future Technology renamed. Only select this advance for research when there's no other option available. Has no beneficial effect.</td>
+        </tr>
+      </table>
+
+      <h5>8.6. Mobilisation of the Enemy</h5>
+
+      <p>At the beginning of the game, both Isengard and Mordor (including its allies, the Haradrim and the Easterlings) will be preparing their armies for war. You should use this time wisely to prepare your own defences and to begin the Quest of Mount Doom as discreetly as possible; for while the clouds of war are gathering, most confrontations with the Enemy will be limited to small engagements with scouts and spies.</p>
+
+      <p>The initial state of dormancy displayed by your two main enemies can rapidly escalate into full scale warfare depending on your own actions. Certain events may lead to the early mobilisation of Mordor and/or Isengard. For example, if the Fellowship is not discreet, Sauron may become aware that the Free Peoples intend to use the Ring for some purpose and launch his main attack early. If you play your cards right, you should expect the Enemy's main assault to begin some time around the mid-part of the game. What follows is a list of events that may contribute to an early mobilisation:</p>
+
+      <table cellpadding="2">
+        <tr>
+          <td colspan="2"><b>Attacks on the Fellowship</b></td>
+          <td colspan="2"><b>Attacks on Enemy Cities</b></td>
+        </tr>
+        <tr class="alt">
+          <td>&bull; Frodo is captured:</td>
+          <td>Automatic + Ring is captured</td>
+          <td>&bull; Orc Garrison is destroyed:</td>
+          <td>Automatic</td>
+        </tr>
+        <tr>
+          <td>&bull; Sam is captured:</td>
+          <td>+2</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr class="alt">
+          <td>&bull; Merry is captured:</td>
+          <td>+2</td>
+          <td><b>Encounters with Saruman's Spies</b></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&bull; Pippin is captured:</td>
+          <td>+2</td>
+          <td>&bull; Crebain are killed:</td>
+          <td>+1*</td>
+        </tr>
+        <tr class="alt">
+          <td>&bull; Gandalf is killed:</td>
+          <td>+1</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&bull; Aragorn is killed:</td>
+          <td>+1</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr class="alt">
+          <td>&bull; Boromir is killed:</td>
+          <td>+1</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&bull; Legolas is killed:</td>
+          <td>+1</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr class="alt">
+          <td>&bull; Gimli is killed:</td>
+          <td>+1</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><br></td>
+        </tr>
+        <tr>
+          <td colspan="4">* Maximum 3 points.</td>
+        </tr>
+      </table>
+
+      <p><b>Hint:</b> The High Pass (121, 59) was watched by the Enemy during the War of the Ring.</p>
+
+      <h5>8.7. Map Labels</h5>
+
+      <table>
+        <colgroup>
+          <col>
+          <col width="15">
+          <col>
+        </colgroup>
+        <tr valign="top">
+          <td><p>A few areas of interest are marked on the map with text labels (see right). At a glance these tiles would appear to contain foreign cities. Well, they do in a way. However, with the exception of the Falls of Rauros (139, 151), which acts as an invincible barrier between the upper and lower reaches of the Anduin, all of these tiles can be entered normally and do not interfere with gameplay.</p></td>
+          <td></td>
+          <td><img class="framed" src="readme_files/wotr_weathertop.png" width="270" height="126" alt="Weathertop"></td>
+        </tr>
+      </table>
+    </div><br>
+
+    <div id="Heroes" class="block">
+      <h4>9. Heroes of the Free Peoples</h4>
+
+      <p>The Lord of the Rings is a tale dominated by heroes and it's no surprise that they play a large role in the outcome of the scenario. The nine Fellowship members are critical to the completion of the Quest of Mount Doom, but there are others with parts to play in the great war. I've provided here a summary of all the heroes of Gondor. More detailed descriptions can be found in the game's Civilopedia; this table is more of a beginner's guide on how to use the heroes in the game. Rating is not based on a hero's combat capabilities, but on its importance to achieving total victory. The Ring icon in the final column indicates that the unit was one of the nine members of the Fellowship of the Ring that set out from Rivendell following the Council of Elrond.</p>
+
+      <table cellpadding="5">
+        <colgroup>
+          <col>
+          <col>
+          <col width="150">
+          <col>
+        </colgroup>
+        <tr class="tablehead" valign="top">
+          <td>Unit</td>
+          <td>Mission/Function</td>
+          <td align="left" >Secondary Maps: Places to Visit</td>
+          <td>Rating</td>
+          <td></td>
+        </tr>
+        <tr class="alt" valign="top">
+          <td>Frodo Baggins<br><img src="readme_files/frodo.gif" width="64" height="64" alt="Frodo"></td>
+          <td>Frodo is the bearer of the One Ring. He must travel all the way from Hobbiton (59, 65) to Mount Doom (169, 165) to destroy it. If he is captured by Mordor, its allies or Isengard, the Ring will fall into the hands of the Enemy. The path to victory will be very difficult if Frodo is lost &ndash; especially if he is taken early in the game. Protect him at all costs. He begins the game under the pseudonym Mr Underhill. Frodo receives a critical upgrade if he visits Rivendell.</td>
+          <td>Bree<br>Rivendell<br>Lórien<br>Emyn Muil<br>Cirith Ungol<br>Mount Doom</td>
+          <td><img src="readme_files/5star.gif" width="49" height="9" alt="5 Stars"></td>
+          <td><img src="readme_files/ring.gif" width="24" height="16" alt="Fellowship"></td>
+        </tr>
+        <tr valign="top">
+          <td>Gollum<br>(Sméagol)<br><img src="readme_files/gollum.gif" width="64" height="64" alt="Gollum"></td>
+          <td>Gollum is the key to Mordor's back door. Do not lose him. He can be picked up by Frodo in the hills of the Emyn Muil. He is an excellent scout, with 2 space vision and treats all terrain as road. Frodo and Sam cannot pass through the pass at Cirith Ungol without the aid of Gollum.</td>
+          <td>Cirith Ungol</td>
+          <td><img src="readme_files/5star.gif" width="49" height="9" alt="5 Stars"></td>
+          <td></td>
+        </tr>
+        <tr class="alt" valign="top">
+          <td>Samwise<br>Gamgee<br><img src="readme_files/sam.gif" width="64" height="64" alt="Sam"></td>
+          <td>Sam is Frodo's closest friend and can defend him in areas where other units cannot, for example, Cirith Ungol and the Forge of Mount Doom. Using the light from the Phial of Galadriel, he fought off Shelob the Great in the gloom of Torech Ungol. Picking up the Phial in Lórien may again prove vital. He can receive a critical upgrade in the Barrow-downs.</td>
+          <td>Barrow-downs<br>Lórien<br>Cirith Ungol<br>Mount Doom</td>
+          <td><img src="readme_files/4star.gif" width="39" height="9" alt="4 Stars"></td>
+          <td><img src="readme_files/ring.gif" width="24" height="16" alt="Fellowship"></td>
+        </tr>
+        <tr valign="top">
+          <td>Meriadoc<br>Brandybuck<br><img src="readme_files/merry.gif" width="64" height="64" alt="Merry"></td>
+          <td>Another of Frodo's loyal friends, Merry, along with Pippin, was instrumental in rousing the Ents of Fangorn Forest into action against Isengard. Both hobbits were captured by orcs at Amon Hen (137, 149), but later escaped during an attack by the Rohirrim. He slew the Lord of the Nazgûl, with the aid of Éowyn, at the Battle of the Pelennor Fields. Merry can receive a critical upgrade in the Barrow-downs.</td>
+          <td>Barrow-downs<br>Lórien<br>Fangorn Forest</td>
+          <td><img src="readme_files/3star.gif" width="29" height="9" alt="3 Stars"></td>
+          <td><img src="readme_files/ring.gif" width="24" height="16" alt="Fellowship"></td>
+        </tr>
+        <tr class="alt" valign="top">
+          <td>Peregrin Took<br><img src="readme_files/pippin.gif" width="64" height="64" alt="Pippin"></td>
+          <td>Pippin has identical stats and abilities to Merry. Also receives an upgrade in the Barrow-downs.</td>
+          <td>Barrow-downs<br>Lórien<br>Fangorn Forest</td>
+          <td><img src="readme_files/3star.gif" width="29" height="9" alt="3 Stars"></td>
+          <td><img src="readme_files/ring.gif" width="24" height="16" alt="Fellowship"></td>
+        </tr>
+        <tr valign="top">
+          <td>Aragorn<br><img src="readme_files/aragorn.gif" width="64" height="64" alt="Aragorn"></td>
+          <td>The heir to the throne of Gondor. A powerful unit capable of defending the hobbits against orcs and wolves on open ground. He first appears in Bree and is useful for dealing with the Nazgûl around the Shire in the early part of the game. He can access the Paths of the Dead near Dunharrow and mobilise the Army of the Dead, following the arrival of the Grey Company. If Aragorn is killed, you will not be able to build the elite Dúnedain unit following the destruction of the Ring and the White Tree wonder will not appear. Aragorn the Ranger is upgraded to Elessar when the Ring is destroyed - the Return of the King.</td>
+          <td>Lórien<br>Paths of the Dead</td>
+          <td><img src="readme_files/4star.gif" width="39" height="9" alt="4 Stars"></td>
+          <td><img src="readme_files/ring.gif" width="24" height="16" alt="Fellowship"></td>
+        </tr>
+        <tr class="alt" valign="top">
+          <td>Gandalf<br><img src="readme_files/gandalf.gif" width="64" height="64" alt="Gandalf"></td>
+          <td>Gandalf begins the game in Rivendell as Gandalf the Grey. If he perishes in the mines of Moria, he will return later as the more powerful Gandalf the White. Should Gandalf the Grey fall anywhere else, he will not be returned. Gandalf was responsible for the mobilisation of Rohan when he cast Wormtongue, Saruman's agent in Rohan, out of the Hall of Edoras and freed King Théoden from the spells that crippled him. He later led the defence of Minas Tirith during the siege of the city when Denethor II, Steward of Gondor, abandoned his station as its commander.</td>
+          <td>Doors of Durin<br>Moria<br>Hall of Edoras<br>Minas Tirith</td>
+          <td><img src="readme_files/4star.gif" width="39" height="9" alt="4 Stars"></td>
+          <td><img src="readme_files/ring.gif" width="24" height="16" alt="Fellowship"></td>
+        </tr>
+        <tr valign="top">
+          <td>Gimli<br><img src="readme_files/gimli.gif" width="64" height="64" alt="Gimli"></td>
+          <td>He begins the game in Rivendell following the Council of Elrond. A stout defender, Gimli's initial role is to protect the hobbits. Later he can contribute to city defence. </td>
+          <td>Lórien</td>
+          <td><img src="readme_files/2star.gif" width="19" height="9" alt="2 Stars"></td>
+          <td><img src="readme_files/ring.gif" width="24" height="16" alt="Fellowship"></td>
+        </tr>
+        <tr class="alt" valign="top">
+          <td>Legolas<br>Greenleaf<br><img src="readme_files/legolas.gif" width="64" height="64" alt="Legolas"></td>
+          <td>Legolas' role is identical to Gimli's. Good scout with 2 space vision and x3 defence vs air units.</td>
+          <td>Lórien</td>
+          <td><img src="readme_files/2star.gif" width="19" height="9" alt="2 Stars"></td>
+          <td><img src="readme_files/ring.gif" width="24" height="16" alt="Fellowship"></td>
+        </tr>
+        <tr valign="top">
+          <td>Boromir<br><img src="readme_files/boromir.gif" width="64" height="64" alt="Boromir"></td>
+          <td>Captain of the White Tower and heir to Denethor II, Steward of Gondor. Boromir's role is identical to Gimli's. Unlike the book, he makes no attempt to seize the Ring in the scenario, but he can be easily bribed - although this is unlikely.</td>
+          <td>Lórien</td>
+          <td><img src="readme_files/2star.gif" width="19" height="9" alt="2 Stars"></td>
+          <td><img src="readme_files/ring.gif" width="24" height="16" alt="Fellowship"></td>
+        </tr>
+        <tr class="alt" valign="top">
+          <td>Faramir<br><img src="readme_files/faramir.gif" width="64" height="64" alt="Faramir"></td>
+          <td>Captain of Gondor and Boromir's younger brother. An excellent unit for attacking out of cities using the ambush (paradrop) ability. Can hole up in the hideout of Henneth Annûn and help keep North Ithilien clear for the passage of Frodo, Sam and Gollum. If Faramir dies, the <i>Rangers of Ithilien</i> advance will become unavailable for research.</td>
+          <td>Henneth Annûn</td>
+          <td><img src="readme_files/2star.gif" width="19" height="9" alt="2 Stars"></td>
+          <td></td>
+        </tr>
+        <tr valign="top">
+          <td>Elrond<br>Half-elven<br><img src="readme_files/elrond.gif" width="64" height="64" alt="Elrond"></td>
+          <td>Elrond, Lord of Rivendell, is used only for the active defence of Rivendell. He has a limited range and is bound to that city.</td>
+          <td></td>
+          <td><img src="readme_files/1star.gif" width="9" height="9" alt="1 Star"></td>
+          <td></td>
+        </tr>
+        <tr class="alt" valign="top">
+          <td>Grimbeorn<br>the Old<br><img src="readme_files/grimbeorn.gif" width="64" height="64" alt="Grimbeorn"></td>
+          <td>A limited range air unit, Grimbeorn is restricted to the area around The Carrock and Rhosgobel. Another active defender.</td>
+          <td></td>
+          <td><img src="readme_files/1star.gif" width="9" height="9" alt="1 Star"></td>
+          <td></td>
+        </tr>
+        <tr valign="top">
+          <td>Radagast<br>the Brown<br><img src="readme_files/radagast.gif" width="64" height="64" alt="Radagast"></td>
+          <td>A limited range unit capable of defending the area around Northern Mirkwood. He'll probably be sick of the sight of spiders by the end of the scenario.</td>
+          <td></td>
+          <td><img src="readme_files/1star.gif" width="9" height="9" alt="1 Star"></td>
+          <td></td>
+        </tr>
+        <tr class="alt" valign="top">
+          <td>King Dáin II<br>Ironfoot<br><img src="readme_files/dain.gif" width="64" height="64" alt="Dáin"></td>
+          <td>The Dwarven King Under the Mountain will probably spend most of the scenario defending Dale and Esgaroth. If Dáin dies, the <i>Iron Hills Regiment</i> advance will become unavailable for research.</td>
+          <td>Lonely Mountain</td>
+          <td><img src="readme_files/1star.gif" width="9" height="9" alt="1 Star"></td>
+          <td></td>
+        </tr>
+        <tr valign="top">
+          <td>King Brand<br><img src="readme_files/brand.gif" width="64" height="64" alt="Brand"></td>
+          <td>King of Dale during the War of the Ring. Has a similar role to Dáin. If Brand dies, the <i>Bardings of Dale</i> advance will become unavailable for research.</td>
+          <td>Lonely Mountain</td>
+          <td><img src="readme_files/1star.gif" width="9" height="9" alt="1 Star"></td>
+          <td></td>
+        </tr>
+        <tr class="alt" valign="top">
+          <td>Éomer<br><img src="readme_files/eomer.gif" width="64" height="64" alt="Éomer"></td>
+          <td>If Gandalf counsels King Théoden in the Hall of Edoras, Éomer, Third Marshal of Riddermark, will become available to the Gondor player. A good versatile unit: high mobility, good attack, defence and hit points; an improved Knights unit for want of a better description.</td>
+          <td></td>
+          <td><img src="readme_files/1star.gif" width="9" height="9" alt="1 Star"></td>
+          <td></td>
+        </tr>
+        <tr valign="top">
+          <td>King<br>Théoden<br><img src="readme_files/theoden.gif" width="64" height="64" alt="Théoden"></td>
+          <td>King Théoden of Rohan will become available to the Gondor player if <i>The Muster of Rohan</i> advance is acquired by Gondor. Similar capabilities to Éomer, with a slightly higher attack, reflecting his leadership status.</td>
+          <td></td>
+          <td><img src="readme_files/1star.gif" width="9" height="9" alt="1 Star"></td>
+          <td></td>
+        </tr>
+        <tr class="alt" valign="top">
+          <td>Éowyn<br><img src="readme_files/eowyn.gif" width="64" height="64" alt="Éowyn"></td>
+          <td>Éowyn becomes available to Gondor under the same circumstances as Théoden. She receives a x3 defensive bonus against air units, reflecting her effectiveness against the Winged Nazgûl. During the Battle of the Pelennor Fields, she, along with Merry, slew the Lord of the Nazgûl.</td>
+          <td></td>
+          <td><img src="readme_files/1star.gif" width="9" height="9" alt="1 Star"></td>
+          <td></td>
+        </tr>
+        <tr valign="top">
+          <td>Elf-lord<br><img src="readme_files/elf-lord.gif" width="64" height="64" alt="Elf-lord"></td>
+          <td>Represents several Elven heroes from the War of the Ring. The Gondor player may receive up to three of these units. The first is Glorfindel, who appears in Rivendell in the early part of the game. Later, following the acquisition of <i>The Grey Company</i> advance, Elrond's sons Elrohir and Elladan will arrive in Rohan. Gondor's ally, the Elves, will also receive these units when Sauron launches his assaults upon Lórien and the Woodland Realm. A robust unit with high mobility.</td>
+          <td></td>
+          <td><img src="readme_files/1star.gif" width="9" height="9" alt="1 Star"></td>
+          <td></td>
+        </tr>
+        <tr class="alt" valign="top">
+          <td>Treebeard<br><img src="readme_files/treebeard.gif" width="64" height="64" alt="Treebeard"></td>
+          <td>The oldest and most powerful of all the Ents, Treebeard and his kin will appear in Fangorn Forest following the acquisition of the <i>Entmoot</i> advance. Treebeard is very effective against the orc garrisons in Isengard. He is a limited-range air unit, so keep a close eye on his available moves. Heal and rest him in the dwelling at Derndingle.</td>
+          <td></td>
+          <td><img src="readme_files/2star.gif" width="19" height="9" alt="2 Stars"></td>
+          <td></td>
+        </tr>
+        <tr valign="top">
+          <td>Gwaihir the<br>Windlord<br><img src="readme_files/gwaihir.gif" width="64" height="64" alt="Gwaihir"></td>
+          <td>Gwaihir will appear in the Eagles' Eyrie in the Misty Mountains, along with some of his kin, following the acquisition of the <i>Eagles of the Misty Mountains</i> advance. He is the most powerful of all the great eagles and his mobility is unsurpassed. Gwaihir can be attacked by ground units, so use him to pick off enemies from the safety of cities, water bodies and impassable terrain. Useful for finishing off injured Winged Nazgûl in the field. Use dwellings and the roost in Rhosgobel to heal him rapidly &ndash; he becomes weaker with time spent in the field.</td>
+          <td></td>
+          <td><img src="readme_files/2star.gif" width="19" height="9" alt="2 Stars"></td>
+          <td></td>
+        </tr>
+      </table>
+    </div><br>
+
+    <div id="Issues" class="block">
+      <h4>10. Known Issues</h4>
+
+      <h5>10.1. Quest Triggers and Map Access</h5>
+      
+      <p>Many of the quest event triggers are located in areas on the secondary maps restricted to specific unit types. Undesirable attackers are thus filtered out of the equation. However, due to the limited number of map transport relationships in the game (there are only 6), I've equipped <i>some</i> undesirables with the ability to access <i>some</i> trigger areas. The probability of undesirables triggering events is very slim (I've never managed to do it in any of my play tests), due to the barriers of distance, terrain and hostile territory. I've made sure there's no pay off for a player going out of his way to realise such a possibility.</p>
+      
+      <h5>10.2. The Lórien Trigger</h5>
+      
+      <p>The trigger in Lórien can be dispatched by <i>any</i> member of the Fellowship so long as Frodo hasn't been captured or killed by the Enemy. This means that Frodo or Sam don't actually need to pass through Lórien to receive the benefit of Galadriel's Phial. Likewise, Merry and Pippin can receive Elven-cloaks in their absence. I've gone for simplicity and economy in the events file. Apart from that, it doesn't strike me as a major issue.</p>
+      
+      <h5>10.3. Hidden Health Bars</h5>
+
+      <p>Several units in the game have their health bars hidden from view. There are a couple of side effects associated with the process. Firstly, at high zoomed-in levels (three or more steps), their sprites will disappear from the screen entirely. Secondly, at high screen resolutions, and particularly when using the map layout with the status bar down the right hand side of the screen, their health bars may become visible at the very top of the screen. This affects the Mount Doom and trigger units. Nothing I can do about it really.</p>
+    
+      <h5>10.4. 'You are convinced by the Wizard Saruman...'</h5>
+
+      <p>Because Isengard possesses the Voice of Saruman wonder (United Nations), it is possible for Saruman to enforce peace treaties and cease fires during negotiations. I've given Isengard this wonder so that it can pacify Rohan in the early part of the game. With the exception of the Rohan-Isengard and Gondor-Isengard relationships, all diplomatic relationships are locked, so there's no great disadvantage to Gondor (a Monarchy) for breaking these peace treaties with Isengard, except, maybe, to make further treaties less likely. As the Gondor player, use the situation to your advantage, but be aware that Isengard more often than not is the first one to disregard a cease fire. Maybe if Gondor were a Democracy or a Republic, Saruman would be calling more of the shots.</p>
+    </div><br>
+
+    <div id="Acknowledgements" class="block">
+      <h4>11. Acknowledgements</h4>
+
+      <h5>11.1. Design</h5>
+
+      <p>The scenario was principally a solo effort, but over the years I've had input from a few people, namely Harlan Thompson, Boco, Yoshi, Techumseh and Mercator, in the form of design concepts and technical advice. There are a few nods in there to Harlan's original Lord of the Rings scenario for the Fantastic Worlds expansion. I worked with him around 1999-2000 on what I'd call a prototype version of the scenario; he's the one who persuaded me to begin the project in the first place. Also special thanks to William Keenan and Cam Hills for their Test of Time design guides; they can be found at <a href="http://coc.apolyton.net/">The Cradle of Civilization</a>. The map for the scenario was made by me back in 2004, using a combination of Paint Shop Pro, MapEdit and the Civ2 Map Editor.</p>
+
+      <h5>11.2. Artwork</h5>
+
+      <h6>Units, Terrain, People and Cities</h6>
+
+      <p>To credit the authors I've tried, as best I could, to add signatures to all of  these graphics files. The list of credits includes texture sources for terrain graphics (where known), regardless of the amount of modification:</p>
+      
+      <table>
+        <tr class="alt">
+          <td>AoK</td>
+          <td>Age of Kings (Ensemble Studios)</td>
+          <td>DO</td>
+          <td>Dark Omen (Electronic Arts)</td>
+          <td>MP</td>
+          <td>MicroProse</td>
+        </tr>
+        <tr>
+          <td>AoM</td>
+          <td>Age of Mythology (Ensemble Studios)</td>
+          <td>Erwan</td>
+          <td>Erwan Catesson</td>
+          <td>Nemo</td>
+          <td>Captain Nemo</td>
+        </tr>
+        <tr class="alt">
+          <td>BG2</td>
+          <td>Baldur's Gate 2 (BioWare)</td>
+          <td>FavFly</td>
+          <td>Favoured Flight</td>
+          <td>SC</td>
+          <td>Starcraft (Blizzard Entertainment)</td>
+        </tr>
+        <tr>
+          <td>CH</td>
+          <td>Sarsstock</td>
+          <td>GB</td>
+          <td>Gareth "Fairline" Birch</td>
+          <td>Tec</td>
+          <td>Techumseh</td>
+        </tr>
+        <tr class="alt">
+          <td>Civ3</td>
+          <td>Civilization 3 (Firaxis)</td>
+          <td>H-T</td>
+          <td>Harry Tuttle</td>
+          <td>TQ</td>
+          <td>Titan Quest (Iron Lore Entertainment)</td>
+        </tr>
+        <tr>
+          <td>CS</td>
+          <td>Curt Sibling</td>
+          <td>Legion</td>
+          <td>Legion (Slitherine Software)</td>
+          <td><img src="readme_files/Catfish.gif" width="19" height="9" alt="Catfish"></td>
+          <td>Catfish</td>
+        </tr>
+      </table>
+      
+      <h6>Icons</h6>
+
+      <p>Catfish, Big Huge Games (Rise of Nations icons), MicroProse, Curt Sibling and Mercator. Smooth tile grids by Mercator.</p>
+
+      <h6>User Interface, Title Page, Background Screens, Windows Textures, AVI files and Documentation</h6>
+
+      <p>Catfish, MicroProse, id Software (base textures), New Line Cinema (movie frames and photographs), Ted Nasmith (art), Tim and Greg Hildebrandt (art), Angus McBride (art), Tim Morozzo (map), Chris Taylor (map), Fantasy Films (movie frame), Third Age: Total War mod for Medieval II: Total War (screenshots), Dave Brasgalla (icons), Triumph Studios (icons) and Pete Klassen (Ringbearer font used in the title page; you can download it from <a href="http://www.thehutt.de/tolkien/fonts.html">here</a>).</p>
+
+      <h6>City Improvement and Wonder Graphics</h6>
+
+      <p>Images are the product of MicroProse unless stated below:</p>
+
+      <table>
+        <tr class="alt">
+          <td>01imp</td>
+          <td>Digital Design</td>
+          <td>24imp</td>
+          <td>New Line Cinema</td>
+          <td>44imp</td>
+          <td>Alan Lee</td>
+          <td>57imp</td>
+          <td>New Line Cinema</td>
+        </tr>
+        <tr>
+          <td>04imp</td>
+          <td>Belgareth</td>
+          <td>25imp</td>
+          <td>New Line Cinema</td>
+          <td>45imp</td>
+          <td>New Line Cinema</td>
+          <td>58imp</td>
+          <td>New Line Cinema</td>
+        </tr>
+        <tr class="alt">
+          <td>06imp</td>
+          <td>New Line Cinema</td>
+          <td>26imp</td>
+          <td>Palmiro M. Arias</td>
+          <td>46imp</td>
+          <td>New Line Cinema</td>
+          <td>59imp</td>
+          <td>New Line Cinema</td>
+        </tr>
+        <tr>
+      <td>10imp</td>
+          <td>Catfish*</td>
+          <td>27imp</td>
+          <td>Michael Whelan</td>
+          <td>47imp</td>
+          <td>New Line Cinema</td>
+          <td>60imp</td>
+          <td>New Line Cinema</td>
+        </tr>
+        <tr class="alt">
+      <td>11imp</td>
+          <td>Carlo Traversi</td>
+          <td>29imp</td>
+          <td>Darrell Sweet</td>
+          <td>48imp</td>
+          <td>Ted Nasmith</td>
+          <td>61imp</td>
+          <td>Bethesda Software</td>
+        </tr>
+        <tr>
+          <td>12imp</td>
+          <td>New Line Cinema</td>
+          <td>30imp</td>
+          <td>Catfish*</td>
+          <td>49imp</td>
+          <td>New Line Cinema</td>
+          <td>62imp</td>
+          <td>New Line Cinema</td>
+        </tr>
+        <tr class="alt">
+          <td>14imp</td>
+          <td>Angus McBride (R.I.P.)</td>
+          <td>31imp</td>
+          <td>Catfish*</td>
+          <td>50imp</td>
+          <td>Ted Nasmith</td>
+          <td>63imp</td>
+          <td>New Line Cinema</td>
+        </tr>
+        <tr>
+          <td>15imp</td>
+          <td>Agades</td>
+          <td>32imp</td>
+          <td>Darrell Sweet</td>
+          <td>51imp</td>
+          <td>Lon Chaney</td>
+          <td>64imp</td>
+          <td>New Line Cinema</td>
+        </tr>
+        <tr class="alt">
+          <td>16imp</td>
+          <td>New Line Cinema</td>
+          <td>34imp</td>
+          <td>Unknown</td>
+          <td>52imp</td>
+          <td>New Line Cinema</td>
+          <td>65imp</td>
+          <td>Howard Kozlov</td>
+        </tr>
+        <tr>
+          <td>19imp</td>
+          <td>Ibon Gonzalez</td>
+          <td>40imp</td>
+          <td>New Line Cinema</td>
+          <td>53imp</td>
+          <td>New Line Cinema</td>
+          <td>66imp</td>
+          <td>New Line Cinema</td>
+        </tr>
+        <tr class="alt">
+          <td>20imp</td>
+          <td>Denes Isti</td>
+          <td>41imp</td>
+          <td>Unknown</td>
+          <td>54imp</td>
+          <td>New Line Cinema</td>
+          <td>67imp</td>
+          <td>Unknown</td>
+        </tr>
+        <tr>
+          <td>21imp</td>
+          <td>Keith Parkinson (R.I.P.)</td>
+          <td>42imp</td>
+          <td>Alfons Blom</td>
+          <td>55imp</td>
+          <td>Ted Nasmith</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="alt">
+          <td>23imp</td>
+          <td>Catfish*</td>
+          <td>43imp</td>
+          <td>New Line Cinema</td>
+          <td>56imp</td>
+          <td>New Line Cinema</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><br></td>
+        </tr>
+        <tr>
+          <td colspan="8">* Using BioWare's Neverwinter Nights Aurora Toolset to create the scenes.</td>
+        </tr>
+      </table>
+      
+      <h5>11.3. Sound</h5>
+
+      <p>I've used sounds from many sources. Some sound files have been mixed using at least a dozen different tracks. The bulk of the sounds found in this scenario have been sampled from New Line Cinema's film trilogy and Electronic Arts' The Lord of the Rings: The Battle for Middle-earth game. Other sources include: BioWare's Baldur's Gate I and II, and Neverwinter Nights games, Ensemble Studios' Age of Kings, the movie Braveheart, various anonymous samples taken from the Internet or other Civ2 scenarios, and of course, MicroProse. Shame about Civ2's rubbish sound quality: 8-bit, 22 kHz PCM - otherwise the sounds would have been great.</p>
+    </div><br>
+
+    <div id="Utilities" class="block">
+      <h4>12. Utility Software</h4>
+
+      <p><a href="http://aok.heavengames.com/modpack-stable/mps">AOK Mod Pack Studio 2.0</a>, by JC Alsup - used to extract textures and sounds from Ensemble Studios' Age of Kings game and its expansion pack, The Conquerors.</p>
+      <p><a href="http://audacity.sourceforge.net/">Audacity 1.3.3</a> - an open source audio editor, used to edit and mix sound files.</p>
+      <p><a href="http://www.axe-editor.com/">AXE 3.4.1</a>, by Benjamin Peterson - a hex-editor, used to edit the scenario's SAV and SPR files.</p>
+      <p><a href="http://apolyton.net/forums/showthread.php?t=22704">Civ2 Combat Probability Calculator</a>, by Boco - a Microsoft Excel spreadsheet for calculating Civilization 2 combat odds, based on an algorithm developed by Buenos, Eggman and Marquis de Sodaq.</p>
+      <p><a href="http://www.civgaming.net/mercator/mapedit/downloads.html#file0007">CivSprite 1.0</a>, by Jorrit "Mercator" Vermeiren - used to create the animated resource sprite file.</p>
+      <p><a href="http://www.editplus.com/">EditPlus 2.31</a>, by ES-Computing - used to edit text files, including this one. The syntax highlighting is quite handy for writing events files.</p>
+      <p><a href="http://mevault.ign.com/View.php?view=Utilities.Detail&amp;id=3">FinalBIG 0.36 beta</a>, by Matthias Wagner - used to extract sounds from The Lord of the Rings: The Battle for Middle-earth games.</p>
+      <p><a href="http://www.civgaming.net/mercator/mapedit/downloads.html#file0001">MapEdit 2.1</a>, by Jorrit "Mercator" Vermeiren - used to help create the map for this scenario.</p>
+      <p><a href="http://www.idi.ntnu.no/~joh/ni/">Near Infinity 1.32</a>, by Jon Olav Hauglid - used to extract sounds and graphics from 
+      BioWare's Baldur's Gate I and II, and Neverwinter Nights games.</p>
+      <p>Neverwinter Nights Toolset, by BioWare - used to create scenes for city improvement graphics.</p>
+      <p>Paint Shop Pro 9.01, by Jasc Software - used to make the map and edit the graphics files found throughout the scenario.</p>
+      <p><a href="http://www.angusj.com/resourcehacker/">Resource Hacker 3.0.4.79</a>, by Angus Johnson - used to customise the game's DLL files.</p>
+      <p><a href="http://www.civgaming.net/mercator/mapedit/downloads.html#file0008">SpriteGen 1.1</a>, by Jorrit "Mercator" Vermeiren - used to create the static unit sprite file.</p>
+      <p><a href="http://www.virtualdub.org/">VirtualDub 1.9.6</a>, by Avery Lee - a video editor, used to create the scenario's AVI video files.</p>
+      <p><a href="http://www.waveflow.com/">Wave Flow 5.8</a>, by Xavier Cirac Vidal - an audio editor, used to edit and mix most of the scenario's sound files.</p>
+    </div><br>
+
+    <div id="References" class="block">
+      <h4>13. References</h4>
+
+      <p>For the full referencing of the Civilopedia, see the commented entries in the describe.txt file.</p>
+
+      <h5>Books</h5>
+
+      <p>Day, D (2000) <b>Tolkien: The Illustrated Encyclopedia</b>, Mitchell Beazley, 279 pp.</p>
+      <p>Fonstad, KW (1991) <b>The Atlas of Middle-earth</b>, Houghton Mifflin, 208pp.</p>
+      <p>Foster, R (1978) <b>The Complete Guide to Middle-earth</b>, Unwin Paperbacks, 441pp.</p>
+      <p>Tolkien, JRR (1985) <b>Unfinished Tales</b>, Unwin Paperbacks, 472pp.</p>
+      <p>Tolkien, JRR (1996) <b>The Hobbit</b>, Harper Collins, 4th ed., 271pp.</p>
+      <p>Tolkien, JRR (1997) <b>The Lord Of The Rings</b>, Harper Collins, 2nd ed., 1137pp.</p>
+
+      <h5>Films</h5>
+
+      <p>The Lord of the Rings: The Fellowship of the Ring (2001), Film, Directed by Peter Jackson, New Zealand/USA: New Line Cinema</p>
+      <p>The Lord of the Rings: The Two Towers (2002), Film, Directed by Peter Jackson, New Zealand/USA: New Line Cinema</p>
+      <p>The Lord of the Rings: The Return of the King (2003), Film, Directed by Peter Jackson, New Zealand/USA: New Line Cinema</p>
+
+      <h5>Games</h5>
+
+      <p>SPI's War of the Ring, designed by Howard Barasch and Richard Berg.</p>
+
+      <h5>Websites</h5>
+
+      <p>The Barrow-Downs - <a href="http://www.barrowdowns.com/">http://www.barrowdowns.com/</a></p>
+      <p>The Cradle of Civilization - <a href="http://coc.apolyton.net/">http://coc.apolyton.net/</a></p>
+      <p>The Encyclopedia of Arda - <a href="http://www.glyphweb.com/arda/">http://www.glyphweb.com/arda/</a></p>
+      <p>Renderosity - <a href="http://www.renderosity.com/">http://www.renderosity.com/</a></p>
+      <p>Rolozo Tolkien - <a href="http://fan.theonering.net/rolozo/">http://fan.theonering.net/rolozo/</a></p>
+      <p>The Thain's Book - <a href="http://www.tuckborough.net/">http://www.tuckborough.net/</a> (best Middle-earth reference site of the lot, in my view)</p>
+      <p>TolkienWiki - <a href="http://www.thetolkienwiki.org/">http://www.thetolkienwiki.org/</a></p>
+    </div><br>
+
+    <div id="Changelog" class="block">
+      <h4>14. Changelog</h4>
+
+      <h5>14/01/2010 - Version 1.03</h5>
+
+      <ul>
+        <li><p>Added 'March of the Ents' AVI. Saw pic, couldn't resist.</p></li>
+      </ul>
+
+      <h5>20/12/2009 - Version 1.02</h5>
+
+      <ul>
+        <li><p>Additional installation instructions for Windows 7 and Vista.</p></li>
+        <li><p>Tweaked stats of Saruman, Sharkey and The Dead.</p></li>
+        <li><p>Bonus Dwarves received for killing the Balrog only appear following the destruction of the Ring - reversion to earlier state.</p></li>
+        <li><p>Tightened up flags for the capture of Minas Tirith and Pelargir - made possible with additional events space.</p></li>
+      </ul>
+
+      <h5>31/10/2009 - Version 1.01</h5>
+
+      <ul>
+        <li><p>Introduced a few events hacks to reduce the effects of ToT's buggy implementation of the Map parameter (ie, map values from event actions contaminate map parameters in the triggers of other events). There were potentially a few game-breakers.</p></li>
+      </ul>
+
+      <h5>29/10/2009 - Version 1.0</h5>
+
+      <ul>
+        <li><p>Moved more text events over to AVI to clear events space.</p></li>
+        <li><p>Tower of Ecthelion will expire if Gandalf is killed after taking command of Minas Tirith.</p></li>
+        <li><p>Removed Prisons from Esgaroth and Dale. Erebor Palace makes them virtually redundant. No spies up there.</p></li>
+        <li><p>Finished city improvement descriptions in Describe.txt.</p></li>
+        <li><p>Increased Gondor treasury to 1 gold to prevent city improvements from being sold on the first turn at Nazgûl (Deity) level of difficulty.</p></li>
+        <li><p>Changed a few icon, improvement, city improvement and wonder graphics.</p></li>
+      </ul>
+
+      <h5>26/06/2009</h5>
+
+      <ul>
+        <li><p>Moved more text events over to AVI to clear events space.</p></li>
+        <li><p>Removed the random Ents that spawned following the mobilisation of Rohan.</p></li>
+        <li><p>Replaced many of the Barad-dûr spawn co-ordinates for Mordor units to reduce traffic within Mordor following its mobilisation.</p></li>
+        <li><p>Set respawn delay for the Lord of the Nazgûl (winged version) following his first defeat. Only affects games where Mordor is mobilised early.</p></li>
+        <li><p>Increased the attack and cost of Axemen of Rhûn.</p></li>
+        <li><p>Scattered a few Fortress Ruins around the area to the east of Rhovanion for use as strong points. One too many Dwarven disasters there.</p></li>
+      </ul>
+
+      <h5>08/05/2009</h5>
+
+      <ul>
+        <li><p>Removed the WotR skin pack from the download list. Background tiles are now included with the core graphics. Skins can be downloaded elsewhere. Updated the batch file installer.</p></li>
+      </ul>
+
+      <h5>04/02/2009</h5>
+
+      <ul>
+        <li><p>Fixed a map parameter (Civ2) bug in events associated with the capture of Minas Tirith.</p></li>
+        <li><p>Fixed the possibility of the <i>Despair of Denethor</i> occuring <i>after</i> the fall of Minas Tirith.</p></li>
+      </ul>
+
+      <h5>30/10/2008</h5>
+
+      <ul>
+        <li><p>Numerous changes, many of which are discussed in <a href="http://apolyton.net/forums/showthread.php?t=181069">this forum thread</a> at Apolyton.</p></li>
+      </ul>
+
+      <h5>20/09/2008</h5>
+
+      <ul>
+        <li><p>Public beta release.</p></li>
+      </ul>
+    </div><br>
+
+    <div class="block">
+      <p>May the Balrog tear you a new one,</p>
+
+      <p><img src="readme_files/balrog.gif" width="61" height="58" alt="Balrog"></p>
+
+      <p>Catfish (aka Wobbegong)</p>
+
+      <p><a href="http://users.tpg.com.au/jpwbeest/">http://users.tpg.com.au/jpwbeest/</a></p>
+
+      <p>9/06/2007</p>
+    </div>
+
+  </body>
+
+</html>

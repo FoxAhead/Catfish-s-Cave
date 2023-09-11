@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+  <head>
+    <title>Catfish's Cave - Unit Sounds</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="author" content="Catfish">
+    <meta name="description" content="A guide to mapping unit sounds for the turn-based strategy game, Civilization 2: Test of Time.">
+    <meta name="viewport" content="width=device-width, initial-scale=.8">
+    <link href="cave.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+
+    <div class="Fixed">
+      <div><img src="images/Cave.png" width="660" height="100" alt="Catfish's Cave - Resources For Civilization 2: Test of Time"></div>
+      <div class="SideBar">
+        <ul class="menu">
+          <li><p><a title="Catfish's Cave Homepage" href="index.htm">Main</a></p></li>
+          <li><p><a title="Frequently Asked Questions." href="jp_faq.htm">FAQ</a></p></li>
+          <li><p><a title="Design guides for Test of Time." href="jp_guides.htm">Guides</a></p></li>
+          <li><p><a title="Download the War of the Ring scenario." href="jp_wotr.htm">War of the Ring</a></p></li>
+          <li><p><a title="24-bit units for Test of Time." href="jp_units.htm">Units</a><br>(last modified<br>25/05/2009)</p></li>
+          <li><p><a title="24-bit terrain graphics for Test of Time." href="jp_terrain.htm">Terrain</a><br>(last modified<br>24/05/2009)</p></li>
+          <li><p><a title="Modpacks, People, Icons, Wonders, etc." href="jp_miscgraphics.htm">Miscellaneous Graphics</a><br>(last modified<br>28/02/2020)</p></li>
+          <li><p><a title="Links to useful websites related to Civ2 scenarios and their design." href="jp_links.htm">Links</a></p></li>
+        </ul>
+      </div>
+      <div class="SideBarBot"><p></p></div>
+    </div>
+
+    <div class="content" style="min-width: 616px">
+
+      <h1>Unit Sounds in Test of Time</h1>
+
+      <p>In early versions of Civilization 2, the map for unit combat sounds was hard-coded. Specific sound files were bound to fixed unit slots. Close attention to the relationship between unit slot and sound file was required by scenario designers as multiple unit slots were assigned the same combat sound. The same is true in Test of Time, but this version of the game introduced a new combat sound override in rules.txt (@SOUNDS) which allowed the designer to assign a unique sound file to each unit. However, the default sound map does provide some types of units with enhanced sound effects, eg, separate ground and air attack sounds for fighter-bombers, and multiple salvos from artillery and naval vessels, so it's worth a look.</p>
+
+      <div class="tipblock">
+
+        <div class="blockheading">
+          <h3>Default Unit Sound Map</h3>
+        </div>
+
+        <p>The matrix below shows the default sounds for the 80 unit slots in Test of Time. A unit will use the default sound set if its entry in the @SOUNDS table in rules.txt is set to '&lt;none&gt;'. The soundset used depends on a unit's domain type, ie, ground, air or sea, with some exceptions (see notes). Some sea and artillery sounds are repeated each round of combat.</p>
+
+        <p><img class="framed" src="images/ToT_UnitCombatSoundMap.png" width="586" height="586" alt="Unit Combat Sound Map in ToT"></p>
+
+        <table class="sounds_combat">
+          <tr class="alt">
+            <td colspan="2"><b>Ground Units</b> (Domain 0):</td>
+          </tr>
+          <tr>
+            <td>G1 = </td>
+            <td>Swordfgt.wav</td>
+          </tr>
+          <tr class="alt">
+            <td>G2 = </td>
+            <td>Infantry.wav</td>
+          </tr>
+          <tr>
+            <td>G3 = </td>
+            <td>Mchnguns.wav</td>
+          </tr>
+          <tr class="alt">
+            <td>G4 = </td>
+            <td>Swrdhors.wav</td>
+          </tr>
+          <tr>
+            <td>G5 = </td>
+            <td>Elephant.wav</td>
+          </tr>
+          <tr class="alt">
+            <td>G6 = </td>
+            <td>Cavalry.wav</td>
+          </tr>
+          <tr>
+            <td>G7 = </td>
+            <td>Medgun.wav/round + Largexpl.wav</td>
+          </tr>
+          <tr class="alt">
+            <td>G8 = </td>
+            <td>Catapult.wav</td>
+          </tr>
+          <tr>
+            <td>G9 = </td>
+            <td>Fire---.wav + Medgun.wav/round + Largexpl.wav</td>
+          </tr>
+          <tr>
+            <td><br></td>
+            <td></td>
+          </tr>
+          <tr class="alt">
+            <td colspan="2"><b>Air Units</b> (Domain 1):</td>
+          </tr>
+          <tr>
+            <td>A1 =</td>
+            <td>Divebomb.wav (air-to-ground)</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Aircombt.wav (air-to-air)</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Divcrash.wav (unit crashes)</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Engnsput.wav (out of fuel)</td>
+          </tr>
+          <tr class="alt">
+            <td>A2 =</td>
+            <td>Jetbomb.wav (air-to-ground)</td>
+          </tr>
+          <tr class="alt">
+            <td></td>
+            <td>Jetcombt.wav (air-to-air)</td>
+          </tr>
+          <tr class="alt">
+            <td></td>
+            <td>Jetcrash.wav (unit crashes)</td>
+          </tr>
+          <tr class="alt">
+            <td></td>
+            <td>Jetsputr.wav (out of fuel)</td>
+          </tr>
+          <tr>
+            <td><br></td>
+            <td></td>
+          </tr>
+          <tr class="alt">
+            <td colspan="2"><b>Sea Units</b> (Domain 2):</td>
+          </tr>
+          <tr>
+            <td>S1 =</td>
+            <td>Biggun.wav/round + Largexpl.wav</td>
+          </tr>
+          <tr class="alt">
+            <td>S2 =</td>
+            <td>Navbttle.wav/round + Largexpl.wav</td>
+          </tr>
+        </table>
+
+        <h4>Exceptions:</h4>
+
+        <ul>
+          <li><p>Air units with a range of 0 will use Helishot.wav.*</p></li>
+          <li><p>Sea units with the submarine flag will use Torpedos.wav.*</p></li>
+          <li><p>Any unit with the 'destroyed after attacking' flag will use Missile.wav. This will override Torpedos.wav or Helishot.wav.*</p></li>
+          <li><p>Any unit with an attack value >98 will have Nukexplo.wav appended to its attack sound. This last one applies even if a custom sound is listed for the unit in the @SOUNDS override section of rules.txt</p></li>
+        </ul>
+
+        <p>* Units occupying slots 51-61 will use the default sound map, ie, CustomX.wav or ExtraX.wav.</p>
+
+        <p>The @SOUNDS section only overrides combat sounds. Air units which run out of fuel or crash, will always produce 'sputter' and 'crash' sounds.</p><br>
+
+      </div><br>
+
+      <div class="tipblock">
+
+        <div class="blockheading">
+          <h3>Other Unit Sounds</h3>
+        </div>
+
+        <table class="sounds_other">
+          <colgroup>
+            <col width="200">
+            <col width="430">
+            <col width="100">
+          </colgroup>
+          <tr class="alt">
+            <td><b>Unit Type</b></td>
+            <td><b>Action</b></td>
+            <td><b>Sound File</b></td>
+          </tr>
+          <tr>
+            <td>Settler unit (AI role 5)</td>
+            <td>Builds a new city.</td>
+            <td>Bldcity.wav</td>
+          </tr>
+          <tr class="alt">
+            <td>Diplomacy unit (AI role 6)</td>
+            <td>Bribes a unit, incites a revolt, investigates a city or steals a technology.</td>
+            <td>Spysound.wav</td>
+          </tr>
+          <tr class="alt">
+            <td></td>
+            <td>Sabotages a city (without Gunpowder advance).</td>
+            <td>Spysound.wav</td>
+          </tr>
+          <tr class="alt">
+            <td></td>
+            <td>Sabotages a city (with Gunpowder advance).</td>
+            <td>Medexpl.wav</td>
+          </tr>
+          <tr>
+            <td>Spy (AI role 6, unit slot 47)</td>
+            <td>Sabotages a unit.</td>
+            <td>Smallexp.wav</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Poisons a city's water supply.</td>
+            <td>Spysound.wav</td>
+          </tr>
+          <tr class="alt">
+            <td>Trade unit (AI role 7)</td>
+            <td>Establishes a new trade route with a city.</td>
+            <td>Mrktplce.wav</td>
+          </tr>
+          <tr>
+            <td>Freight (AI role 7, unit slot 49)</td>
+            <td>Establishes a new trade route with a city.</td>
+            <td>Diesel.wav</td>
+          </tr>
+          <tr class="alt">
+            <td>Sea unit with the trireme flag</td>
+            <td>Becomes lost at sea.</td>
+            <td>Boatsink.wav</td>
+          </tr>
+        </table>
+
+      </div><br>
+
+      <p><img src="images/Shambler.gif" width="52" height="52" alt="ShamblingMound_Icon"></p>
+
+      <p>Catfish</p>
+      <p>18/06/2009</p>
+      <p class="note">(Last updated 18/09/2009.)</p>
+
+    </div>
+
+  </body>
+
+</html>

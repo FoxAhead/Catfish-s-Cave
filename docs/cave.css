@@ -1,0 +1,314 @@
+body        
+{
+background: url(images/Back.jpg) #0F5A80 fixed;
+color: #FFF;
+font-family: Arial, sans-serif;
+margin: 0 0 0 0
+}
+
+table {font-size: 10pt}
+
+img {border-width: 0px}
+img.framed {border: 3px ridge #63C0ED}
+img.floatright {float: right; margin: 0px 0px 10px 15px}
+
+a:link, a:hover, a:active {background-color: transparent; color: #63C0ED}
+a:visited {background-color: transparent; color: #6293EE}
+
+h1 {background-color: transparent; color: #FFF; font-size: 18pt; font-weight: bold; text-align: left}
+h2 {background-color: transparent; color: #FFF; font-size: 14pt; font-weight: bold; text-align: left}
+h3 {background-color: transparent; color: #FFF; font-size: 13pt; font-weight: bold; padding: 0.08em 0.3em; text-align: left}
+h4 {background-color: transparent; color: #FFF; font-size: 11pt; font-weight: bold; text-align: left}
+
+h4 a:link, h4 a:active, h4 a:hover, h4 a:visited {background-color: transparent; color: #FFF}
+
+/*
+.Fixed
+{
+position: fixed;
+z-index: 2
+}
+*/
+
+.SideBar 
+{
+position: absolute;
+background-image: url('images/Left_Bar.png');
+top: 100px;
+height: 430px;
+width: 180px
+}
+
+.SideBarBot
+{
+position: absolute;
+background-image: url('images/Left_Bar_bot.png');
+top: 530px;
+height: 14px;
+width: 180px
+}
+
+.menu
+{
+list-style-image: url('images/arrow.gif');
+font-family: Arial, sans-serif;
+font-size: 10pt
+}
+
+.menu a:link, .menu a:hover, .menu a:active, .menu a:visited
+{
+background-color: transparent;
+color: #FFF;
+font-family: Arial, sans-serif;
+font-size: 12pt;
+font-weight: bold;
+text-align: left;
+text-decoration: none
+}
+
+.archive a:link, .archive a:hover, .archive a:active, .archive a:visited
+{
+color: #FFF;
+font-family: Arial, sans-serif;
+font-size: 11pt;
+font-weight: bold;
+text-decoration: none
+}
+
+.content
+{
+position: absolute;
+left: 200px;
+right: 50px;
+top: 125px;
+font-size: 10pt;
+margin: 0px 0px 20px 0px;
+max-width: 1000px;
+text-align: justify;
+z-index: 1
+}
+
+.post
+{
+background-color: #074663;
+border: 2px solid #91BBCF;
+color: #FFF;
+font-family: Arial, sans-serif;
+font-size: 10pt;
+overflow: hidden;
+padding: 0px 10px 5px 10px;
+margin: 0px 0px 15px 0px;
+text-align: justify
+}
+
+.blockheading
+{
+background-color: #023551;
+}
+
+.date
+{
+float: right
+}
+
+.textblock
+{
+background-color: #7DCCFB;
+border: 3px solid #126C98;
+color: #000;
+font-family: "Courier New", monospace;
+font-size: 10pt;
+padding: 0 5px 0 5px;
+text-align: left
+}
+
+.tipblock
+{
+background-color: #074663;
+border: 2px solid #91BBCF;
+color: #FFF;
+font-family: Arial, sans-serif;
+font-size: 10pt;
+padding: 5px 10px 5px 10px;
+margin: 0px 0px 15px 0px;
+text-align: justify
+}
+
+.tipblock_dark
+{
+background-color: #00405e;
+border: 2px solid #91BBCF;
+color: #FFF;
+font-family: Arial, sans-serif;
+font-size: 10pt;
+padding: 5px 10px 5px 10px;
+text-align: justify
+}
+
+.tip_indent
+{
+background-color: #074663;
+border: 2px solid #91BBCF;
+color: #FFF;
+font-family: Arial, sans-serif;
+font-size: 10pt;
+margin-left: 40px;
+padding: 5px 10px 5px 10px;
+text-align: justify
+}
+
+.tip_indent_dark
+{
+background-color: #00405e;
+border: 2px solid #91BBCF;
+color: #FFF;
+font-family: Arial, sans-serif;
+font-size: 10pt;
+margin-left: 40px;
+padding: 5px 10px 5px 10px;
+text-align: justify
+}
+
+.thumbs
+{
+color: #FFF;
+font-family: Arial, sans-serif;
+font-size: 10pt;
+padding: 5px 10px 5px 10px;
+text-align: left;
+width: 220px
+}
+
+.noindent {margin-left: -20px}
+
+.indent {margin-left: 40px}
+
+.indent2 {margin-left: 80px}
+
+table.versions
+{
+background-color: #074663;
+border-collapse: collapse;
+font-size: 8pt;
+text-align: left;
+width: 754px
+}
+
+table.hex
+{
+background-color: #074663;
+border-collapse: collapse;
+font-size: 8pt
+}
+
+table.units
+{
+border-collapse: collapse;
+font-size: 8pt;
+text-align: left;
+width: 586px
+}
+
+table.macro
+{
+border-collapse: collapse;
+width: 100%
+}
+
+table.sounds_combat
+{
+border-collapse: collapse;
+width: 590px
+}
+
+table.sounds_other
+{
+border-collapse: collapse
+}
+
+tr.alt {background-color: #023551}
+tr.alt9 {background-color: #023551; font-size: 9pt; font-weight: bold}
+tr.alt10 {background-color: #023551; font-size: 10pt; font-weight: bold}
+
+.footnotes {font-size: 8pt; text-align: left}
+
+td.top {vertical-align: top}
+
+.faq_menu
+{
+background-color: #074663;
+border: 2px solid #91BBCF;
+color: #FFF;
+line-height: 250%;
+text-align: left;
+padding: 5px 10px 5px 10px;
+margin: 0px 0px 15px 0px
+}
+
+.faq_menu a:link, .faq_menu a:active, .faq_menu a:visited
+{
+background-color: transparent;
+color: #FFF;
+text-decoration: none;
+font-weight: bold
+}
+
+.faq_menu a:hover {background-color: transparent; color: #95D8FF; text-decoration: none; font-weight: bold}
+
+.dl a:link, .dl a:hover, .dl a:active, .dl a:visited
+{
+font-size: 12pt;
+font-weight: bold
+}
+
+.submenu
+{
+line-height: 300%;
+list-style-image: url('images/arrow2.gif');
+margin: 40px 0 0 60px;
+vertical-align: middle
+}
+
+.submenu a:link, .submenu a:hover, .submenu a:active, .submenu a:visited
+{
+background-color: transparent;
+color: #FFF;
+text-align: left;
+text-decoration: none;
+font-size: 12pt;
+font-weight: bold;
+white-space: nowrap
+}
+
+.totmenu
+{
+list-style-image: url('images/Bullet_ToT.png');
+vertical-align: middle
+}
+
+.scenmenu
+{
+list-style-image: url('images/Bullet_Scenario.png');
+vertical-align: middle
+}
+
+.utilmenu
+{
+list-style-image: url('images/Bullet_Utility.png');
+vertical-align: middle
+}
+
+.checkmenu
+{
+list-style-image: url('images/Bullet_CheckBox.png');
+vertical-align: middle
+}
+
+.note {font-family: Arial, sans-serif; font-size: 8pt}
+
+input.button {
+  border-color: #91BBCF;
+  color: white;
+  font: bold 8pt'trebuchet ms',helvetica,sans-serif;
+  background-color: #074663;
+}

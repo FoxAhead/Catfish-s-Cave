@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+  <head>
+    <title>Catfish's Cave - Sprites</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="author" content="Catfish">
+    <meta name="description" content="A guide to working with unit and terrain sprites in the turn-based strategy game, Civilization 2: Test of Time.">
+    <meta name="viewport" content="width=device-width, initial-scale=.8">
+    <link href="cave.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+
+    <div class="Fixed">
+      <div><img src="images/Cave.png" width="660" height="100" alt="Catfish's Cave - Resources For Civilization 2: Test of Time"></div>
+      <div class="SideBar">
+        <ul class="menu">
+          <li><p><a title="Catfish's Cave Homepage" href="index.htm">Main</a></p></li>
+          <li><p><a title="Frequently Asked Questions." href="jp_faq.htm">FAQ</a></p></li>
+          <li><p><a title="Design guides for Test of Time." href="jp_guides.htm">Guides</a></p></li>
+          <li><p><a title="Download the War of the Ring scenario." href="jp_wotr.htm">War of the Ring</a></p></li>
+          <li><p><a title="24-bit units for Test of Time." href="jp_units.htm">Units</a><br>(last modified<br>25/05/2009)</p></li>
+          <li><p><a title="24-bit terrain graphics for Test of Time." href="jp_terrain.htm">Terrain</a><br>(last modified<br>24/05/2009)</p></li>
+          <li><p><a title="Modpacks, People, Icons, Wonders, etc." href="jp_miscgraphics.htm">Miscellaneous Graphics</a><br>(last modified<br>28/02/2020)</p></li>
+          <li><p><a title="Links to useful websites related to Civ2 scenarios and their design." href="jp_links.htm">Links</a></p></li>
+        </ul>
+      </div>
+      <div class="SideBarBot"><p></p></div>
+    </div>
+
+    <div class="content" style="min-width: 760px">
+
+      <h1>Those Damned Sprites!</h1>
+
+      <p>A perennial bugbear for Test of Time scenario designers seems to be the nagging persistence of those damned sprites. Sprites from the Original game have a nasty habit of popping up in the middle of  scenarios - but it shouldn't be this way. If the scenario designer has a handle on the game's sprite options, then it really should be a piece of cake for the player to switch them off. There's no need to go around moving, deleting or renaming files. I guess it's time to put this one to bed and explain exactly what the sprite settings do.</p>
+
+      <div id="SpriteTypes" class="tipblock">
+
+        <div class="blockheading">
+          <h3>Sprite Types</h3>
+        </div>    
+
+        <p>Firstly, it might be worth explaining that there are 3 types of sprite file in Test of Time. They are:</p>
+
+        <div class="tipblock_dark">
+          <ol>
+            <li><p><b>Animated Unit Sprites</b> (unitXX.spr): There are 79 of these files in the Original folder, one for each of the 52 unit types in the  Original game (including the barbarian leader), 26 from the Extended game, plus the train animation for rail movement (unit99.spr). Each file contains frames for movement, combat and death, plus an idle animation. Animations are  displayed only for the unit currently selected by the player, even the idle animation sequence is not used by non-selected units. Additionally, each frame has a complimentary mask layer, used to define the region on the unit  marked by tribe colours. The Fantasy and Sci-Fi directories have their own sets of animated sprites, but they will rarely interfere with scenarios: only if the scenario began as one of those game types.</p></li>
+            <li><p><b>Animated Terrain Sprites</b> (resource.spr): One file contains frames for all animated resources. Each game type, Original, Fantasy and Sci-Fi, has its own file.</p></li>
+            <li><p><b>Static Unit Sprites</b> (static.spr): One file contains 5 frames for each unit, each frame depicting a different orientation: facing N, NE, E, SE and S. The three east-facing frames are  mirrored by the game when a unit moves in a westerly direction, creating a total of 8 orientations. As with the animated sprites, each frame is mapped with a complimentary tribe colour mask. Static unit sprites are used in most areas of the game, with the exception of the Civilopedia, the city @PRODUCTION box and some of the other game.txt boxes (eg, diplomat and spy menus); these always use the units.bmp file.</p></li>
+          </ol>
+        </div><br>
+
+      </div><br>
+
+      <div id="SpriteOptions" class="tipblock">
+
+        <div class="blockheading">
+          <h3>Sprite Options</h3>
+        </div>
+
+        <p>From the designer's point of view, an understanding of these options is essential if one is to successfully disable the appearance of sprites from the Original game within a custom scenario. If these settings are in order, there's no need to tamper with the sprite files in the Original folder. I use custom static.spr and resource.spr files for my Original game, and I ain't moving them for no-one. The game's sprite options are found in 3 locations:</p>
+
+        <h4>1. Game menu</h4>
+
+        <p>Under Graphic Options (Ctrl+P) in the Game menu, you will find two options:</p>
+
+        <div class="tipblock_dark">
+          <ul>
+            <li><p><b>Animated Units:</b> Checking this box will turn on animated units. The setting is universal, ie, it will be applied across all game types and scenarios. If you're playing a custom scenario, leave this box unchecked; I've yet to see an unofficial scenario that uses animated units. Simply put, animated units cannot appear in the game unless this option is selected.</p></li>
+            <li><p><b>Animated Terrain:</b> Checking this box will turn on animated terrain. Again, this setting is universal. One might expect that if this option is left unchecked, animated terrain will be switched off completely. Well it is - almost. Strangely, one frame from the Original game's oil resource (a looping animation) is still rendered by the game. Clearly it's a bug. It's no big deal; there's a simple solution. Any sprite file in your scenario folder will override the one in the Original folder. Therefore, if you include a dummy resource.spr file with your scenario, the bug is bypassed. You can download such a file <a href="files/Dummy_Resource.zip">here</a>. It's only 369 bytes unzipped. Because the dummy file overrides the Original game's file, the animated terrain sprites from the Original game will not be loaded. This eliminates any possibility of animated terrain appearing in the scenario, even when the animated terrain option is enabled.</p>
+			<p><b>Update:</b> In June 2014, the looping animation bug was fixed in version 0.6 of the <a href="http://forums.civfanatics.com/showthread.php?t=517282">Test of Time Patch Project</a>.</p>
+            </li>
+          </ul>
+        </div>
+
+        <p>If either of these options is unavailable, ie, they have been greyed out, it is because you are playing a scenario in which the author has enabled the animation lockout parameters in the Cheat menu (see below). Lockout does not actually disable animation, it only prevents you from making changes to your current animation settings. If, however, you wish to change your  options, you're not completely locked out; you can switch to a game in which the animation options have not been locked or alternatively, disable the lockout parameters by editing the scenario file.</p>
+
+        <h4>2. Cheat menu</h4>
+
+        <p>Select Scenario Parameters (Ctrl+Shift+P) in the Cheat menu. Go to Edit Special Rules. There are three parameters here and they are the cause of most of the sprite confusion.</p>
+
+        <div class="tipblock_dark">
+          <ul>
+            <li><p><b>Terrain animation lockout:</b> This parameter disables (greys out) the Animated Terrain option in the Graphic Options menu. Yep, that's all it does. So don't use it.</p></li>
+            <li><p><b>Unit animation lockout:</b> This parameter disables (greys out) the Animated Units option in the Graphic Options menu. Again, don't use it.</p></li>
+            <li><p><b>.SPR file override:</b> This parameter blocks static unit sprites only. It does not affect animated unit sprites. If your scenario uses a custom static.spr file, leave this setting disabled. Actually, there's really no reason to use this parameter at all; blocking static sprites can be done with precision in the rules.txt file (see below).</p></li>
+          </ul>
+        </div>
+
+        <p>Much of the confusion surrounding the two animation lockout parameters is due to the fact that they simply don't work as advertised by the game's developers. Here's an excerpt from the official 1.1 patch readme file:</p>
+
+        <blockquote class="textblock">These items lock the settings they affect to whatever they where [<i>sic</i>] set as when the scenario file is saved. In other words if you have the unit animation lockdown selected and your graphic options have animations turned on when you save your scenario they [<i>sic</i>] the animation for units will ALWAYS be on and cannot be modified. The opposite is true as well. For example if you have the terrain animations turned off and you set the lockout option then save your scenario then terrain animation will ALWAYS be off.</blockquote>
+
+        <p>Unfortunately none of this is correct. Of the three sprite-related scenario parameters, only the .SPR file override works correctly.</p>
+
+        <h4>3. Rules.txt</h4>
+
+        <div class="tipblock_dark">
+          <ul>
+            <li><p><b>Advanced Units section:</b> The animated <i>and</i> static sprites for each unit can be blocked using the 8th bit (reverse programmer notation) in column G of the @ADVANCED_UNITS section (see below, highlighted red). Setting this bit to 1 will override both the unitXX.spr and static.spr files for the specified unit. Setting these bits to 1 for all units in the table will completely eradicate unit sprites from your scenario irrespective of the user's Animated Units settings.</p></li>
+          </ul>
+        </div>
+
+        <blockquote class="textblock">@UNITS_ADVANCED<br>
+        11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, <font color="red"><b>1</b></font>0000000</blockquote>
+
+        <p>The .SPR file override in the Advanced Units section basically renders the one in the Cheat menu obsolete. The only circumstance in which the Cheat menu override would be considered as an option is when the scenario uses no unit sprites at all. Enabling it would blanket ban the static sprites for all units, but why wouldn't you just go a step further and do it in the rules file? That way you can kill two birds with one stone by disabling both the animated <i>and</i> static unit sprites. Instructions to disable animated unit sprites would simply not be required for such a scenario.</p>
+
+        <p class="tipblock_dark"><b>Note:</b> When switching between game types (eg, Original, Midgard, etc) or scenarios, it is important that you quit to Test of Time's main menu first. If you simply use the Load Game (Ctrl+L) option in the Game menu, the game's sprites will not be refreshed and you will be presented with the set of sprites from the previous game.</p>
+
+      </div><br>
+
+      <div id="CustomSprites" class="tipblock">
+
+        <div class="blockheading">
+          <h3>Custom Sprites for Scenarios</h3>
+        </div>
+
+        <p>It is possible to create custom sprites for Test of Time using Mercator's SpriteGen and CivSprite utilities. Both of these can be downloaded from <a href="http://civ2.mercator.fastmail.fm/mapedit/downloads.html">his website</a>. Custom sprite files are simply placed in the scenario folder; they will override the files from the Original game. Animated sprite files are rarely used (although there are custom resource.spr files in the <a href="jp_miscgraphics.htm">Graphics Mod Pack for the Original Game</a> and the <a href="jp_wotr.htm">War of the Ring scenario</a>); static sprites are more frequently used to hide health bars and display tribe colours (see below).</p>
+
+        <p style="text-align: center"><img class="framed" src="images/WotR_Masks-NoHealthBar.jpg" width="280" height="165" alt="Screenshot of Tribe Colour Masks and Hidden Health Bars in Test of Time"></p>
+
+		<div class="tipblock_dark">
+          <p><b>Update:</b> In March 2008, <a href="http://apolyton.net/showthread.php/175579-Sprite-problem!">Mercator released version 1.1 of SpriteGen</a> with added support for tribe colour masks. You no longer need to mess with CivSprite when creating static sprites... well, unless you want different unit orientations represented by different icons.</p>
+		</div>
+
+        <p>There have been very few attempts to create animated units for Test of Time, so there's little point discussing them here. If you wish to try your hand, CivSprite is the tool for the job. For a discussion and examples, see <a href="http://forums.civfanatics.com/showthread.php?t=411816">this thread</a>. To hide the health bars and/or implement tribe colour masks for static unit icons, you want SpriteGen. For more information about hidden health bars, see <a href="http://forums.civfanatics.com/showpost.php?p=10212283&amp;postcount=2">this post</a>.</p>
+
+		<div class="tipblock_dark">
+		  <p><b>Update:</b> In April 2014, the ability to hide health bars was introduced in version 0.4 of the <a href="http://forums.civfanatics.com/showthread.php?t=517282">Test of Time Patch Project</a>. Health bars can now be hidden by way of unit flags in rules.txt. Sprite editing is not required. This new method eliminates the side effects produced by tall sprites, namely, disappearing units at high zoom levels and visible health bars at the tops of high resolution screens; a superior solution all round.</p>
+		</div>
+
+        <p class="tipblock_dark"><b>Tip:</b> Before running SpriteGen, first make a copy of units.bmp. Replace any purple background colours with magenta (some shades of purple are not recognised by SpriteGen). Remove any superfluous unit graphics, ie, those units without masks or hidden health bars. Run SpriteGen on the file. In the @UNITS_ADVANCED section of the rules file, change the .SPR file override bit to 1 for all units except those with masks or hidden health bars. If you don't, you will end up with a lot of invisible units.</p>
+
+      </div><br>
+
+      <div id="Examples" class="tipblock">
+
+        <div class="blockheading">
+          <h3>Scenario Examples</h3>
+        </div>
+
+        <p>To clarify the sprite situation, here are a few examples:</p>
+
+        <p><b>Case 1:</b> The scenario uses <i>no sprites</i> of any kind.</p>
+
+        <table class="tipblock_dark" width="740">
+          <colgroup>
+            <col width="40%" align="left">
+            <col width="10%" align="center">
+            <col width="40%" align="left">
+            <col width="10%" align="center">
+          </colgroup>
+          <tr>
+            <td nowrap>Graphic Options - Animated Units</td>
+            <td nowrap>N/A</td>
+            <td nowrap>Graphic Options - Animated Terrain</td>
+            <td nowrap>N/A<sup>1</sup></td>
+          </tr>
+          <tr>
+            <td nowrap>Scenario Parameters - Terrain animation lockout</td>
+            <td nowrap>Off</td>
+            <td nowrap>Scenario Parameters - Unit animation lockout</td>
+            <td nowrap>Off</td>
+          </tr>
+          <tr>
+            <td nowrap>Scenario Parameters - .SPR file override</td>
+            <td nowrap>N/A</td>
+            <td nowrap>Rules File - Individual unit .SPR file overrides</td>
+            <td nowrap>Set all to 1</td>
+          </tr>
+        </table>
+
+        <p>Setting the .SPR file overrides to 1 for all units in rules.txt will eliminate animated <i>and</i> static unit sprites from the scenario. Including the dummy resource.spr file will completely eliminate animated terrain. This setup requires no instructions for the user.</p>
+
+        <p><b>Case 2:</b> The scenario uses <i>no animated sprites</i> of any kind, but uses a <i>static sprite</i> file to hide the health bars of some units.</p>
+
+        <table class="tipblock_dark" width="740">
+          <colgroup>
+            <col width="40%" align="left">
+            <col width="10%" align="center">
+            <col width="40%" align="left">
+            <col width="10%" align="center">
+          </colgroup>
+          <tr>
+            <td nowrap>Graphic Options - Animated Units</td>
+            <td nowrap>Unchecked</td>
+            <td nowrap>Graphic Options - Animated Terrain</td>
+            <td nowrap>N/A<sup>1</sup></td>
+          </tr>
+          <tr>
+            <td nowrap>Scenario Parameters - Terrain animation lockout</td>
+            <td nowrap>Off</td>
+            <td nowrap>Scenario Parameters - Unit animation lockout</td>
+            <td nowrap>Off</td>
+          </tr>
+          <tr>
+            <td nowrap>Scenario Parameters - .SPR file override</td>
+            <td nowrap>Off</td>
+            <td nowrap>Rules File - Individual unit .SPR file overrides</td>
+            <td nowrap>Variable<sup>2</sup></td>
+          </tr>
+        </table>
+
+        <p>The user should be instructed to leave the Animated units box unchecked.</p>
+
+        <p><b>Case 3:</b> The scenario uses <i>no animated sprites</i> of any kind, but uses a <i>static sprite</i> file to  implement tribe colours for all units.</p>
+
+        <table class="tipblock_dark" width="740">
+          <colgroup>
+            <col width="40%" align="left">
+            <col width="10%" align="center">
+            <col width="40%" align="left">
+            <col width="10%" align="center">
+          </colgroup>
+          <tr>
+            <td nowrap>Graphic Options - Animated Units</td>
+            <td nowrap>Unchecked</td>
+            <td nowrap>Graphic Options - Animated Terrain</td>
+            <td nowrap>N/A<sup>1</sup></td>
+          </tr>
+          <tr>
+            <td nowrap>Scenario Parameters - Terrain animation lockout</td>
+            <td nowrap>Off</td>
+            <td nowrap>Scenario Parameters - Unit animation lockout</td>
+            <td nowrap>Off</td>
+          </tr>
+          <tr>
+            <td nowrap>Scenario Parameters - .SPR file override</td>
+            <td nowrap>Off</td>
+            <td nowrap>Rules File - Individual unit .SPR file overrides</td>
+            <td nowrap>Set all to 0</td>
+          </tr>
+        </table>
+
+        <p>The user should be instructed to leave the Animated units box unchecked.</p>
+
+        <p><b>Case 4:</b> The scenario uses <i>no animated unit sprites</i>, uses a custom <i>animated terrain</i> file and a <i>static sprite</i> file to hide the health bars of some units.</p>
+
+        <table class="tipblock_dark" width="740">
+          <colgroup>
+            <col width="40%" align="left">
+            <col width="10%" align="center">
+            <col width="40%" align="left">
+            <col width="10%" align="center">
+          </colgroup>
+          <tr>
+            <td nowrap>Graphic Options - Animated Units</td>
+            <td nowrap>Unchecked</td>
+            <td nowrap>Graphic Options - Animated Terrain</td>
+            <td nowrap>Checked</td>
+          </tr>
+          <tr>
+            <td nowrap>Scenario Parameters - Terrain animation lockout</td>
+            <td nowrap>Off</td>
+            <td nowrap>Scenario Parameters - Unit animation lockout</td>
+            <td nowrap>Off</td>
+          </tr>
+          <tr>
+            <td nowrap>Scenario Parameters - .SPR file override</td>
+            <td nowrap>Off</td>
+            <td nowrap>Rules File - Individual unit .SPR file overrides</td>
+            <td nowrap>Variable<sup>2</sup></td>
+          </tr>
+        </table>
+
+        <p>The user should be instructed to check the Animated terrain box, but leave the Animated units box unchecked.</p>
+
+        <p>1. If you include the <a href="files/Dummy_Resource.zip">dummy resource.spr file</a> with your scenario, it renders this option redundant and removes the oil resource bug.<br>2. You might consider setting the individual unit overrides for all units with visible health bars to 1. Doing so will allow you to remove these units from the static.spr file, thereby reducing its size.</p>
+
+      </div><br>
+
+      <p><img src="images/ShieldKnight.gif" width="51" height="52" alt="ShieldKnight_Icon"></p>
+
+      <p>Catfish</p>
+      <p>26/01/2005</p>
+      <p class="note">(Last updated 26/06/2014. ToTPP v0.6 fix for the looping animation bug.)</p>
+
+    </div>
+
+  </body>
+
+</html>

@@ -1,0 +1,192 @@
+<html>
+
+<head>
+<meta name="author" content="Catfish">
+<meta name="description" content="Resources for Civilization 2: Test of Time.">
+<meta name="keywords" content="Civilization 2, Civilization II, Test of Time, Civ2, Civ 2, ToT, Civ2 units, Civilization 2 units, ToT units, Test of Time units, Civilization 2 graphics, Test of Time graphics, Civ2 graphics, Civ 2 graphics, ToT graphics, Catfish">
+<meta http-equiv="Content-Language" content="en-au">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Catfish's Cave</title>
+<base target="_self">
+</head>
+
+<body bgcolor="#0099CC" text="#FFFFFF">
+
+<p align="justify"><font face="Arial" size="4">1/08/2004</font></p>
+
+<p align="justify"><font face="Arial">Progress on the War of the Ring scenario 
+has been spasmodic as my interest in Civ2 waxes and wanes. I'm running only my 
+5th playtest. The struggles continue with the AI and events space (see the 
+comments below on delayed events).
+</font></p>
+
+<p align="justify"><font face="Arial">I've added a graphics mod pack for ToT's 
+Original game to the <a href="JP_MiscGraphics.htm">Miscellaneous Graphics</a> section. It was made a couple of 
+weeks ago for an older person whose eyesight isn't exactly 100% and makes use of 
+team colour masks. It's basically a compilation of user-made and Microprose material; the 
+credits are in the Readme file. It won't be everybody's cup of tea. Take it or 
+leave it.</font></p>
+
+<p align="justify"><font face="Arial">The inclusion of animated terrain (which 
+I'd always removed from my game) in the aforementioned mod pack exposed me to a 
+bug whereby the animated terrain file, resource.spr, would interfere with 
+scenarios lacking their own custom resource.spr file - even when  the 
+Animated Terrain was turned off under the game's Graphic Options. See 
+<a href="http://apolyton.net/forums/showthread.php?threadid=118766">this thread</a> at Apolyton for 
+details. As a result I created a <a href="Files/Dummy_Resource.zip">dummy 
+resource.spr</a> file which can (and should, in my opinion :)) be included with 
+any ToT scenario to prevent  such interference. Most veteran gamers tend to 
+ditch terrain animation by renaming the file, but new players won't. Oh and 
+scenario designers should also avoid the animation lockout options in the Scenario Parameters list. They're 
+useless and only impede a player's ability to adjust their settings to the 
+correct ones.</font></p>
+
+<p class="MsoNormal" style="text-autospace: none" align="justify"><font face="Arial">About Delay 
+and DelayPerFlag modifiers:</font></p>
+<p class="MsoNormal" style="text-autospace: none" align="justify"><font face="Arial">From my 
+experience with these, my advice would be to use them sparingly and with 
+caution. Each time a Delay or DelayPerFlag event is called, it is loaded into 
+the memory space shared by all other events. Each delayed event takes up 276 bytes in 
+the .sav file and requires 284 bytes in memory. Repeating Delay/DelayPerFlag 
+events can very quickly eat up your remaining events memory as each stacks up an 
+additional 284 bytes. To avoid problems with these modifiers in your scenario you'll need to calculate the maximum possible 
+number of concurrent Delay/DelayPerFlag events and multiply this figure by 284. 
+The resulting value must not exceed the remaining heap space, as calculated by the 
+events debugger, otherwise there exists the potential for some delayed events to 
+simply not load&nbsp; – although I guess if 
+none of them are game critical, it may not matter.</font></p>
+<p class="MsoNormal" style="text-autospace: none" align="justify"><font face="Arial">Not having 
+read the <i>entire</i> Macro.txt document for a few years, I discovered this the 
+hard way (which includes plenty of obscene language). Shortly after figuring this out I stumbled on these lines at the end 
+of the document: </font></p>
+<blockquote>
+  <p class="MsoNormal" style="text-autospace: none" align="justify"><font face="Arial">&quot;In 
+  addition, delayed actions (those using the DELAY modifier) create countdown 
+  timers that also take up memory space. If your delays pile up and you run out 
+  of memory because of it, the scenario won't crash, but any delayed actions 
+  that don't fit in memory will not ever take place.&quot;</font></p>
+</blockquote>
+<p class="MsoNormal" style="text-autospace: none" align="justify"><font face="Arial">Sigh…</font></p>
+
+<p class="MsoNormal" style="text-autospace: none" align="justify">
+<font face="Arial">Addendum (6/08/2004): Man, it certainly pays to read all of 
+the text files, doesn't it? This time from the 1.1 patch readme:</font></p>
+
+<blockquote>
+<p class="MsoNormal" style="text-autospace: none" align="justify">
+<font face="Arial">&quot;For events files, the Debug file (report.txt) now includes 
+the amount of stack space left for your use. Please note, however, that this 
+total does NOT include the stack space needed by DELAYed events. Each DELAY adds 
+284 bytes to the space used. Overlapping DELAYs (those whose counters could be 
+running at the same time) add up, but those that do not overlap do not-- i.e. 
+they can re-use the same 284 bytes.&quot;</font></p>
+
+</blockquote>
+<p class="MsoNormal" style="text-autospace: none" align="justify">
+<font face="Arial">This would have saved me a lot of grief. If there's any 
+consolation, at least I know I was right on the money. :|</font></p>
+
+<p align="justify"><img border="0" src="Pics/Ogre.png" width="48" height="52"></p>
+
+<p align="justify"><font face="Arial" size="4">23/06/2004</font></p>
+
+<p class="MsoNormal" align="justify"><font face="Arial">I’ve been working away on the War of the 
+Ring 
+scenario over the last few nights. My, isn’t fleshing out the describe.txt file 
+an exciting task? Copying, pasting, scanning, typing, editing - 21 000 words and 
+counting. I’m also fighting with the events file – fitting all of your events 
+within the 104 kb allocated memory must be akin to trying to stuff a push bike 
+into a Christmas stocking. However, the biggest problem with the scenario is the AI. 
+Now, I’ve always known that the Civ2 AI was dumb, but trying to get it to jump 
+through the hoops that are the impassable terrain barriers in this scenario is a 
+nightmare. I’m having to divide the map into many MoveUnit cells, each of which 
+directs traffic through the numerous choke points. Of course, each additional MoveUnit 
+event  further reduces my available events space. Then there are those units which are independently assigned ridiculous 
+GoTo 
+orders that they can’t possibly hope to carry out. Whinge. Moan. </font></p>
+<p class="MsoNormal" style="text-autospace: none" align="justify"><font face="Arial">In contrast 
+to my gripes, I have to say that the Quest scripting works pretty well – an 
+impossible task without Test of Time’s multiple maps and flags. These 
+include the Barrow-downs upgrades, Rivendell and the Council of Elrond (Frodo’s 
+arrival/non-arrival, upgrade and spawning of Fellowship members), Gandalf 
+opening the Gates of Moria, Merry/Pippin rousing the Ents, Gandalf rousing 
+Théoden, Aragorn and the Paths of the Dead, Gollum opening the way through 
+Cirith Ungol and of course, the final event: destruction of the Ring in Mount 
+Doom. Lórien (Elven boats and Sam upgrade) has a minor problem. I simply ran out 
+of map transport relationships, so it’s possible (but very unlikely – I’ve made 
+it difficult and unrewarding) to fire this trigger with inappropriate units.</font></p>
+<p class="MsoNormal" style="text-autospace: none" align="justify"><font face="Arial">&nbsp;<img border="0" src="Pics/Shelob.png" width="59" height="52"></font></p>
+
+<p align="justify"><font face="Arial" size="4">10/06/2004</font></p>
+
+<p align="justify"><font face="Arial">Hmm, so what have I been up to in the realms of Civ2 over 
+the last 3 months? Not much, I'm afraid. I was supposed to be working on my 
+scenario, but only resumed work on the project yesterday. It was not long after 
+my last site update that I let the cat out of the bag in one of the Civ2 forums 
+regarding the project's nature. In February this year, I dusted off my old War of the Ring 
+scenario, 
+decided I didn't like the map and so started over again from scratch.&nbsp; I'll post a few screenshots in the Scenarios section - it may 
+provide me with some additional motivation to get my arse into gear.</font></p>
+
+<p align="justify"><font face="Arial">I've got my filthy mitts on a scanner of 
+late and thought I'd take the opportunity to sample some of the newly available 
+source materials for unit creation. A couple of WWII Brits was the result. 
+They're intentionally smaller than my standard man-sized units; make them too 
+large and they dwarf the armour.</font></p>
+
+<p align="justify"><font face="Arial">
+<img border="0" src="Pics/Catfish_WWII_Brits.png" width="131" height="66"></font></p>
+
+<p align="justify"><font face="Arial" size="4">12/03/2004</font></p>
+
+<p align="justify"><font face="Arial">Been working on various scenario stuff, both of a graphical and non-graphical 
+nature. In the process, I'm trying not to get distracted by Boco's
+<a href="http://apolyton.net/forums/showthread.php?s=&threadid=109766">beta 
+release</a> of his superb El Aurens scenario. A lot of time and effort has been 
+poured into this one, so get play-testing! Just to prove that I haven't been 
+sitting on my hands, here's a screenshot of a revamped city screen for a ToT 
+scenario of mine (66% 
+of original size). The original city name and flag have been scrubbed.</font></p>
+
+<p align="justify">
+<font face="Arial">
+<img border="0" src="Pics/CityScreen.png" width="640" height="446"></font></p>
+
+<p align="justify">
+<img border="0" src="Pics/Indiana.png" width="43" height="52"></p>
+
+<p align="justify"><font face="Arial" size="4">26/01/2004</font></p>
+
+<p align="justify"><font face="Arial">I was playing around with Test of Time's sprites and masks  
+(courtesy of Mercator's CivSprite utility) and came up with 
+the following results:</font></p>
+
+<p align="justify">
+<img border="0" src="Pics/ToTMasks.png" width="279" height="133"></p>
+
+<p align="justify"><font face="Arial">The  brightness and contrast of the unmasked area (greyscaled)  could 
+probably be worked a bit (the mask layer, itself, is either on or off), but it 
+was just an experiment. Not quite as good as the original (inset) but I still 
+may consider its use for some generic units, such as this man-at-arms.</font></p>
+
+<p align="justify">
+<img border="0" src="Pics/Pandaren.png" width="50" height="52"></p>
+
+<p align="justify"><font face="Arial" color="#FFFFFF" size="4">19/12/2003</font></p>
+
+<p align="justify"><font face="Arial" color="#FFFFFF">This is my first attempt at anything 
+website related, whacked together one night using FrontPage. Favouring 
+functionality over design, it's really just a repository for my Civilization 2: Test of Time 
+files - instead of having them scattered all over the Apolyton site. Here, I will post my 
+graphics and scenarios (should I ever finish them and if they'll fit - I've got 
+a 10 Mb limit).</font></p>
+<p align="justify"><font face="Arial" color="#FFFFFF">Catfish</font></p>
+
+<p align="justify">
+<img border="0" src="Pics/Sasquatch.png" width="48" height="52"></p>
+
+</body>
+
+</html>

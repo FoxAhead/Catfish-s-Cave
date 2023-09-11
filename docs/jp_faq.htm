@@ -1,0 +1,349 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+  <head>
+    <title>Catfish's Cave - FAQ</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="author" content="Catfish">
+    <meta name="description" content="Frequently Asked Questions relating to the turn-based strategy game, Civilization 2: Test of Time.">
+    <meta name="viewport" content="width=device-width, initial-scale=.8">
+    <link href="cave.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+
+    <div class="Fixed">
+      <div><img src="images/Cave.png" width="660" height="100" alt="Catfish's Cave - Resources For Civilization 2: Test of Time"></div>
+      <div class="SideBar">
+        <ul class="menu">
+          <li><p><a title="Catfish's Cave Homepage" href="index.htm">Main</a></p></li>
+          <li><p><a title="Frequently Asked Questions." href="jp_faq.htm">FAQ</a></p></li>
+          <li><p><a title="Design guides for Test of Time." href="jp_guides.htm">Guides</a></p></li>
+          <li><p><a title="Download the War of the Ring scenario." href="jp_wotr.htm">War of the Ring</a></p></li>
+          <li><p><a title="24-bit units for Test of Time." href="jp_units.htm">Units</a><br>(last modified<br>25/05/2009)</p></li>
+          <li><p><a title="24-bit terrain graphics for Test of Time." href="jp_terrain.htm">Terrain</a><br>(last modified<br>24/05/2009)</p></li>
+          <li><p><a title="Modpacks, People, Icons, Wonders, etc." href="jp_miscgraphics.htm">Miscellaneous Graphics</a><br>(last modified<br>28/02/2020)</p></li>
+          <li><p><a title="Links to useful websites related to Civ2 scenarios and their design." href="jp_links.htm">Links</a></p></li>
+        </ul>
+      </div>
+      <div class="SideBarBot"><p></p></div>
+    </div>
+
+    <div class="content" style="min-width: 620px">
+
+      <h1>FAQ</h1>
+
+      <div class="faq_menu">
+        <div class="blockheading">    
+          <h3 id="General">General</h3>
+        </div>    
+
+        <ul>
+          <li><a href="#Versions">What is the difference between Fantastic Worlds (FW), Multiplayer Gold Edition (MGE) and Test of Time (ToT)?</a></li>
+          <li><a href="#Patch">Is there an official patch for Test of Time?</a></li>
+          <li><a href="#Crack">Is there a no-CD crack for Test of Time?</a></li>
+          <li><a href="#Interface">How do I get the city screen and status bar arrangement the same as the older versions of Civilization 2?</a></li>
+        </ul>
+
+        <div class="blockheading">    
+          <h3 id="Troubleshooting">Troubleshooting</h3>
+        </div>    
+
+        <ul>
+          <li><a href="#RegistryFix">Test of Time 1.0 is installed on my machine. I'm trying to apply the version 1.1 patch, but the installer tells me, 'You must have Civ II Test of Time installed in order to install this update.' What gives?</a></li>
+          <li><a href="#IndeoCodec">Test of Time works fine until it attempts to play videos, at which point the program hangs/produces a black screen. How can I fix this?</a></li>
+          <li><a href="#Windows64-bit">I have a 64-bit version of Windows. Test of Time installs and launches well enough, but whenever I try to build a city, it crashes. Is there a solution?</a></li>
+          <li><a href="#CPUFix">When I play Test of Time my CPU runs at 100%, sending the fans into overdrive. Is there anything I can do to fix this?</a></li>
+          <li><a href="#WrongDirectory">I just reloaded my saved game and the graphics look like a corrupted variety of those found in older versions of Civilization 2. What's going on?</a></li>
+          <li><a href="#WrongVersion">I've downloaded a Test of Time scenario from the Internet, but when I try to play it, a dialogue box pops up displaying the following message: 'Failed to load game: file is in obsolete format.' Why is this happening?</a></li>
+          <li><a href="#Sprites">I've downloaded a Test of Time scenario from the Internet. Unit and terrain resource graphics from the Original game are appearing in place of the scenario's custom icons. Why is this happening and what can I do to fix it?</a></li>
+          <li><a href="#BatchFiles">I've downloaded a scenario from the Internet. It requires me to run a batch (.BAT) file to install/change various game files. When I double-click the file, the Command Prompt window flashes on the screen for less than a second and then disappears. How do I get these batch files to work?</a></li>
+        </ul>
+
+        <div class="blockheading">    
+          <h3 id="Editing">Editing and Design</h3>
+        </div>    
+
+        <ul>
+          <li><a href="#MapEditor">Does Test of Time have a map editor?</a></li>
+          <li><a href="#GraphicFormat">What graphical format does Test of Time use?</a></li>
+          <li><a href="#SoundFormat">What sound format does Test of Time use?</a></li>
+          <li><a href="#Macro">Where can I find a list of Test of Time's additions to the macro language for events?</a></li>
+          <li><a href="#Civilopedia">How do I get all of the units in my scenario to appear in the Civilopedia?</a></li>
+          <li><a href="#TribeMayBuild">How does the 'Tribe May Build' mask work in the Advanced Units section of the Rules file?</a></li>
+          <li><a href="#NotAllowedOnMap">How does the 'Not Allowed On Map' mask work in the Advanced Units section of the Rules file?</a></li>
+          <li><a href="#TribeColours">How do I set the colours for each tribe?</a></li>
+          <li><a href="#Improvements">What is improvements.bmp used for? I make changes to the file, but they are not reflected in the Civilopedia.</a></li>
+          <li><a href="#WonderGraphics">Why are my wonder graphics in the Civilopedia corrupt?</a></li>
+          <li><a href="#LeaderTitles">I have just saved my game as a scenario and now all my tribe-specific leader titles (@LEADERS table in rules.txt) are ignored. The default titles for each government type (@GOVERNMENTS table) are loaded instead. How do I fix this?</a></li>
+          <li><a href="#WotR">Are you ever going to release that War of the Ring scenario?</a></li>
+        </ul>
+      </div><br>
+
+      <h2>General</h2>
+
+      <div id="Versions" class="tipblock">
+        <h4>What is the difference between Fantastic Worlds (FW), Multiplayer Gold Edition (MGE) and Test of Time (ToT)?</h4>
+
+        <p class="indent">A table showing a comparison between these three versions can be found <a href="jp_versions.htm">here</a>. The emphasis is on scenario design.</p>
+      </div><br>
+
+      <div id="Patch" class="tipblock">
+        <h4>Is there an official patch for Test of Time?</h4>
+
+        <div class="indent">
+          <p>Yes, the latest version of the game is 1.1. The patch can be downloaded from the following locations:</p>
+		  <ul class="totmenu">
+            <li><p><a href="http://forums.civfanatics.com/downloads.php?do=cat&amp;id=101">Civilization Fanatics' Center</a> (Hosts the English and German versions.)</p></li>
+            <li><p><a href="http://sleague.civfanatics.com/COC/utilities/index.shtml">The Cradle of Civilization</a> (Hosts the English, French and German versions.)</p></li>
+            <li><p><a href="http://civ2.mercator.fastmail.fm/files.html">Mercator's Civilization 2 Site</a> (Hosts the English, French and German versions.)</p></li>
+		  </ul>
+        </div>
+      </div><br>
+
+      <div id="Crack" class="tipblock">
+        <h4>Is there a no-CD crack for Test of Time?</h4>
+
+        <div class="indent">
+		  <p>For those people who hate CD-swapping, like me, there are a number of no-CD options available. The <a href="http://forums.civfanatics.com/showthread.php?t=517282">Test of Time Patch Project</a> includes one for ToT version 1.1. There are also discrete patchers, <a href="files/Civ2ToTCrk_1.1.zip">one for version 1.1</a> (3 kB) and <a href="files/Civ2ToTCrk_All.zip">another for versions 1.0 and 1.1</a> (16 kB).</p>
+		</div>
+      </div><br>
+
+      <div id="Interface" class="tipblock">
+        <h4>How do I get the city screen and status bar arrangement the same as the older versions of Civilization 2?</h4>
+
+        <p class="indent">In the View menu there are Map and City Layout options. Map Layout toggles the position of the status bar - horizontal-top or vertical-right-hand-side. City Layout toggles between the standard Test of Time city information screen and the style characteristic of earlier Civilization 2 versions.</p>
+      </div><br>
+
+      <h2>Troubleshooting</h2>
+
+      <div id="RegistryFix" class="tipblock">
+        <h4>Test of Time 1.0 is installed on my machine. I'm trying to apply the version 1.1 patch, but the installer tells me, 'You must have Civ II Test of Time installed in order to install this update.' What gives?</h4>
+
+        <p class="indent">It seems that for some versions of Test of Time, particularly the one that ships with <i>Civilization Chronicles</i> (inexplicably released as version 1.0 in 2006), the game is not correctly installed in the registry and the patch installer can't detect the game. If you are using <i>Civilization Chronicles</i>, try updating the game with SanMadJack's <a href="http://forums.civfanatics.com/downloads.php?do=file&amp;id=8534">patch installer</a>. Alternatively, the missing registry entries can be patched in prior to running the official 1.1 patch installer. For this method, click on <a href="http://forums.civfanatics.com/showthread.php?t=233203">this link</a> and follow Mercator's instructions.</p>
+      </div><br>
+
+      <div id="IndeoCodec" class="tipblock">
+        <h4>Test of Time works fine until it attempts to play videos, at which point the program hangs/produces a black screen. How can I fix this?</h4>
+
+        <div class="indent">
+          <p>Test of Time videos are encoded with the antiquated Indeo 5 codec. If you don't have it installed and registered on your system, the game can't play videos correctly. Here are three solutions in the order of my preference:</p>
+					<ol class="utilmenu">
+						<li><p><b>Solution 1:</b> Install the <a href="http://forums.civfanatics.com/showthread.php?t=517282">Test of Time Patch Project</a>. It contains a DirectShow video patch that allows Indeo playback with more modern filters. If this patch doesn't immediately fix the problem, then you probably need to grab some DirectShow filters. Try any of the following codec/filter packs:</p>
+						<ul class="totmenu">
+							<li><p><a href="http://sourceforge.net/projects/ffdshow-tryout/">ffdshow</a> Last updated 17/07/2014. (<a href="http://www.videohelp.com/software/ffdshow">VideoHelp page</a>)</p></li>
+							<li><p><a href="http://www.cccp-project.net/">The Combined Community Codec Pack (CCCP)</a> Last updated 13/07/2014. (<a href="http://www.videohelp.com/software/Combined-Community-Codec-Pack">VideoHelp page</a>)</p></li>
+							<li><p><a href="http://codecguide.com/">K-Lite Codec Pack</a> Regularly updated. (As you work through the installation wizard, be watchful for bundled crapware and <b>Decline</b> any offers. Under <b>Additional Tasks and Options</b>, scroll to the bottom of the list and deselect <b>Visit a website with codec news</b>.) (<a href="http://www.videohelp.com/software/K-Lite-Codec-Pack">VideoHelp page</a>)</p></li>
+							<li><p><a href="http://www.free-codecs.com/download/directshow_filterpack.htm">DirectShow FilterPack</a> Last updated 04/03/2012.</p></li>
+						</ul>
+						<p>You may need to right-click the installer files and select <b>Run as administrator</b>.</p></li>
+						<li><p><b>Solution 2:</b> The Indeo 5 codec may already be installed on the system, but not registered. If you have a 32-bit version of Windows, look in your Windows\System32 folder for a file called <b>ir50_32.dll</b>. For 64-bit versions of Windows, check your Windows\SysWOW64 folder. If it's not there, try one of the other solutions.</p>			  
+						<p>If it <i>is</i> there, you can register it to enable it. This is typically not required for Windows XP, but from Windows Vista onwards, Microsoft <a href="http://www.computerworld.com/s/article/9142140/Rather_than_patch_Microsoft_blocks_buggy_code">ceased support for the Indeo codecs</a>, and they were disabled for <a href="https://support.microsoft.com/en-us/kb/954157">security reasons</a>. Use at own risk, I suppose. Run the Command Prompt as an administrator by typing CMD in the Search box (Start button), and then holding Ctrl+Shift and hitting Enter. For 32-bit operating systems, type the following and hit Enter:</p>
+						<blockquote class="textblock">regsvr32 ir50_32.dll</blockquote>
+						<p>For 64-bit operating systems, type the following and hit Enter:</p>
+						<blockquote class="textblock">regsvr32 C:\Windows\SysWOW64\ir50_32.dll</blockquote>
+						<p>assuming that the operating system is installed on C: drive.</p></li>
+						<li><p><b>Solution 3:</b> Install the <a href="http://www.free-codecs.com/download/Indeo_Codec.htm">Ligos Indeo Codec v5.11</a>. The pack includes versions 3.2, 4.1 (required for earlier versions of Civilization 2) and 5.1 of the codec. The installer is ancient (27/05/2004); it spends an age searching your machine for Netscape Navigator. See security note in <b>Solution 2</b>.</p>
+						<p>You may need to right-click the installer file and select <b>Run as administrator</b>.</li>
+					 </ol>
+        </div>
+      </div><br>
+
+      <div id="Windows64-bit" class="tipblock">
+        <h4>I have a 64-bit version of Windows. Test of Time installs and launches well enough, but whenever I try to build a city, it crashes. Is there a solution?</h4>
+
+        <div class="indent">
+		      <p>Test of Time (32-bit) is not fully compatible with 64-bit operating systems. Use of the edit control (eg, enter leader name, Build New City) will cause the game to crash. There are two 64-bit compatibility patches available for download:</p>
+		      <ul class="totmenu">
+		        <li><p><a href="http://forums.civfanatics.com/showthread.php?t=517282">TheNamelessOne's Test of Time Patch Project</a></p></li>
+		        <li><p><a href="http://forums.civfanatics.com/downloads.php?do=file&amp;id=15208">MastermindX's 64-bit Windows Compatibility Patcher</a></p></li>
+		      </ul>
+	  	  </div>
+      </div><br>
+
+      <div id="CPUFix" class="tipblock">
+        <h4>When I play Test of Time my CPU runs at 100%, sending the fans into overdrive. Is there anything I can do to fix this?</h4>
+
+        <div class="indent">
+          <p>Yes. The Civ2 executable typically uses 100% of the available CPU core 100% of the time. Remember, the original version of the game was released back in 1996 when this type of thing wasn't a concern. These days that's a lot of electricity and system fan activity for naught. There are two CPU usage patches available for download:
+		      <ul class="totmenu">
+		        <li><p><a href="http://forums.civfanatics.com/showthread.php?t=517282">TheNamelessOne's Test of Time Patch Project</a></p></li>
+		        <li><p><a href="http://forums.civfanatics.com/downloads.php?do=file&amp;id=9593">Till's CPU-Throttle</a></p></li>
+		      </ul>	  
+	      </div>
+      </div><br>
+
+      <div id="WrongDirectory" class="tipblock">
+        <h4>I just reloaded my saved game and the graphics look like a corrupted variety of those found in older versions of Civilization 2. What's going on?</h4>
+
+        <p class="indent">When you save your Test of Time games, you must save them in the correct subfolder. This means that if you are playing the Original game, you must save your games in the Original folder. Likewise, Extended Original games must be saved in the ExtendedOriginal folder. The same goes for scenarios. The old-style graphics appear if you save your games in Test of Time's main folder. The game will read any resources located there, including obsolete graphics, when the saved game is reloaded.</p>
+      </div><br>
+
+      <div id="WrongVersion" class="tipblock">
+        <h4>I've downloaded a Test of Time scenario from the Internet, but when I try to play it, a dialogue box pops up displaying the following message: 'Failed to load game: file is in obsolete format.' Why is this happening?</h4>
+
+        <p class="indent">Test of Time 1.1 is required to play scenarios created with version 1.1. You need to update your version of the game. See <a href="#Patch">here</a>.</p>
+      </div><br>
+
+      <div id="Sprites" class="tipblock">
+        <h4>I've downloaded a Test of Time scenario from the Internet. Unit and terrain resource graphics from the Original game are appearing in place of the scenario's custom icons. Why is this happening and what can I do to fix it?</h4>
+
+        <div class ="indent">
+          <p>It's happening simply because the author of the scenario failed to disable them. You need to do two things:</p>
+
+          <ol>
+            <li><p><b>Disable the unit sprites:</b> Open the rules.txt file in your scenario folder and go to the @UNITS_ADVANCED section. Change the 8th bit in column G (reverse programmer notation) to 1 for every entry in the table (see below, highlighted red).</p>
+            <blockquote class="textblock">@UNITS_ADVANCED<br>
+            11111111, 00000000, 0, 0000000000000000,0000000000000000,0000000000000000, <font color="red"><b>1</b></font>0000000</blockquote></li>
+            <li><p><b>Disable the terrain resource sprites:</b> Download <a href="files/Dummy_Resource.zip">this dummy resource sprite file</a> (369 bytes unzipped) and place it in your scenario folder.</p></li>
+          </ol>
+
+          <p>If the scenario is running, quit back to the main menu and reload the game. That will refresh the graphics and the offending sprites will be history. For more information on sprite management, see <a href="jp_sprites.htm">this guide</a>.</p>
+        </div>
+      </div><br>
+
+      <div id="BatchFiles" class="tipblock">
+        <h4>I've downloaded a scenario from the Internet. It requires me to run a batch (.BAT) file to install/change various game files. When I double-click the file, the Command Prompt window flashes on the screen for less than a second and then disappears. How do I get these batch files to work?</h4>
+
+        <div class="indent">
+		  <p>These batch files use the obsolete Choice command for menu selection. To function, this command requires the file, choice.com. Choice.com shipped with Windows 9x systems, but is not supported on NT-based systems, eg, XP, Vista and 7. When choice.com is missing, the batch process terminates. To run these batch files successfully, download <a href="files/Choice.zip">Choice.com</a> (3 kB) and place it in your scenario folder, or better still, in your Windows\System32 folder.</p>
+		
+		  <p>A more conventional method for creating batch file menus on modern operating systems is to use SET /P instead, as explained by Mercator in <a href="http://forums.civfanatics.com/showpost.php?p=3398234&amp;postcount=7">this post</a>. This is especially relevant as 64-bit versions of Microsoft Windows are becoming standard and Choice.com is incompatible with these systems. For more information on creating 64-bit-compatible batch files for Civilization 2 scenarios, see <a href="http://forums.civfanatics.com/showthread.php?t=433664">this thread</a>.</p>
+		</div>
+      </div><br>
+
+      <h2>Editing and Design</h2>
+
+      <div id="MapEditor" class="tipblock">
+        <h4>Does Test of Time have a map editor?</h4>
+
+        <div class="indent">
+          <p>No, it doesn't. The readme file states the following:</p>
+
+          <blockquote class="textblock">With regret, we must announce that we can no longer support a map editor with this product. Test of Time will accept maps made by a map editor included in any of the other Civ II products, however.</blockquote>
+
+          <p>This isn't a problem because Mercator adapted the official map editor that shipped with earlier versions of Civilization 2 for use with Test of Time. It is available on <a href="http://civ2.mercator.fastmail.fm/mapedit/downloads.html#file0006">his site</a>. Unlike the original, this one also supports gigamaps, ie, maps larger than 10 922 tiles (to a maximum of 32 767). If you have a <a href="http://windows.microsoft.com/en-au/windows/32-bit-and-64-bit-windows#1TC=windows-7">64-bit version of Windows</a>, run <a href="http://forums.civfanatics.com/downloads.php?do=file&amp;id=15208">MastermindX's 64-bit Windows Compatibility Patcher</a> on the Civ2map.exe file to prevent edit control crashes.</p>
+        </div>
+      </div><br>
+
+      <div id="GraphicFormat" class="tipblock">
+        <h4>What graphical format does Test of Time use?</h4>
+
+        <p class="indent">Test of Time renders most of its graphics in 15-bit Highcolor (that's 2 bytes); for some it uses various 8-bit palettes. The last (16th) bit of the 2 bytes is used as a mask indicator, ie, for team colours. This gives you 5 bits per colour channel (RGB) or 2<sup>5</sup> x 2<sup>5</sup> x 2<sup>5</sup> = 32 768 colours, as opposed to the 192 available colours (out of 256) in the standard 8-bit Civilization 2 palette. The official Test of Time bitmaps are saved as Highcolor graphics, but many editors don't support this format. That's no problem because the game can read 24-bit (Truecolor) bitmaps. Simply save your Test of Time graphics as 24-bit BMP files.</p>
+      </div><br>
+
+      <div id="SoundFormat" class="tipblock">
+        <h4>What sound format does Test of Time use?</h4>
+
+        <p class="indent">Sounds for Test of Time must be saved as 8-bit, 22 kHz, PCM format WAV files. Stereo and mono are supported.</p>
+      </div><br>
+
+      <div id="Macro" class="tipblock">
+        <h4>Where can I find a list of Test of Time's additions to the macro language for events?</h4>
+
+        <p class="indent">Test of Time's  macro language for events is explained in the macro.txt file, located in the main Test of Time folder. This file has been reported as missing from some of the non-English versions of the game, so I'll host it <a href="files/Macro.zip">here</a>.</p>
+      </div><br>
+
+      <div id="Civilopedia" class="tipblock">
+        <h4>How do I get all of the units in my scenario to appear in the Civilopedia?</h4>
+
+        <div class="indent">
+          <p>By default, only the first 62 units listed in your rules.txt file will appear in the Civilopedia. To make additional units (63-80) appear, you will need to include a describe.txt file with your scenario. You will more than likely also need to edit the @@UNIT_INDEX section of this file. For a scenario that uses the full compliment of 80 units, the list requires 80 entries. If you don't want to write a description for each unit, simply enter index values of -1 (this disables the item's description button). Remember, unit numbering begins at zero and the list must be terminated with a value of -2. To make things easier I'll provide a describe.txt template for <a href="files/Describe_Template.zip">download</a>. The principle is the same for the other sections of the Civilopedia, eg, additional terrain types for a multi-map scenario will only appear if extra indices are added to the @@TERRAIN_INDEX list.</p>
+
+          <p>Your scenario may also contain unbuildable units, ie, 'no' prerequisites. If you want them to appear in the Civilopedia, the procedure is simple (none of that once-removed-tech nonsense of earlier versions of Civ2). Give these units a prerequisite of 'nil' or in fact, any technology you deem appropriate. Once a unit has been defined as unbuildable in column A of the @UNITS_ADVANCED section (rules.txt), its prerequisite technology becomes redundant. Only units with a 'no' prerequisite will fail to appear in the Civilopedia.</p>
+        </div>
+      </div><br>
+
+      <div id="TribeMayBuild" class="tipblock">
+        <h4>How does the 'Tribe May Build' mask work in the Advanced Units section of the Rules file?</h4>
+
+        <div class="indent">
+          <p>This is pretty straightforward, with most of the confusion stemming from the game's use of reverse programmer notation and tribe order. All of the masks in the @UNITS_ADVANCED table (rules.txt) use reverse programmer notation. This means that the bit values in each mask are read from right to left. In the 'Tribe May Build' mask (column A) there are 8 bits, one for each tribe slot, starting with tribe 0 (Barbarians). A value of 1 indicates the tribe <i>can</i> build the unit; a value of 0 indicates the tribe <i>can't</i> build the unit. In the example below, only tribes 0, 6 and 7 would be able to build that unit, even if all tribes possessed its prerequisite technology.</p>
+
+          <blockquote class="textblock">
+            <p>;&nbsp;&nbsp;&nbsp;A<br>
+            @UNITS_ADVANCED<br>
+            11000001, ...</p>
+          </blockquote>
+
+          <p>If the human player can't build a particular unit you will see a red 'You cannot build this unit' displayed in the Civilopedia entry. Look in the Original game rules and you can see that everyone can build everything, as you'd expect.</p>
+
+          <p>So just to be clear, we have: tribe 0 (rightmost, barbarians), tribe 1 (2nd from the right, Romans/Russians/Celts),... tribe 7 (leftmost, Indians/Mongols/Sioux).</p>
+        </div>
+      </div><br>
+
+      <div id="NotAllowedOnMap" class="tipblock">
+        <h4>How does the 'Not Allowed On Map' mask work in the Advanced Units section of the Rules file?</h4>
+
+        <div class="indent">
+          <p>Column B in the @UNITS_ADVANCED table (rules.txt) has two effects. Firstly, it prevents a unit from being built on the specified map/s. Secondly, it is <i>supposed</i> to prevent a unit from accessing such maps via the native transport ability (column F). The second function is buggy, as explained by TheNamelessOne <a href="http://forums.civfanatics.com/showpost.php?p=13306868&amp;postcount=99">here</a>. The bug was fixed in version 0.7 of his <a href="http://forums.civfanatics.com/showthread.php?t=517282">Test of Time Patch Project</a>. Column B does not prevent a unit from using a transporter to enter the specified map/s (column E handles that). As with all bitmasks, it uses reverse programmer notation, so values are read from right to left. Each bit represents one of the 4 possible maps (numbered 0-3); the last 4 bits in the mask are not used. In the example below, you would not be allowed to build the specified unit on maps 0 and 2; the unit would also be unable to enter either of these maps using its native transport ability (if it possessed one).</p>
+
+          <blockquote class="textblock">
+            <p>;&nbsp;&nbsp;&nbsp;A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B<br>
+            @UNITS_ADVANCED<br>
+            11111111, 00000101, ...</p>
+          </blockquote>
+        </div>
+      </div><br>
+
+      <div id="TribeColours" class="tipblock">
+        <h4>How do I set the colours for each tribe?</h4>
+
+        <div class="indent">
+          <p>Tribe colours are determined by two pixels above each flag icon in cities.bmp, as illustrated below. The in-game effect is shown on the right.</p>
+          <ol>
+            <li><p>The colour of the city name text.</p></li>
+            <li><p>The colour of the city size box, diplomacy screen trim, unit key (shield) and team colour masks for sprites. In the game, the colour on the unit key is a darker version of this pixel (approximately half the RGB value). Note that the <a href="http://forums.civfanatics.com/showthread.php?t=517282">Test of Time Patch Project</a> allows you to control the brightness of the unit key with a setting (UnitShieldColor) in rules.txt.</p></li>
+          </ol>
+          <p style="text-align: center"><img class="framed" src="images/Tribe_Colours.png" width="268" height="224" alt="Tribe Colours"></p>
+        </div>
+      </div><br>
+
+      <div id="Improvements" class="tipblock">
+        <h4>What is improvements.bmp used for? I make changes to the file, but they are not reflected in the Civilopedia.</h4>
+
+        <div class="indent">
+          <p>You might think that the 72 x 40 pixel icons in improvements.bmp are used by the game's Civilopedia screens, where you can find both 72 x 40 and 54 x 30 pixel icons for wonders and city improvements. Not so. The Civilopedia uses the smaller 36 x 20 pixel icons from the icons.bmp file, resulting in a somewhat clunky, pixellated appearance. Don't ask me why. Anyway, the larger icons from improvements.bmp are used in the city screen (the standard one for Test of Time, not the classic one - toggled via City Layout in the View menu) and in various message boxes from game.txt, eg, @HOCKTHIS, @NOTRANSPORTER and @BATTERY (shown below).</p>
+          <p style="text-align: center"><img src="images/Improvements_Battery.png" width="433" height="125" alt="Battery Icon"></p>
+        </div>
+      </div><br>
+
+      <div id="WonderGraphics" class="tipblock">
+        <h4>Why are my wonder graphics in the Civilopedia corrupt?</h4>
+
+        <div class="indent">
+          <p>You've just gone and pasted an image into one of your XXimp.bmp files and then loaded up the game to see how it checks out in the Civilopedia. You find that the picture is marred by dark lines or that large patches are missing. This is because the colour of the pixel in the top left corner of the image defines a transparency mask. All like pixels will become transparent, revealing boarder1.bmp behind. This phenomenon only occurs in the wonder graphics (40imp.bmp - 67imp.bmp), not the city improvement graphics (01imp.bmp - 39imp.bmp). It seems that Microprose's own art team was unaware of the fact, as a number of the official wonder graphics have been corrupted in this manner (see below).</p>
+          <p style="text-align: center"><img src="images/Imp_Pyramids.png" width="246" height="199" alt="The Pyramids"></p>
+          <p><b>Solution:</b> make sure that the pixel in the top left corner is of a different colour to the remainder in the image. Magenta (#FF00FF) is a good choice, as it's rarely found in graphics and stands out like a sore thumb. If you don't like the effect of one missing pixel in the top left corner, you could create a one-pixel wide border down the left hand side or across the top of the image.</p>
+          <p>Transparent colour markers like these can be found all over the place in Test of Time: cities.bmp, units.bmp, people.bmp, terrainX.bmp, icons.bmp, city.bmp and dialog.bmp.</p>
+        </div>
+      </div><br>
+
+      <div id="LeaderTitles" class="tipblock">
+        <h4>I have just saved my game as a scenario and now all my tribe-specific leader titles (@LEADERS table in rules.txt) are ignored. The default titles for each government type (@GOVERNMENTS table) are loaded instead. How do I fix this?</h4>
+
+        <div class="indent">
+          <p>This happens once the scenario flag is set, ie, in SCN files, or SAV files derived from them. If a tribe's plural name (column 6 in the @LEADERS table) matches the one stored in the SAV/SCN file, then the game only reads leader titles from the @GOVERNMENTS table and ignores those from @LEADERS.</p>
+          
+          <p><b>Solution:</b> after saving a game as a scenario, change the plural names in @LEADERS to something different. You should find that the game now reads the custom titles at the end of each leader entry. This workaround isn't perfect. To work for the human player it requires the game to be saved and reloaded. Tribe-specific titles for the AI tribes will be loaded correctly when the scenario is begun.</p>
+        </div>
+      </div><br>
+
+      <div id="WotR" class="tipblock">
+        <h4>Are you ever going to release that War of the Ring scenario?</h4>
+
+        <p class="indent">It's right <a href="jp_wotr.htm">here</a>, you clown. Quit your nagging.</p><br>
+      </div><br>
+
+      <p><img src="images/VampHunter.gif" width="40" height="51" alt="VampireHunter_Icon"></p>
+
+      <p>Catfish</p>
+      <p>26/01/2005</p>
+      <p class="note">(Last updated 08/09/2015. Update to entry for Indeo video playback.)</p>
+
+    </div>
+
+  </body>
+
+</html>

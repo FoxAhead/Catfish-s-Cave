@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+  <head>
+    <title>Catfish's Cave - Archive (2003-2004)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="author" content="Catfish">
+    <meta name="description" content="Catfish's Cave archived Main page for the period 2003-2004.">
+    <meta name="viewport" content="width=device-width, initial-scale=.8">
+    <link href="cave.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+
+    <div class="Fixed">
+      <div><img src="images/Cave.png" width="660" height="100" alt="Catfish's Cave - Resources For Civilization 2: Test of Time"></div>
+      <div class="SideBar">
+        <ul class="menu">
+          <li><p><a title="Catfish's Cave Homepage" href="index.htm">Main</a></p></li>
+          <li><p><a title="Frequently Asked Questions." href="jp_faq.htm">FAQ</a></p></li>
+          <li><p><a title="Design guides for Test of Time." href="jp_guides.htm">Guides</a></p></li>
+          <li><p><a title="Download the War of the Ring scenario." href="jp_wotr.htm">War of the Ring</a></p></li>
+          <li><p><a title="24-bit units for Test of Time." href="jp_units.htm">Units</a><br>(last modified<br>25/05/2009)</p></li>
+          <li><p><a title="24-bit terrain graphics for Test of Time." href="jp_terrain.htm">Terrain</a><br>(last modified<br>24/05/2009)</p></li>
+          <li><p><a title="Modpacks, People, Icons, Wonders, etc." href="jp_miscgraphics.htm">Miscellaneous Graphics</a><br>(last modified<br>28/02/2020)</p></li>
+          <li><p><a title="Links to useful websites related to Civ2 scenarios and their design." href="jp_links.htm">Links</a></p></li>
+        </ul>
+      </div>
+      <div class="SideBarBot"><p></p></div>
+    </div>
+
+    <div class="content" style="min-width: 480px">
+
+      <h1>Archived Main (2003 - 2004)</h1>
+
+      <div class="post" id="P20040801">
+        <div class="blockheading">
+          <h3><span class="date">1/08/2004 </span>Miscellaneous Gibberings</h3>
+        </div>
+
+        <p>Progress on the War of the Ring scenario has been spasmodic as my interest in Civ2 waxes and wanes. I'm running only my 5th playtest. The struggles continue with the AI and events space (see the comments below on delayed events).</p>
+
+        <p>I've added a graphics mod pack for ToT's Original game to the <a href="jp_miscgraphics.htm">Miscellaneous Graphics</a> section. It was made a couple of weeks ago for an older person whose eyesight isn't exactly 100% and makes use of team colour masks. It's basically a compilation of user-made and Microprose material; the credits are in the Readme file. It won't be everybody's cup of tea. Take it or leave it.</p>
+
+        <p>The inclusion of animated terrain (which I'd always removed from my game) in the aforementioned mod pack exposed me to a bug whereby the animated terrain file, resource.spr, would interfere with scenarios lacking their own custom resource.spr file - even when the Animated Terrain was turned off under the game's Graphic Options. See <a href="http://apolyton.net/showthread.php/118766-Resource.spr-and-Animated-Terrain">this thread</a> at Apolyton for details. As a result I created a <a href="files/Dummy_Resource.zip">dummy resource.spr</a> file which can (and should, in my opinion :)) be included with any ToT scenario to prevent  such interference. Most veteran gamers tend to ditch terrain animation by renaming the file, but new players won't. Oh and scenario designers should also avoid the animation lockout options in the Scenario Parameters list. They're useless and only impede a player's ability to adjust their settings to the correct ones.</p>
+
+        <h4>About Delay and DelayPerFlag modifiers:</h4>
+
+        <p>From my experience with these, my advice would be to use them sparingly and with caution. Each time a Delay or DelayPerFlag event is called, it is loaded into the memory space shared by all other events. Each delayed event takes up 276 bytes in the .sav file and requires 284 bytes in memory. Repeating Delay/DelayPerFlag events can very quickly eat up your remaining events memory as each stacks up an additional 284 bytes. To avoid problems with these modifiers in your scenario you'll need to calculate the maximum possible number of concurrent Delay/DelayPerFlag events and multiply this figure by 284. The resulting value must not exceed the remaining heap space, as calculated by the events debugger, otherwise there exists the potential for some delayed events to simply not load - although I guess if none of them are game critical, it may not matter.</p>
+
+        <p>Not having read the <i>entire</i> Macro.txt document for a few years, I discovered this the hard way (which includes plenty of obscene language). Shortly after figuring this out I stumbled on these lines at the end of the document:</p>
+
+        <blockquote class="textblock">In addition, delayed actions (those using the DELAY modifier) create countdown timers that also take up memory space. If your delays pile up and you run out of memory because of it, the scenario won't crash, but any delayed actions that don't fit in memory will not ever take place.</blockquote>
+
+        <p>Sigh...</p>
+
+        <h4>Addendum (6/08/2004):</h4>
+        
+        <p>Man, it certainly pays to read all of the text files, doesn't it? This time from the 1.1 patch readme:</p>
+
+        <blockquote class="textblock">For events files, the Debug file (report.txt) now includes the amount of stack space left for your use. Please note, however, that this total does NOT include the stack space needed by DELAYed events. Each DELAY adds 284 bytes to the space used. Overlapping DELAYs (those whose counters could be running at the same time) add up, but those that do not overlap do not-- i.e. they can re-use the same 284 bytes.</blockquote>
+
+        <p>This would have saved me a lot of grief. If there's any consolation, at least I know I was right on the money. :|</p>
+
+        <p><img src="images/Ogre.gif" width="48" height="52" alt="Sign Off"></p>
+      </div>
+
+      <div class="post" id="P20040623">
+        <div class="blockheading">
+          <h3><span class="date">23/06/2004 </span>War of the Ring Progress</h3>
+        </div>
+
+        <p>I've been working away on the War of the Ring scenario over the last few nights. My, isn't fleshing out the describe.txt file an exciting task? Copying, pasting, scanning, typing, editing - 21 000 words and counting. I'm also fighting with the events file - fitting all of your events within the 104 kB allocated memory must be akin to trying to stuff a push bike into a Christmas stocking. However, the biggest problem with the scenario is the AI. Now, I've always known that the Civ2 AI was dumb, but trying to get it to jump through the hoops that are the impassable terrain barriers in this scenario is a nightmare. I'm having to divide the map into many MoveUnit cells, each of which directs traffic through the numerous choke points. Of course, each additional MoveUnit event  further reduces my available events space. Then there are those units which are independently assigned ridiculous GoTo orders that they can't possibly hope to carry out. Whinge. Moan.</p>
+
+        <p>In contrast to my gripes, I have to say that the Quest scripting works pretty well - an impossible task without Test of Time's multiple maps and flags. These include the Barrow-downs upgrades, Rivendell and the Council of Elrond (Frodo's arrival/non-arrival, upgrade and spawning of Fellowship members), Gandalf opening the Gates of Moria, Merry/Pippin rousing the Ents, Gandalf rousing Théoden, Aragorn and the Paths of the Dead, Gollum opening the way through Cirith Ungol and of course, the final event: destruction of the Ring in Mount Doom. Lórien (Elven boats and Sam upgrade) has a minor problem. I simply ran out of map transport relationships, so it's possible (but very unlikely - I've made it difficult and unrewarding) to fire this trigger with inappropriate units.</p>
+
+        <p><img src="images/Spider.gif" width="59" height="52" alt="Sign Off"></p>
+      </div>
+
+      <div class="post" id="P20040610">
+        <div class="blockheading">
+          <h3><span class="date">10/06/2004 </span>Random Update</h3>
+        </div>
+
+        <p>Hmm, so what have I been up to in the realms of Civ2 over the last 3 months? Not much, I'm afraid. I was supposed to be working on my scenario, but only resumed work on the project yesterday. It was not long after my last site update that I let the cat out of the bag in one of the Civ2 forums regarding the project's nature. In February this year, I dusted off my old War of the Ring scenario, decided I didn't like the map and so started over again from scratch. I'll post a few screenshots in the Scenarios section - it may provide me with some additional motivation to get my arse into gear.</p>
+
+        <p>I've got my filthy mitts on a scanner of late and thought I'd take the opportunity to sample some of the newly available source materials for unit creation. A couple of WWII Brits was the result. They're intentionally smaller than my standard man-sized units; make them too large and they dwarf the armour.</p>
+
+        <p><img src="images/Catfish_WWII_Brits.png" width="131" height="66" alt="WWII Brit Units"></p>
+      </div>
+
+      <div class="post" id="P20040312">
+        <div class="blockheading">
+          <h3><span class="date">12/03/2004 </span>El Aurens Beta Released</h3>
+        </div>
+
+        <p>Been working on various scenario stuff, both of a graphical and non-graphical nature. In the process, I'm trying not to get distracted by Boco's <a href="http://apolyton.net/showthread.php?s=&amp;threadid=109766">beta release</a> of his superb El Aurens scenario. A lot of time and effort has been poured into this one, so get play-testing! Just to prove that I haven't been sitting on my hands, here's a screenshot of a revamped city screen for a ToT scenario of mine (66% of original size). The original city name and flag have been scrubbed.</p>
+
+        <p><img class="framed" src="images/CityScreen_thumb.png" width="160" height="112" alt="City Screen Thumbnail"></p>
+
+        <p><img src="images/Indiana.gif" width="43" height="52" alt="Sign Off"></p>
+      </div>
+
+      <div class="post" id="P20040126">
+        <div class="blockheading">
+          <h3><span class="date">26/01/2004 </span>Sprites Unmasked</h3>
+        </div>
+
+        <p>I was playing around with Test of Time's sprites and masks (courtesy of Mercator's CivSprite utility) and came up with the following results:</p>
+
+        <p><img class="framed" src="images/ToTMasks.png" width="279" height="133" alt="ToT Masks"></p>
+
+        <p>The brightness and contrast of the unmasked area (greyscaled) could probably be worked a bit (the mask layer, itself, is either on or off), but it was just an experiment. Not quite as good as the original (inset) but I still may consider its use for some generic units, such as this man-at-arms.</p>
+
+        <p><img src="images/Pandaren.gif" width="50" height="52" alt="Sign Off"></p>
+      </div>
+
+      <div class="post" id="P20031219">
+        <div class="blockheading">
+          <h3><span class="date">19/12/2003 </span>New Website</h3>
+        </div>
+
+        <p>This is my first attempt at anything website related, whacked together one night using FrontPage. Favouring functionality over design, it's really just a repository for my Civilization 2: Test of Time files - instead of having them scattered all over the Apolyton site. Here, I will post my graphics and scenarios (should I ever finish them and if they'll fit - I've got a 10 Mb limit).</p>
+
+        <p>Catfish</p>
+        <p><img src="images/Sasquatch.gif" width="48" height="52" alt="Sign Off"></p>
+      </div>
+
+    </div>
+
+  </body>
+
+</html>
