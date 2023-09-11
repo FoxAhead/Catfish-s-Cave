@@ -50,7 +50,7 @@ width: 180px
 
 .menu
 {
-list-style-image: url('images/arrow.gif');
+list-style-image: url('images/Arrow.gif');
 font-family: Arial, sans-serif;
 font-size: 10pt
 }
@@ -264,7 +264,7 @@ font-weight: bold
 .submenu
 {
 line-height: 300%;
-list-style-image: url('images/arrow2.gif');
+list-style-image: url('images/Arrow2.gif');
 margin: 40px 0 0 60px;
 vertical-align: middle
 }
